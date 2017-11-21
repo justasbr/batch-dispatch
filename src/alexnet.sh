@@ -1,0 +1,1 @@
+python benchmark.py --batch_size 2 --num_batches 1 --framework keras --model inception

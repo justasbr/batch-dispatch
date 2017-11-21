@@ -1,0 +1,118 @@
+         8040 function calls (7840 primitive calls) in 0.635 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       10    0.000    0.000    0.635    0.063 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1070(wrapper)
+       10    0.000    0.000    0.628    0.063 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:656(f)
+       10    0.038    0.004    0.628    0.063 benchmark.py:53(torch_classify)
+       10    0.000    0.000    0.589    0.059 /Users/justas/PycharmProjects/ugproject/src/callback_raw_img/torch_models/torch_alexnet.py:47(forward)
+   220/20    0.004    0.000    0.588    0.029 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/module.py:322(__call__)
+       20    0.002    0.000    0.588    0.029 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/container.py:65(forward)
+       50    0.001    0.000    0.265    0.005 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py:275(forward)
+       50    0.259    0.005    0.264    0.005 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/functional.py:57(conv2d)
+       30    0.000    0.000    0.263    0.009 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/linear.py:54(forward)
+       30    0.001    0.000    0.262    0.009 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/functional.py:822(linear)
+       30    0.261    0.009    0.261    0.009 {built-in method torch._C.addmm}
+       30    0.000    0.000    0.030    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/pooling.py:140(forward)
+       30    0.000    0.000    0.030    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/functional.py:327(max_pool2d)
+       30    0.029    0.001    0.029    0.001 {built-in method torch._C._nn.max_pool2d}
+       70    0.000    0.000    0.024    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/activation.py:42(forward)
+       70    0.023    0.000    0.023    0.000 {built-in method torch._C._nn.threshold}
+       10    0.000    0.000    0.005    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:625(__call__)
+       10    0.000    0.000    0.005    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:640(add_function)
+       10    0.000    0.000    0.005    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:560(add)
+       10    0.000    0.000    0.005    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:916(getsourcelines)
+      200    0.001    0.000    0.004    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/utils.py:6(parse)
+      420    0.001    0.000    0.003    0.000 {built-in method builtins.isinstance}
+       10    0.000    0.000    0.003    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:905(getblock)
+      200    0.002    0.000    0.003    0.000 /Users/justas/miniconda3/lib/python3.6/abc.py:178(__instancecheck__)
+      370    0.001    0.000    0.003    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:492(_tokenize)
+       10    0.000    0.000    0.002    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:730(findsource)
+      180    0.001    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/module.py:352(__getattr__)
+       20    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/modules/dropout.py:45(forward)
+       20    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/functional.py:525(dropout)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:753(show_results)
+      250    0.001    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/_weakrefset.py:70(__contains__)
+       20    0.001    0.000    0.001    0.000 {built-in method apply}
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:684(getmodule)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:672(getabsfile)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:367(abspath)
+      330    0.001    0.000    0.001    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/nn/_functions/dropout.py:19(forward)
+       90    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/torch/autograd/variable.py:64(__getattr__)
+       80    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+      320    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:152(_compile)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:650(getsourcefile)
+       10    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+      330    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/re.py:231(compile)
+       30    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/genericpath.py:16(exists)
+      120    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+      360    0.000    0.000    0.000    0.000 <string>:12(__new__)
+      360    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:861(tokeneater)
+       20    0.000    0.000    0.000    0.000 {method 'clone' of 'torch._C.FloatTensorBase' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:614(__init__)
+      330    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/re.py:286(_compile)
+       30    0.000    0.000    0.000    0.000 {method 't' of 'torch._C._VariableBase' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:613(getfile)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:329(normpath)
+      460    0.000    0.000    0.000    0.000 {method 'values' of 'collections.OrderedDict' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1085(choose_backend)
+      360    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      360    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x108f904e0}
+       10    0.000    0.000    0.000    0.000 {method 'view' of 'torch._C._VariableBase' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:682(disable_by_count)
+      100    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:73(join)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/linecache.py:53(checkcache)
+       80    0.000    0.000    0.000    0.000 {method 'dim' of 'torch._C.FloatTensorBase' objects}
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       10    0.000    0.000    0.000    0.000 {built-in method torch._C.from_numpy}
+      320    0.000    0.000    0.000    0.000 {method 'span' of '_sre.SRE_Match' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:62(isabs)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:458(unwrap)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:63(ismodule)
+      280    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+       30    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:675(enable_by_count)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:39(_get_sep)
+       50    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:607(<genexpr>)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/linecache.py:37(getlines)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:601(items)
+       90    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       70    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:475(_is_wrapper)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:749(disable)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:50(normcase)
+       10    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:53(unicode)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:742(enable)
+       50    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:852(__init__)
+       30    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:657(<genexpr>)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:660(<genexpr>)
+       30    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:252(iscode)
+       40    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:228(istraceback)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:72(isclass)
+       90    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1097(<genexpr>)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:80(ismethod)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:729(generate_tokens)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:158(isfunction)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:238(isframe)
+       10    0.000    0.000    0.000    0.000 {method 'size' of 'torch._C.FloatTensorBase' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:555(__init__)
+       10    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       10    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       10    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+       20    0.000    0.000    0.000    0.000 {built-in method sys.settrace}
+       10    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:652(wrap_function)
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+       10    0.000    0.000    0.000    0.000 {built-in method sys.gettrace}
+
+

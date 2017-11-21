@@ -1,0 +1,10 @@
+Framework	torch
+Model____	inception
+Bsize____	6
+TP (Img/s)	125.56
+99pct LAT	0.0488
+90pct LAT	0.0479
+
+75pct LAT	0.0478
+50pct LAT	0.0477
+ 

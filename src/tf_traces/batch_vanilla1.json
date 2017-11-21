@@ -1,0 +1,1328 @@
+{
+    "traceEvents": [
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 0,
+            "args": {
+                "name": "Allocators"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 1,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 2,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Tensors"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652751,
+            "dur": 7,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652784,
+            "dur": 7,
+            "args": {
+                "name": "conv1/Conv2D/input",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652783,
+            "dur": 12,
+            "args": {
+                "name": "conv1/biases",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652780,
+            "dur": 17,
+            "args": {
+                "name": "conv1/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652786,
+            "dur": 12,
+            "args": {
+                "name": "conv2/biases",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652798,
+            "dur": 5,
+            "args": {
+                "name": "conv1/biases/read",
+                "op": "Identity",
+                "input0": "conv1/biases"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv1/biases",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652795,
+            "id": 0
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv1/biases",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652798,
+            "id": 0
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652786,
+            "dur": 18,
+            "args": {
+                "name": "conv2/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133652792,
+            "dur": 14,
+            "args": {
+                "name": "conv3/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652807,
+            "dur": 4,
+            "args": {
+                "name": "conv2/weights/read",
+                "op": "Identity",
+                "input0": "conv2/weights"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv2/weights",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652804,
+            "id": 1
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv2/weights",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652807,
+            "id": 1
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652806,
+            "dur": 7,
+            "args": {
+                "name": "conv4/biases",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652807,
+            "dur": 8,
+            "args": {
+                "name": "conv4/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652802,
+            "dur": 5,
+            "args": {
+                "name": "conv2/biases/read",
+                "op": "Identity",
+                "input0": "conv2/biases"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652816,
+            "dur": 3,
+            "args": {
+                "name": "conv4/biases/read",
+                "op": "Identity",
+                "input0": "conv4/biases"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv4/biases",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652813,
+            "id": 2
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv4/biases",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652816,
+            "id": 2
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652815,
+            "dur": 7,
+            "args": {
+                "name": "conv5/weights",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652818,
+            "dur": 5,
+            "args": {
+                "name": "conv4/weights/read",
+                "op": "Identity",
+                "input0": "conv4/weights"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652806,
+            "dur": 9,
+            "args": {
+                "name": "conv3/biases",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 6,
+            "ts": 1514469133652801,
+            "dur": 25,
+            "args": {
+                "name": "conv1/weights/read",
+                "op": "Identity",
+                "input0": "conv1/weights"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv1/weights",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652797,
+            "id": 3
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv1/weights",
+            "pid": 1,
+            "tid": 6,
+            "ts": 1514469133652801,
+            "id": 3
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652824,
+            "dur": 4,
+            "args": {
+                "name": "conv5/weights/read",
+                "op": "Identity",
+                "input0": "conv5/weights"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv5/weights",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652822,
+            "id": 4
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv5/weights",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652824,
+            "id": 4
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652816,
+            "dur": 15,
+            "args": {
+                "name": "conv3/weights/read",
+                "op": "Identity",
+                "input0": "conv3/weights"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv3/weights",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133652806,
+            "id": 5
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv3/weights",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652816,
+            "id": 5
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652825,
+            "dur": 7,
+            "args": {
+                "name": "fcc6/Variable",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 7,
+            "ts": 1514469133652794,
+            "dur": 23,
+            "args": {
+                "name": "fcc6/Reshape/shape",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652826,
+            "dur": 11,
+            "args": {
+                "name": "fcc6/Variable_1",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652835,
+            "dur": 3,
+            "args": {
+                "name": "fcc6/Variable/read",
+                "op": "Identity",
+                "input0": "fcc6/Variable"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc6/Variable",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652832,
+            "id": 6
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc6/Variable",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652835,
+            "id": 6
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652823,
+            "dur": 6,
+            "args": {
+                "name": "conv5/biases",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652836,
+            "dur": 7,
+            "args": {
+                "name": "fcc7/Variable_1",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652839,
+            "dur": 8,
+            "args": {
+                "name": "fcc6/Variable_1/read",
+                "op": "Identity",
+                "input0": "fcc6/Variable_1"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc6/Variable_1",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652837,
+            "id": 7
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc6/Variable_1",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652839,
+            "id": 7
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652846,
+            "dur": 3,
+            "args": {
+                "name": "fcc7/Variable_1/read",
+                "op": "Identity",
+                "input0": "fcc7/Variable_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652830,
+            "dur": 5,
+            "args": {
+                "name": "conv3/biases/read",
+                "op": "Identity",
+                "input0": "conv3/biases"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652843,
+            "dur": 9,
+            "args": {
+                "name": "fcc7_1/Variable_1",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652849,
+            "dur": 4,
+            "args": {
+                "name": "conv5/biases/read",
+                "op": "Identity",
+                "input0": "conv5/biases"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv5/biases",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652829,
+            "id": 8
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv5/biases",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652849,
+            "id": 8
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652834,
+            "dur": 7,
+            "args": {
+                "name": "fcc7/Variable",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652854,
+            "dur": 4,
+            "args": {
+                "name": "fcc7_1/Variable_1/read",
+                "op": "Identity",
+                "input0": "fcc7_1/Variable_1"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc7_1/Variable_1",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652852,
+            "id": 9
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc7_1/Variable_1",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652854,
+            "id": 9
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VariableV2",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652846,
+            "dur": 6,
+            "args": {
+                "name": "fcc7_1/Variable",
+                "op": "VariableV2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652863,
+            "dur": 4,
+            "args": {
+                "name": "fcc7/Variable/read",
+                "op": "Identity",
+                "input0": "fcc7/Variable"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc7/Variable",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652841,
+            "id": 10
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc7/Variable",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652863,
+            "id": 10
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652884,
+            "dur": 4,
+            "args": {
+                "name": "fcc7_1/Variable/read",
+                "op": "Identity",
+                "input0": "fcc7_1/Variable"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc7_1/Variable",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652852,
+            "id": 11
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc7_1/Variable",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652884,
+            "id": 11
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133652830,
+            "dur": 2067,
+            "args": {
+                "name": "conv1/Conv2D",
+                "op": "Conv2D",
+                "input0": "conv1/Conv2D/input",
+                "input1": "conv1/weights/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv1/Conv2D/input",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133652791,
+            "id": 12
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv1/Conv2D/input",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133652830,
+            "id": 12
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv1/weights/read",
+            "pid": 1,
+            "tid": 6,
+            "ts": 1514469133652826,
+            "id": 13
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv1/weights/read",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133652830,
+            "id": 13
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133654910,
+            "dur": 83,
+            "args": {
+                "name": "conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "conv1/Conv2D",
+                "input1": "conv1/biases/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv1/Conv2D",
+            "pid": 1,
+            "tid": 5,
+            "ts": 1514469133654897,
+            "id": 14
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv1/Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133654910,
+            "id": 14
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133654997,
+            "dur": 51,
+            "args": {
+                "name": "conv1",
+                "op": "Relu",
+                "input0": "conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "LRN",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133655051,
+            "dur": 580,
+            "args": {
+                "name": "lrn1/LRN",
+                "op": "LRN",
+                "input0": "conv1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133655638,
+            "dur": 270,
+            "args": {
+                "name": "pool1",
+                "op": "MaxPool",
+                "input0": "lrn1/LRN"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133655912,
+            "dur": 1870,
+            "args": {
+                "name": "conv2/Conv2D",
+                "op": "Conv2D",
+                "input0": "pool1",
+                "input1": "conv2/weights/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133657790,
+            "dur": 73,
+            "args": {
+                "name": "conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "conv2/Conv2D",
+                "input1": "conv2/biases/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv2/biases/read",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652807,
+            "id": 15
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv2/biases/read",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133657790,
+            "id": 15
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133657867,
+            "dur": 53,
+            "args": {
+                "name": "conv2",
+                "op": "Relu",
+                "input0": "conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "LRN",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133657922,
+            "dur": 541,
+            "args": {
+                "name": "lrn2/LRN",
+                "op": "LRN",
+                "input0": "conv2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133658469,
+            "dur": 76,
+            "args": {
+                "name": "pool2",
+                "op": "MaxPool",
+                "input0": "lrn2/LRN"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133658548,
+            "dur": 1059,
+            "args": {
+                "name": "conv3/Conv2D",
+                "op": "Conv2D",
+                "input0": "pool2",
+                "input1": "conv3/weights/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv3/weights/read",
+            "pid": 1,
+            "tid": 3,
+            "ts": 1514469133652831,
+            "id": 16
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv3/weights/read",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133658548,
+            "id": 16
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133659614,
+            "dur": 38,
+            "args": {
+                "name": "conv3/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "conv3/Conv2D",
+                "input1": "conv3/biases/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv3/biases/read",
+            "pid": 1,
+            "tid": 4,
+            "ts": 1514469133652835,
+            "id": 17
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv3/biases/read",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133659614,
+            "id": 17
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133659654,
+            "dur": 14,
+            "args": {
+                "name": "conv3",
+                "op": "Relu",
+                "input0": "conv3/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133659671,
+            "dur": 1624,
+            "args": {
+                "name": "conv4/Conv2D",
+                "op": "Conv2D",
+                "input0": "conv3",
+                "input1": "conv4/weights/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "conv4/weights/read",
+            "pid": 1,
+            "tid": 2,
+            "ts": 1514469133652823,
+            "id": 18
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "conv4/weights/read",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133659671,
+            "id": 18
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133661302,
+            "dur": 28,
+            "args": {
+                "name": "conv4/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "conv4/Conv2D",
+                "input1": "conv4/biases/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133661332,
+            "dur": 10,
+            "args": {
+                "name": "conv4",
+                "op": "Relu",
+                "input0": "conv4/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133661343,
+            "dur": 991,
+            "args": {
+                "name": "conv5/Conv2D",
+                "op": "Conv2D",
+                "input0": "conv4",
+                "input1": "conv5/weights/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662341,
+            "dur": 28,
+            "args": {
+                "name": "conv5/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "conv5/Conv2D",
+                "input1": "conv5/biases/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662371,
+            "dur": 9,
+            "args": {
+                "name": "conv5",
+                "op": "Relu",
+                "input0": "conv5/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662382,
+            "dur": 27,
+            "args": {
+                "name": "pool5",
+                "op": "MaxPool",
+                "input0": "conv5"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Reshape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662410,
+            "dur": 4,
+            "args": {
+                "name": "fcc6/Reshape",
+                "op": "Reshape",
+                "input0": "pool5",
+                "input1": "fcc6/Reshape/shape"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc6/Reshape/shape",
+            "pid": 1,
+            "tid": 7,
+            "ts": 1514469133652817,
+            "id": 19
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc6/Reshape/shape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662410,
+            "id": 19
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133662416,
+            "dur": 12359,
+            "args": {
+                "name": "fcc6/relu_layer/MatMul",
+                "op": "MatMul",
+                "input0": "fcc6/Reshape",
+                "input1": "fcc6/Variable/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133674782,
+            "dur": 15,
+            "args": {
+                "name": "fcc6/relu_layer/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "fcc6/relu_layer/MatMul",
+                "input1": "fcc6/Variable_1/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133674799,
+            "dur": 6,
+            "args": {
+                "name": "fcc6/relu_layer",
+                "op": "Relu",
+                "input0": "fcc6/relu_layer/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133674806,
+            "dur": 5581,
+            "args": {
+                "name": "fcc7/relu_layer/MatMul",
+                "op": "MatMul",
+                "input0": "fcc6/relu_layer",
+                "input1": "fcc7/Variable/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133680393,
+            "dur": 13,
+            "args": {
+                "name": "fcc7/relu_layer/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "fcc7/relu_layer/MatMul",
+                "input1": "fcc7/Variable_1/read"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "fcc7/Variable_1/read",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469133652849,
+            "id": 20
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "fcc7/Variable_1/read",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133680393,
+            "id": 20
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133680408,
+            "dur": 4,
+            "args": {
+                "name": "fcc7/relu_layer",
+                "op": "Relu",
+                "input0": "fcc7/relu_layer/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133680415,
+            "dur": 1346,
+            "args": {
+                "name": "fcc7_1/xw_plus_b/MatMul",
+                "op": "MatMul",
+                "input0": "fcc7/relu_layer",
+                "input1": "fcc7_1/Variable/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133681764,
+            "dur": 5,
+            "args": {
+                "name": "fcc7_1/xw_plus_b",
+                "op": "BiasAdd",
+                "input0": "fcc7_1/xw_plus_b/MatMul",
+                "input1": "fcc7_1/Variable_1/read"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Softmax",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133681771,
+            "dur": 25,
+            "args": {
+                "name": "Softmax",
+                "op": "Softmax",
+                "input0": "fcc7_1/xw_plus_b"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Retval",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469133681799,
+            "dur": 6,
+            "args": {
+                "name": "_retval_Softmax_0_0",
+                "op": "_Retval",
+                "input0": "Softmax"
+            }
+        }
+    ]
+}
