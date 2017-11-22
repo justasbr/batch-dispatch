@@ -312,7 +312,7 @@ def parse_arguments():
     if args.timeout is not None:
         BATCH_TIMEOUT = args.timeout
 
-    print("Batch size:", BATCH_SIZE)
+    print("Batch sizes:", BATCH_SIZE)
     print("Batch timeout:", BATCH_TIMEOUT)
 
 
@@ -322,17 +322,14 @@ def run_job_batcher():
 
     # TODO - now first batch always full
     while True:
+        time.sleep(0)
         if items.qsize() >= batch_size:
-            print("B" + str(batch_size), end=" ")
             last_batch_time = time.time()
             process_and_return(batch_size)
         elif items.qsize() and last_batch_time and (time.time() - last_batch_time) >= BATCH_TIMEOUT:
-            items_to_process = items.qsize()
-            print("B" + str(items_to_process), end="\n")
             last_batch_time = time.time()
-            process_and_return(items_to_process)
-        else:
-            time.sleep(0)
+            print("Timed out")
+            process_and_return(items.qsize())
 
 
 def process_and_return(batch_size):
@@ -351,14 +348,14 @@ def prepare_framework():
     if FRAMEWORK == "tf" or FRAMEWORK == "tensorflow":
         prepare_tf()
         classify = tf_classify
-        print("Using TensorFlow.")
+        print("Using TensorFlow")
     elif FRAMEWORK == "torch" or FRAMEWORK == "pytorch":
         prepare_torch()
         classify = torch_classify
-        print("Using PyTorch.")
+        print("Using PyTorch")
     else:
         classify = mock_classify
-        print("Using MOCK framework.")
+        print("using MOCK framework")
     time.sleep(0.1)
 
 

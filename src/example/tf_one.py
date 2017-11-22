@@ -210,18 +210,20 @@ def decode_image(file_name):
     return result
 
 
+def tf_classify(img_path):
+    result = decode_image(img_path)
+    return result.argmax()
+
+
 class MyService(rpyc.Service):
     def __init__(self, conn):
         super().__init__(conn)
 
     def exposed_echo(self, img_path):
-        result = decode_image(img_path)
-        img_class = str(result.argmax())
-        print("Done")
-        return img_class
+        return tf_classify(img_path)
 
 
 if __name__ == "__main__":
     server = ThreadedServer(MyService, port=18812)
-    print("Starting server!")
+    print("Starting TensorFlow server!")
     server.start()

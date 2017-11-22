@@ -14,18 +14,12 @@ TIME_BETWEEN_REQUESTS = 0.02
 total_latency = 0.0
 TOTAL_RECEIVED = 0
 
-moving_latency_average = 0.0
-ALPHA = 0.95  # moving average
-
 
 def callback_func_higher(i, start_time):
     def cb_func(x):
-        global total_latency, count_latency, TOTAL_RECEIVED, ALPHA, moving_latency_average
+        global total_latency, count_latency, TOTAL_RECEIVED
         latency = time.time() - start_time
-
-        moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
-
-        print("GOT", i, x, "latency", round(latency, 4), "moving avg", round(moving_latency_average, 4))
+        print("GOT", i, x, latency)
         total_latency += latency
         TOTAL_RECEIVED += 1
 
