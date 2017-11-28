@@ -14,10 +14,10 @@ from alexnet_torch import alexnet
 from skimage import io
 import argparse
 
-import tensorflow as tf
 from numpy import prod
 import os
 import numpy as np
+import tensorflow as tf
 
 BATCH_SIZE = 4
 BATCH_TIMEOUT = 0.1
