@@ -2,9 +2,9 @@ import rpyc
 import time
 import glob
 import argparse
+from skimage import io
 
 # from concurrent.futures import ThreadPoolExecutor
-
 # tpe = ThreadPoolExecutor(max_workers=4)
 
 
@@ -13,13 +13,17 @@ TIME_BETWEEN_REQUESTS = 0.02
 
 total_latency = 0.0
 TOTAL_RECEIVED = 0
+moving_latency_average = 0.0
+ALPHA = 0.95  # moving average
 
 
 def callback_func_higher(i, start_time):
     def cb_func(x):
-        global total_latency, count_latency, TOTAL_RECEIVED
+        global total_latency, count_latency, TOTAL_RECEIVED, ALPHA, moving_latency_average
         latency = time.time() - start_time
-        print("GOT", i, x, latency)
+
+        moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
+        print("GOT", i, x, "Latency:", round(latency, 4), "Moving latency average:", round(moving_latency_average,4))
         total_latency += latency
         TOTAL_RECEIVED += 1
 
@@ -50,7 +54,6 @@ def parse_arguments():
 
 if __name__ == '__main__':
     parse_arguments()
-    filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
 
     host = "localhost"
     port = 1200
@@ -61,13 +64,20 @@ if __name__ == '__main__':
 
     t1 = time.time()
 
+    filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
+
     for i in range(TOTAL_SENT):
         t2 = time.time()
-        if i % 100 == 0:
+        if i % 50 == 0:
             print("SENT", i, t2 - t1)
         t1 = t2
 
-        test = conn.root.RemoteCallbackTest(filenames[i], callback_func_higher(i, start_time=time.time()), )
+        file_name = filenames[i]
+        img_data = io.imread(file_name)
+        import sys
+
+        print(sys.getsizeof(img_data))
+        test = conn.root.RemoteCallbackTest(img_data, callback_func_higher(i, start_time=time.time()), )
         time.sleep(TIME_BETWEEN_REQUESTS)
 
     while TOTAL_RECEIVED < TOTAL_SENT:

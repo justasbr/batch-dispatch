@@ -13,6 +13,7 @@ from torch.autograd import Variable
 from alexnet_torch import alexnet
 from skimage import io
 import argparse
+import random
 
 import tensorflow as tf
 from numpy import prod
@@ -25,7 +26,7 @@ FRAMEWORK = ""
 
 tpe = ThreadPoolExecutor(max_workers=4)
 
-items = queue.Queue()
+image_queue = queue.Queue()
 
 global classify
 
@@ -217,30 +218,8 @@ def prepare_tf():
     global fnames, enq_op, prob, main_sess, images_placeholder
     g = tf.Graph()
     with g.as_default():
-        # filename_queue = tf.FIFOQueue(capacity=100, dtypes=[tf.string])
-        #
-        # fnames = tf.placeholder(tf.string, shape=[None, ])
-        # enq_op = filename_queue.enqueue_many(fnames)
-        #
-        # reader = tf.WholeFileReader()
-        # images = []
-
         images_placeholder = tf.placeholder(tf.uint8, shape=(None, 224, 224, 3))
-        # image_batch = tf.stack(images_placeholder)
-        # image_batch = tf.map_fn(lambda frame: tf.reshape(frame, shape=(224, 224, 3)), image_batch)
-        # for i in range(BATCH_SIZE):
-        #     _, img_file = reader.read(filename_queue)
-        #
-        #     image = tf.image.decode_jpeg(img_file, channels=3)
-        #     image = tf.reshape(image, shape=(224, 224, 3))
-        #     image = tf.image.per_image_standardization(image)
-        #     image = tf.clip_by_value(image, -1.0, 1.0)
-        #     # Results get shuffled
-        #     images.append(image)
 
-        # images = tf.cast(tf.float, images_placeholder)
-        # print(images_placeholder)
-        # image_batch = tf.to_float(images_placeholder, name="ToFloat")
         img_batch_float = tf.cast(images_placeholder, tf.float32)
         img_batch_float = tf.map_fn(tf.image.per_image_standardization, img_batch_float)
         img_batch_float = tf.map_fn(lambda frame: tf.clip_by_value(frame, -1.0, 1.0), img_batch_float)
@@ -265,13 +244,11 @@ def tf_classify(img_paths):
     return result.argmax(axis=1)
 
 
-def mock_classify(img_paths):
-    def get_num(path):
-        file_name = os.path.basename(path)
-        num, ext = file_name.split(".", 1)
-        return int(num) % 1000
+def mock_classify(raw_images):
+    def get_random_num(raw_img):
+        return random.randint(0, 1000)
 
-    return list(map(get_num, img_paths))
+    return list(map(get_random_num, raw_images))
 
 
 class MyService(rpyc.Service):
@@ -291,8 +268,10 @@ class MyService(rpyc.Service):
         """
         print("Executive has disconnected...")
 
-    def exposed_RemoteCallbackTest(self, i, callback):
-        items.put((i, callback))
+    def exposed_RemoteCallbackTest(self, img, callback):
+        import sys
+        # print("SIZE: ", sys.getsizeof(img))
+        # image_queue.put((img, callback))
 
 
 def parse_arguments():
@@ -323,20 +302,20 @@ def run_job_batcher():
     # TODO - now first batch always full
     while True:
         time.sleep(0)
-        if items.qsize() >= batch_size:
+        if image_queue.qsize() >= batch_size:
             last_batch_time = time.time()
             process_and_return(batch_size)
-        elif items.qsize() and last_batch_time and (time.time() - last_batch_time) >= BATCH_TIMEOUT:
+        elif image_queue.qsize() and last_batch_time and (time.time() - last_batch_time) >= BATCH_TIMEOUT:
             last_batch_time = time.time()
             print("Timed out")
-            process_and_return(items.qsize())
+            process_and_return(image_queue.qsize())
 
 
 def process_and_return(batch_size):
     inputs = [None] * batch_size
     callbacks = [None] * batch_size
     for i in range(batch_size):
-        inputs[i], callbacks[i] = items.get()
+        inputs[i], callbacks[i] = image_queue.get()
     outputs = classify(inputs)
 
     for i in range(batch_size):
