@@ -3,10 +3,9 @@ import time
 import glob
 import argparse
 
-# from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 
-# tpe = ThreadPoolExecutor(max_workers=4)
-
+tpe = ThreadPoolExecutor(max_workers=2)
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02
@@ -25,7 +24,8 @@ def callback_func_higher(i, start_time):
 
         moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
 
-        print("GOT", i, x, "latency", round(latency, 4), "moving avg", round(moving_latency_average, 4))
+        print("GOT", i, x, "\tlatency (ms)", round(1000 * latency, 2), "\tmoving avg (ms)",
+              round(1000 * moving_latency_average, 2))
         total_latency += latency
         TOTAL_RECEIVED += 1
 
@@ -54,17 +54,7 @@ def parse_arguments():
     time.sleep(0.1)
 
 
-if __name__ == '__main__':
-    parse_arguments()
-    filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
-
-    host = "localhost"
-    port = 1200
-    conn = rpyc.connect(host, port)
-
-    rpyc.BgServingThread.SLEEP_INTERVAL = 0
-    rpyc.BgServingThread(conn)
-
+def item_sender():
     t1 = time.time()
 
     for i in range(TOTAL_SENT):
@@ -74,8 +64,23 @@ if __name__ == '__main__':
         t1 = t2
 
         test = conn.root.RemoteCallbackTest(filenames[i], callback_func_higher(i, start_time=time.time()), )
-        time.sleep(TIME_BETWEEN_REQUESTS)
+        # time.sleep(TIME_BETWEEN_REQUESTS)
 
     while TOTAL_RECEIVED < TOTAL_SENT:
         time.sleep(0.05)
     report_stats()
+
+
+if __name__ == '__main__':
+    parse_arguments()
+    filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
+
+    host = "localhost"
+    port = 1200
+    conn = rpyc.connect(host, port)
+
+    rpyc.BgServingThread.SLEEP_INTERVAL = 0
+    # rpyc.BgServingThread(conn)
+    # item_sender()
+    tpe.submit(rpyc.BgServingThread, conn)
+    tpe.submit(item_sender)
