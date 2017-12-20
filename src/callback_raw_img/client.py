@@ -1,12 +1,16 @@
 import rpyc
-import time
 import glob
+import time
 import argparse
 from skimage import io
 
-# from concurrent.futures import ThreadPoolExecutor
-# tpe = ThreadPoolExecutor(max_workers=4)
+from concurrent.futures import ThreadPoolExecutor
 
+tpe = ThreadPoolExecutor(max_workers=2)
+
+import cProfile, pstats, io as io2
+
+# from gprof import GProfiler
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02
@@ -14,26 +18,38 @@ TIME_BETWEEN_REQUESTS = 0.02
 total_latency = 0.0
 TOTAL_RECEIVED = 0
 moving_latency_average = 0.0
+first_packet_time = None
+last_packet_time = None
 ALPHA = 0.95  # moving average
 
 
 def callback_func_higher(i, start_time):
     def cb_func(x):
+        # print("Got answer", time.time())
         global total_latency, count_latency, TOTAL_RECEIVED, ALPHA, moving_latency_average
         latency = time.time() - start_time
 
         moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
-        print("GOT", i, x, "Latency:", round(latency, 4), "Moving latency average:", round(moving_latency_average,4))
+        print("GOT", i, x, "Latency:", round(1000 * latency, 4), "Moving latency average:",
+              round(1000 * moving_latency_average, 4))
         total_latency += latency
         TOTAL_RECEIVED += 1
 
     return cb_func
 
 
+def round_ms(seconds):
+    return round(1000 * seconds, 3)
+
+
 def report_stats():
-    print("TOTAL LATENCY", total_latency)
     print("COUNT:", TOTAL_RECEIVED)
-    print("AVG (ms):", 1000 * (total_latency / TOTAL_RECEIVED))
+    time_to_send_all = last_packet_time - first_packet_time
+    time_to_send_one = time_to_send_all / TOTAL_RECEIVED
+    packets_sent_per_second = 1 / time_to_send_one
+    print("TOTAL time taken to send (ms):", round_ms(time_to_send_all))
+    print("Packets sent per sec", packets_sent_per_second)
+    print("AVG latency (ms):", round_ms(total_latency / TOTAL_RECEIVED))
 
 
 def parse_arguments():
@@ -52,34 +68,53 @@ def parse_arguments():
     time.sleep(0.1)
 
 
-if __name__ == '__main__':
+def main():
+    global first_packet_time, last_packet_time
     parse_arguments()
-
     host = "localhost"
     port = 1200
     conn = rpyc.connect(host, port)
-
     rpyc.BgServingThread.SLEEP_INTERVAL = 0
     rpyc.BgServingThread(conn)
-
-    t1 = time.time()
-
+    # tpe.submit(rpyc.BgServingThread, conn)
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
 
+    t1 = time.time()
+    first_packet_time = time.time()
     for i in range(TOTAL_SENT):
         t2 = time.time()
-        if i % 50 == 0:
+        if not ((i+1) % 50):
             print("SENT", i, t2 - t1)
         t1 = t2
 
         file_name = filenames[i]
-        img_data = io.imread(file_name)
-        import sys
-
-        print(sys.getsizeof(img_data))
-        test = conn.root.RemoteCallbackTest(img_data, callback_func_higher(i, start_time=time.time()), )
+        raw_data = io.imread(file_name).tobytes()
+        # import sys
+        # print(sys.getsizeof(img_data))
+        #
+        # send_img(conn, i, raw_data)
+        tpe.submit(send_img, conn, i, raw_data)
         time.sleep(TIME_BETWEEN_REQUESTS)
+    last_packet_time = time.time()
 
     while TOTAL_RECEIVED < TOTAL_SENT:
-        time.sleep(0.05)
+        time.sleep(0.01)
     report_stats()
+
+
+def send_img(conn, i, raw_data):
+    # print("Sent img", time.time())
+    pr.enable()
+    conn.root.RemoteCallbackTest(raw_data, callback_func_higher(i, start_time=time.time()), )
+    pr.disable()
+
+    # s = io2.StringIO()
+    # sortby = 'cumulative'
+    # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+    # ps.print_stats()
+    # print(s.getvalue())
+
+
+if __name__ == '__main__':
+    pr = cProfile.Profile()
+    main()

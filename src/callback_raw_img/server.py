@@ -15,6 +15,8 @@ from skimage import io
 import argparse
 import random
 
+import cProfile, pstats, io as io2
+
 import tensorflow as tf
 from numpy import prod
 import os
@@ -27,8 +29,13 @@ FRAMEWORK = ""
 tpe = ThreadPoolExecutor(max_workers=4)
 
 image_queue = queue.Queue()
+time_q = queue.Queue()
+
+total_latency = 0.0
+total_done = 0
 
 global classify
+global t1
 
 
 def prepare_torch():
@@ -37,17 +44,19 @@ def prepare_torch():
     transform = torchvision.transforms.ToTensor()
 
 
-def torch_classify(img_paths):
+def torch_classify(imgs):
     img_data = []
-    for img_path in img_paths:
-        data = transform(io.imread(img_path))
+    for img in imgs:
+        data = transform(img)
         data = Variable(data)
         img_data.append(data)
 
     batch = torch.stack(img_data)
     output = net.forward(batch)
     max_val, max_index = torch.max(output, 1)
-    return max_index.data.numpy()
+    output = max_index.data.numpy()
+
+    return output
 
 
 def alexnet_inference(images):
@@ -235,18 +244,24 @@ def prepare_tf():
     main_sess.run(init_local)
 
 
-def tf_classify(img_paths):
-    img_data = np.empty(shape=(len(img_paths), 224, 224, 3))
-    for index, img_path in enumerate(img_paths):
-        img_data[index] = io.imread(img_path)
-    result = main_sess.run(prob, feed_dict={images_placeholder: img_data})
+
+def round_ms(seconds):
+    return round(1000 * seconds, 3)
+
+def tf_classify(imgs):
+    # img_data = np.empty(shape=(len(imgs), 224, 224, 3))
+    # for i, img in enumerate(imgs):
+    #     print(img)
+    # img_data[i] = img
+    result = main_sess.run(prob, feed_dict={images_placeholder: imgs})
 
     return result.argmax(axis=1)
 
 
 def mock_classify(raw_images):
     def get_random_num(raw_img):
-        return random.randint(0, 1000)
+        return 0
+        # return random.randint(0, 1000)
 
     return list(map(get_random_num, raw_images))
 
@@ -268,10 +283,17 @@ class MyService(rpyc.Service):
         """
         print("Executive has disconnected...")
 
-    def exposed_RemoteCallbackTest(self, img, callback):
-        import sys
+    def exposed_RemoteCallbackTest(self, raw_img, callback):
+        # print("GOT IMG", t1)
+        # callback("0")
+        img = np.fromstring(raw_img, dtype=np.uint8).reshape(224, 224, 3)
+        image_queue.put((img, callback))
+
+        # global t1
+        # t1 = time.time()
+        time_q.put(time.time())
+        # print(img.shape)
         # print("SIZE: ", sys.getsizeof(img))
-        # image_queue.put((img, callback))
 
 
 def parse_arguments():
@@ -301,7 +323,6 @@ def run_job_batcher():
 
     # TODO - now first batch always full
     while True:
-        time.sleep(0)
         if image_queue.qsize() >= batch_size:
             last_batch_time = time.time()
             process_and_return(batch_size)
@@ -309,17 +330,37 @@ def run_job_batcher():
             last_batch_time = time.time()
             print("Timed out")
             process_and_return(image_queue.qsize())
-
+        else:
+            time.sleep(0)
 
 def process_and_return(batch_size):
     inputs = [None] * batch_size
     callbacks = [None] * batch_size
     for i in range(batch_size):
         inputs[i], callbacks[i] = image_queue.get()
+
+    classify_start = time.time()
+    pr.enable()
     outputs = classify(inputs)
+    pr.disable()
+    classify_end = time.time()
+    print("Classify, batch_size=", batch_size, "took (ms)", round_ms(classify_end-classify_start))
+
+    # s = io2.StringIO()
+    # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
+    # ps.print_stats()
+    # print(s.getvalue())
 
     for i in range(batch_size):
+        global total_latency, total_done
+        curr_latency = time.time() - time_q.get()
+
+        total_latency += curr_latency
+        total_done += 1
+
+        print("RETURN1 (ms)", round_ms(curr_latency), "AVG (ms)", round_ms(total_latency / total_done))
         callbacks[i](outputs[i])
+        # tpe.submit(callbacks[i], outputs[i])
 
 
 def prepare_framework():
@@ -339,6 +380,8 @@ def prepare_framework():
 
 
 if __name__ == '__main__':
+    pr = cProfile.Profile()
+
     parse_arguments()
     prepare_framework()
 
