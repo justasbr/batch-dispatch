@@ -3,14 +3,15 @@ import glob
 import time
 import argparse
 from skimage import io
+import random
 
+from utils import round_ms
 from concurrent.futures import ThreadPoolExecutor
-
-tpe = ThreadPoolExecutor(max_workers=2)
-
 import cProfile, pstats, io as io2
 
 # from gprof import GProfiler
+
+tpe = ThreadPoolExecutor(max_workers=2)
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02
@@ -30,16 +31,13 @@ def callback_func_higher(i, start_time):
         latency = time.time() - start_time
 
         moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
-        print("GOT", i, x, "Latency:", round(1000 * latency, 4), "Moving latency average:",
-              round(1000 * moving_latency_average, 4))
+        print("GOT " + str(i) + " c: " + str(x) +
+              " LAT: " + str(round_ms(latency)) +
+              " Moving LAT avg:" + str(round_ms(moving_latency_average)))
         total_latency += latency
         TOTAL_RECEIVED += 1
 
     return cb_func
-
-
-def round_ms(seconds):
-    return round(1000 * seconds, 3)
 
 
 def report_stats():
@@ -78,21 +76,19 @@ def main():
     rpyc.BgServingThread(conn)
     # tpe.submit(rpyc.BgServingThread, conn)
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
+    random.shuffle(filenames)
 
     t1 = time.time()
     first_packet_time = time.time()
     for i in range(TOTAL_SENT):
         t2 = time.time()
-        if not ((i+1) % 50):
+        if not ((i + 1) % 50):
             print("SENT", i, t2 - t1)
         t1 = t2
 
         file_name = filenames[i]
         raw_data = io.imread(file_name).tobytes()
-        # import sys
-        # print(sys.getsizeof(img_data))
-        #
-        # send_img(conn, i, raw_data)
+
         tpe.submit(send_img, conn, i, raw_data)
         time.sleep(TIME_BETWEEN_REQUESTS)
     last_packet_time = time.time()
@@ -104,9 +100,9 @@ def main():
 
 def send_img(conn, i, raw_data):
     # print("Sent img", time.time())
-    pr.enable()
+    # pr.enable()
     conn.root.RemoteCallbackTest(raw_data, callback_func_higher(i, start_time=time.time()), )
-    pr.disable()
+    # pr.disable()
 
     # s = io2.StringIO()
     # sortby = 'cumulative'
