@@ -35,6 +35,8 @@ class AlexNet(nn.Module):
             nn.ReLU(inplace=True),
             nn.Linear(4096, num_classes),
         )
+        print(self.features)
+        print(self.classifier)
 
     def forward(self, x):
         x = self.features(x)
