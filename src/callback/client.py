@@ -5,7 +5,7 @@ import argparse
 
 from concurrent.futures import ThreadPoolExecutor
 
-tpe = ThreadPoolExecutor(max_workers=2)
+tpe = ThreadPoolExecutor(max_workers=4)
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02
@@ -33,7 +33,7 @@ def callback_func_higher(i, start_time):
 
 
 def report_stats():
-    print("TOTAL LATENCY", total_latency)
+    # print("TOTAL LATENCY", total_latency)
     print("COUNT:", TOTAL_RECEIVED)
     print("AVG (ms):", 1000 * (total_latency / TOTAL_RECEIVED))
 
@@ -63,7 +63,7 @@ def item_sender():
             print("SENT", i, t2 - t1)
         t1 = t2
 
-        test = conn.root.RemoteCallbackTest(filenames[i], callback_func_higher(i, start_time=time.time()), )
+        conn.root.RemoteCallbackTest(filenames[i], callback_func_higher(i, start_time=time.time()), )
         # time.sleep(TIME_BETWEEN_REQUESTS)
 
     while TOTAL_RECEIVED < TOTAL_SENT:
@@ -79,8 +79,8 @@ if __name__ == '__main__':
     port = 1200
     conn = rpyc.connect(host, port)
 
-    rpyc.BgServingThread.SLEEP_INTERVAL = 0
     # rpyc.BgServingThread(conn)
     # item_sender()
+    rpyc.BgServingThread.SLEEP_INTERVAL = 0
     tpe.submit(rpyc.BgServingThread, conn)
     tpe.submit(item_sender)

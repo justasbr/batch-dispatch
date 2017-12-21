@@ -23,7 +23,7 @@ BATCH_SIZE = 4
 BATCH_TIMEOUT = 0.1
 FRAMEWORK = ""
 
-tpe = ThreadPoolExecutor(max_workers=4)
+tpe = ThreadPoolExecutor(max_workers=2)
 
 items = queue.Queue()
 

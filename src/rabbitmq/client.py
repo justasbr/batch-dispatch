@@ -1,7 +1,12 @@
 #!/usr/bin/env python
+from concurrent.futures import ThreadPoolExecutor
+
 import pika
 import uuid
 import time
+
+tpe = ThreadPoolExecutor(max_workers=2)
+
 
 
 class FibonacciRpcClient(object):
@@ -38,14 +43,16 @@ class FibonacciRpcClient(object):
 
 fibonacci_rpc = FibonacciRpcClient()
 
-print(" [x] Requesting fib(0)")
 total_time = 0
 count = 0
 for i in range(10000):
+    print(" [x] Requesting fib(0)")
     start_time = time.time()
-    response = fibonacci_rpc.call(0)
+    # response = \
+    # tpe.submit(fibonacci_rpc.call, 0)
+    fibonacci_rpc.call(0)
     total_run_time = round(1000 * (time.time() - start_time), 2)
     total_time += total_run_time
     count += 1
-    print("Avg", total_time/count)
-print(" [.] Got %r" % response)
+    print("Avg", total_time / count)
+# print(" [.] Got %r" % response)

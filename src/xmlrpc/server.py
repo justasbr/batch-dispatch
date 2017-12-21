@@ -31,6 +31,10 @@ with SimpleXMLRPCServer(("localhost", 8000),
         def mul(self, x, y):
             return x * y
 
+        def call_func(self, x, y):
+            x(y)
+            return
+
 
     server.register_instance(MyFuncs())
 
