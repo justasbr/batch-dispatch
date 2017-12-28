@@ -66,6 +66,8 @@ class Inception3(nn.Module):
                 m.bias.data.zero_()
 
     def forward(self, x):
+        self.training = False
+
         if self.transform_input:
             x = x.clone()
             x[:, 0] = x[:, 0] * (0.229 / 0.5) + (0.485 - 0.5) / 0.5
@@ -102,8 +104,11 @@ class Inception3(nn.Module):
         # 17 x 17 x 768
         x = self.Mixed_6e(x)
         # 17 x 17 x 768
-        if self.training and self.aux_logits:
-            aux = self.AuxLogits(x)
+
+        # NOT TRAINING
+        # if self.training and self.aux_logits:
+        #     aux = self.AuxLogits(x)
+
         # 17 x 17 x 768
         x = self.Mixed_7a(x)
         # 8 x 8 x 1280
@@ -113,14 +118,15 @@ class Inception3(nn.Module):
         # 8 x 8 x 2048
         x = F.avg_pool2d(x, kernel_size=8)
         # 1 x 1 x 2048
-        x = F.dropout(x, training=self.training)
+
+        # NOT TRAINING
+        x = F.dropout(x, training=False)
+
         # 1 x 1 x 2048
         x = x.view(x.size(0), -1)
         # 2048
         x = self.fc(x)
         # 1000 (num_classes)
-        if self.training and self.aux_logits:
-            return x, aux
         return x
 
 

@@ -21,7 +21,7 @@ TOTAL_RECEIVED = 0
 moving_latency_average = 0.0
 first_packet_time = None
 last_packet_time = None
-ALPHA = 0.95  # moving average
+ALPHA = 0.925  # moving average
 
 
 def callback_func_higher(i, start_time):

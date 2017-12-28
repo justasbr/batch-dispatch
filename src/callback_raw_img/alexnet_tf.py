@@ -1,8 +1,10 @@
 import tensorflow as tf
 from numpy import prod
 
+
 def print_activations(t):
     print(t.op.name, ' ', t.get_shape().as_list())
+
 
 def alexnet_inference(images):
     """Build the AlexNet model.
@@ -29,13 +31,13 @@ def alexnet_inference(images):
         parameters += [kernel, biases]
 
     # lrn1
-    with tf.name_scope('lrn1') as scope:
-        # lrn1 = conv1
-        lrn1 = tf.nn.local_response_normalization(conv1,
-                                                  alpha=1e-4,
-                                                  beta=0.75,
-                                                  depth_radius=2,
-                                                  bias=2.0)
+    lrn1 = conv1
+    # with tf.name_scope('lrn1') as scope:
+    # lrn1 = tf.nn.local_response_normalization(conv1,
+    #                                           alpha=1e-4,
+    #                                           beta=0.75,
+    #                                           depth_radius=2,
+    #                                           bias=2.0)
 
     # pool1
     pool1 = tf.nn.max_pool(lrn1,
@@ -58,13 +60,13 @@ def alexnet_inference(images):
     print_activations(conv2)
 
     # lrn2
-    with tf.name_scope('lrn2') as scope:
-        # lrn2 = conv2
-        lrn2 = tf.nn.local_response_normalization(conv2,
-                                                  alpha=1e-4,
-                                                  beta=0.75,
-                                                  depth_radius=2,
-                                                  bias=2.0)
+    lrn2 = conv2
+    # with tf.name_scope('lrn2') as scope:
+    #     lrn2 = tf.nn.local_response_normalization(conv2,
+    #                                               alpha=1e-4,
+    #                                               beta=0.75,
+    #                                               depth_radius=2,
+    #                                               bias=2.0)
 
     # pool2
     pool2 = tf.nn.max_pool(lrn2,
