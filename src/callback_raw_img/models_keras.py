@@ -3,6 +3,8 @@ from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 from keras.layers.normalization import BatchNormalization
 from keras.applications.vgg16 import VGG16
+from keras.applications.inception_v3 import InceptionV3
+from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
 import numpy as np
@@ -81,4 +83,18 @@ def create_model_alex():
 
 
 def create_model_vgg16():
-    return VGG16(weights='imagenet', include_top=True)
+    model = VGG16(weights='imagenet', include_top=True)
+    print(model.summary())
+    return model
+
+
+def create_model_resnet50():
+    model = ResNet50(weights='imagenet', include_top=True)
+    print(model.summary())
+    return model
+
+
+def create_model_inception_v3():
+    model = InceptionV3(weights='imagenet', include_top=True)
+    print(model.summary())
+    return model
