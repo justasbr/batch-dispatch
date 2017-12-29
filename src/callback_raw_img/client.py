@@ -4,6 +4,7 @@ import time
 import argparse
 from skimage import io
 import random
+import numpy as np
 
 from utils import round_ms
 from concurrent.futures import ThreadPoolExecutor
@@ -18,6 +19,7 @@ TIME_BETWEEN_REQUESTS = 0.02
 
 total_latency = 0.0
 TOTAL_RECEIVED = 0
+IMG_SIZE = None
 moving_latency_average = 0.0
 first_packet_time = None
 last_packet_time = None
@@ -51,16 +53,21 @@ def report_stats():
 
 
 def parse_arguments():
-    global TOTAL_SENT, TIME_BETWEEN_REQUESTS
+    global TOTAL_SENT, TIME_BETWEEN_REQUESTS, IMG_SIZE
     parser = argparse.ArgumentParser()
     parser.add_argument("--requests", help="num of total requests", type=int)
     parser.add_argument("--time", help="time between each request", type=float)
+    parser.add_argument("--size", help="size of img (pix)", type=int)
     args = parser.parse_args()
     if args.requests is not None:
         TOTAL_SENT = args.requests
 
     if args.time is not None:
         TIME_BETWEEN_REQUESTS = args.time
+
+    if args.size is not None:
+        IMG_SIZE = args.size
+
     print("Sending", TOTAL_SENT, "requests")
     print("Sleeping", TIME_BETWEEN_REQUESTS, "between each")
     time.sleep(0.1)
@@ -86,8 +93,15 @@ def main():
             print("SENT", i, t2 - t1)
         t1 = t2
 
-        file_name = filenames[i]
-        raw_data = io.imread(file_name).tobytes()
+        if IMG_SIZE is not None:
+            img_numpy = np.random.randint(256, size=(IMG_SIZE, IMG_SIZE, 3), dtype=np.uint8)
+            # print(img_numpy.shape)
+        else:
+            file_name = filenames[i]
+            img_numpy = io.imread(file_name)
+            # print(img_numpy)
+
+        raw_data = img_numpy.tobytes()
 
         tpe.submit(send_img, conn, i, raw_data)
         time.sleep(TIME_BETWEEN_REQUESTS)
