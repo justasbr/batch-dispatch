@@ -48,8 +48,8 @@ def import_to_tensorboard(model_dir, log_dir):
       graph_def.ParseFromString(f.read())
       importer.import_graph_def(graph_def)
 
-    pb_visual_writer = summary.FileWriter(log_dir)
-    pb_visual_writer.add_graph(sess.graph)
+    pb_visual_writer = summary.FileWriter(log_dir, sess.graph)
+    # pb_visual_writer.add_graph(sess.graph)
     print("Model Imported. Visualize by running: "
           "tensorboard --logdir={}".format(log_dir))
 
