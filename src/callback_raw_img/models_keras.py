@@ -16,69 +16,44 @@ import h5py
 
 def create_model_alex():
     model = Sequential()
+
+    # FEATURES
     model.add(Convolution2D(filters=64, kernel_size=11, strides=(4, 4),
-                            padding="same", input_shape=(224, 224, 3), activation="relu"))
+                            padding="same", input_shape=(224, 224, 3)))
+    model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
 
-    model.add(Convolution2D(filters=192, kernel_size=5, padding="same", activation="relu"))
+    model.add(Convolution2D(filters=192, kernel_size=5, padding="same"))
+    model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
 
-    model.add(Convolution2D(filters=384, kernel_size=3, padding="same", activation="relu"))
+    model.add(Convolution2D(filters=384, kernel_size=3, padding="same"))
+    model.add(Activation('relu'))
 
-    model.add(Convolution2D(filters=256, kernel_size=3, padding="same", activation="relu"))
+    model.add(Convolution2D(filters=256, kernel_size=3, padding="same"))
+    model.add(Activation('relu'))
 
-    model.add(Convolution2D(filters=256, kernel_size=3, padding="same", activation="relu"))
+    model.add(Convolution2D(filters=256, kernel_size=3, padding="same"))
+    model.add(Activation('relu'))
+
     model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
 
+    # CLASSIFIER
     model.add(Flatten())
 
-    model.add(Dropout(0.5))
-    model.add(Dense(4096, kernel_initializer="normal", activation="relu", use_bias=True))
+    # model.add(Dropout(0.5))
+    model.add(Dense(4096, kernel_initializer="normal",  use_bias=True))
+    model.add(Activation('relu'))
 
-    model.add(Dropout(0.5))
-    model.add(Dense(4096, kernel_initializer="normal", activation="relu", use_bias=True))
+    # model.add(Dropout(0.5))
+    model.add(Dense(4096, kernel_initializer="normal", use_bias=True))
+    model.add(Activation('relu'))
 
     model.add(Dense(1000, kernel_initializer="normal", use_bias=True))
-    model.add(Activation('softmax'))
+    # model.add(Activation('softmax'))
 
     print(model.summary())
 
-    #         nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2),
-    #         nn.ReLU(inplace=True),
-    #         nn.MaxPool2d(kernel_size=3, stride=2),
-
-    #         nn.Conv2d(64, 192, kernel_size=5, padding=2),
-    #         nn.ReLU(inplace=True),
-    #         nn.MaxPool2d(kernel_size=3, stride=2),
-
-    #         nn.Conv2d(192, 384, kernel_size=3, padding=1),
-    #         nn.ReLU(inplace=True),
-
-    #         nn.Conv2d(384, 256, kernel_size=3, padding=1),
-    #         nn.ReLU(inplace=True),
-
-    #         nn.Conv2d(256, 256, kernel_size=3, padding=1),
-    #         nn.ReLU(inplace=True),
-    #         nn.MaxPool2d(kernel_size=3, stride=2),
-    #
-    #         nn.Dropout(),
-    #         nn.Linear(256 * 6 * 6, 4096),
-    #         nn.ReLU(inplace=True),
-
-    #         nn.Dropout(),
-    #         nn.Linear(4096, 4096),
-    #         nn.ReLU(inplace=True),
-
-    #         nn.Linear(4096, num_classes),
-    #
-    # def forward(self, x):
-    #     x = self.features(x)
-    #     x = x.view(x.size(0), 256 * 6 * 6)
-    #     x = self.classifier(x)
-    #     return x
-
-    # model.add(Flatten())  # , input_dim)
-    # model.add(Dense(1000, kernel_initializer="normal"))
     return model
 
 
