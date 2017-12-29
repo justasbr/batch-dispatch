@@ -1,0 +1,1423 @@
+{
+    "traceEvents": [
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 0,
+            "args": {
+                "name": "Allocators"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 1,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 2,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Tensors"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074488,
+            "dur": 10,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074507,
+            "dur": 7,
+            "args": {
+                "name": "main/flatten/stack/0",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074517,
+            "dur": 4,
+            "args": {
+                "name": "main/block1_conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469878074517,
+            "dur": 10,
+            "args": {
+                "name": "_arg_main/input_1_0_0",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074524,
+            "dur": 4,
+            "args": {
+                "name": "main/block1_conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074531,
+            "dur": 3,
+            "args": {
+                "name": "main/block1_conv2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074535,
+            "dur": 2,
+            "args": {
+                "name": "main/block1_conv2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074538,
+            "dur": 3,
+            "args": {
+                "name": "main/block2_conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074542,
+            "dur": 2,
+            "args": {
+                "name": "main/block2_conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074545,
+            "dur": 2,
+            "args": {
+                "name": "main/block2_conv2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074549,
+            "dur": 1,
+            "args": {
+                "name": "main/block2_conv2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074552,
+            "dur": 2,
+            "args": {
+                "name": "main/block3_conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074555,
+            "dur": 2,
+            "args": {
+                "name": "main/block3_conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074558,
+            "dur": 2,
+            "args": {
+                "name": "main/block3_conv2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074561,
+            "dur": 2,
+            "args": {
+                "name": "main/block3_conv2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074564,
+            "dur": 3,
+            "args": {
+                "name": "main/block3_conv3/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074568,
+            "dur": 2,
+            "args": {
+                "name": "main/block3_conv3/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074572,
+            "dur": 2,
+            "args": {
+                "name": "main/block4_conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074575,
+            "dur": 3,
+            "args": {
+                "name": "main/block4_conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074579,
+            "dur": 2,
+            "args": {
+                "name": "main/block4_conv2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074618,
+            "dur": 6,
+            "args": {
+                "name": "main/block4_conv2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074627,
+            "dur": 3,
+            "args": {
+                "name": "main/block4_conv3/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074632,
+            "dur": 3,
+            "args": {
+                "name": "main/block4_conv3/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074637,
+            "dur": 3,
+            "args": {
+                "name": "main/block5_conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074642,
+            "dur": 3,
+            "args": {
+                "name": "main/block5_conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074646,
+            "dur": 4,
+            "args": {
+                "name": "main/block5_conv2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074652,
+            "dur": 3,
+            "args": {
+                "name": "main/block5_conv2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074656,
+            "dur": 4,
+            "args": {
+                "name": "main/block5_conv3/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074661,
+            "dur": 3,
+            "args": {
+                "name": "main/block5_conv3/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074666,
+            "dur": 3,
+            "args": {
+                "name": "main/flatten/strided_slice/stack",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074671,
+            "dur": 3,
+            "args": {
+                "name": "main/flatten/strided_slice/stack_1",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074676,
+            "dur": 3,
+            "args": {
+                "name": "main/fc1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074681,
+            "dur": 3,
+            "args": {
+                "name": "main/fc1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074686,
+            "dur": 4,
+            "args": {
+                "name": "main/fc2/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074692,
+            "dur": 3,
+            "args": {
+                "name": "main/fc2/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074696,
+            "dur": 4,
+            "args": {
+                "name": "main/predictions/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074703,
+            "dur": 3,
+            "args": {
+                "name": "main/predictions/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469878074530,
+            "dur": 5858,
+            "args": {
+                "name": "main/block1_conv1/convolution",
+                "op": "Conv2D",
+                "input0": "_arg_main/input_1_0_0",
+                "input1": "main/block1_conv1/kernel"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "main/block1_conv1/kernel",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878074521,
+            "id": 0
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "main/block1_conv1/kernel",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469878074530,
+            "id": 0
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878080399,
+            "dur": 485,
+            "args": {
+                "name": "main/block1_conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block1_conv1/convolution",
+                "input1": "main/block1_conv1/bias"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "main/block1_conv1/convolution",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1514469878080388,
+            "id": 1
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "main/block1_conv1/convolution",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878080399,
+            "id": 1
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878080891,
+            "dur": 451,
+            "args": {
+                "name": "main/block1_conv1/Relu",
+                "op": "Relu",
+                "input0": "main/block1_conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878081347,
+            "dur": 49590,
+            "args": {
+                "name": "main/block1_conv2/convolution",
+                "op": "Conv2D",
+                "input0": "main/block1_conv1/Relu",
+                "input1": "main/block1_conv2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878130953,
+            "dur": 1244,
+            "args": {
+                "name": "main/block1_conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block1_conv2/convolution",
+                "input1": "main/block1_conv2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878132206,
+            "dur": 1224,
+            "args": {
+                "name": "main/block1_conv2/Relu",
+                "op": "Relu",
+                "input0": "main/block1_conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878133440,
+            "dur": 4522,
+            "args": {
+                "name": "main/block1_pool/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/block1_conv2/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878137974,
+            "dur": 15110,
+            "args": {
+                "name": "main/block2_conv1/convolution",
+                "op": "Conv2D",
+                "input0": "main/block1_pool/MaxPool",
+                "input1": "main/block2_conv1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878153095,
+            "dur": 331,
+            "args": {
+                "name": "main/block2_conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block2_conv1/convolution",
+                "input1": "main/block2_conv1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878153431,
+            "dur": 191,
+            "args": {
+                "name": "main/block2_conv1/Relu",
+                "op": "Relu",
+                "input0": "main/block2_conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878153625,
+            "dur": 21625,
+            "args": {
+                "name": "main/block2_conv2/convolution",
+                "op": "Conv2D",
+                "input0": "main/block2_conv1/Relu",
+                "input1": "main/block2_conv2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878175260,
+            "dur": 352,
+            "args": {
+                "name": "main/block2_conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block2_conv2/convolution",
+                "input1": "main/block2_conv2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878175619,
+            "dur": 273,
+            "args": {
+                "name": "main/block2_conv2/Relu",
+                "op": "Relu",
+                "input0": "main/block2_conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878175897,
+            "dur": 2010,
+            "args": {
+                "name": "main/block2_pool/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/block2_conv2/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878177916,
+            "dur": 9874,
+            "args": {
+                "name": "main/block3_conv1/convolution",
+                "op": "Conv2D",
+                "input0": "main/block2_pool/MaxPool",
+                "input1": "main/block3_conv1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878187800,
+            "dur": 233,
+            "args": {
+                "name": "main/block3_conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block3_conv1/convolution",
+                "input1": "main/block3_conv1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878188038,
+            "dur": 129,
+            "args": {
+                "name": "main/block3_conv1/Relu",
+                "op": "Relu",
+                "input0": "main/block3_conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878188172,
+            "dur": 16500,
+            "args": {
+                "name": "main/block3_conv2/convolution",
+                "op": "Conv2D",
+                "input0": "main/block3_conv1/Relu",
+                "input1": "main/block3_conv2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878204697,
+            "dur": 230,
+            "args": {
+                "name": "main/block3_conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block3_conv2/convolution",
+                "input1": "main/block3_conv2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878204932,
+            "dur": 109,
+            "args": {
+                "name": "main/block3_conv2/Relu",
+                "op": "Relu",
+                "input0": "main/block3_conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878205044,
+            "dur": 17383,
+            "args": {
+                "name": "main/block3_conv3/convolution",
+                "op": "Conv2D",
+                "input0": "main/block3_conv2/Relu",
+                "input1": "main/block3_conv3/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878222438,
+            "dur": 218,
+            "args": {
+                "name": "main/block3_conv3/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block3_conv3/convolution",
+                "input1": "main/block3_conv3/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878222662,
+            "dur": 108,
+            "args": {
+                "name": "main/block3_conv3/Relu",
+                "op": "Relu",
+                "input0": "main/block3_conv3/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878222773,
+            "dur": 775,
+            "args": {
+                "name": "main/block3_pool/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/block3_conv3/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878223555,
+            "dur": 7714,
+            "args": {
+                "name": "main/block4_conv1/convolution",
+                "op": "Conv2D",
+                "input0": "main/block3_pool/MaxPool",
+                "input1": "main/block4_conv1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878231284,
+            "dur": 130,
+            "args": {
+                "name": "main/block4_conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block4_conv1/convolution",
+                "input1": "main/block4_conv1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878231422,
+            "dur": 74,
+            "args": {
+                "name": "main/block4_conv1/Relu",
+                "op": "Relu",
+                "input0": "main/block4_conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878231517,
+            "dur": 16061,
+            "args": {
+                "name": "main/block4_conv2/convolution",
+                "op": "Conv2D",
+                "input0": "main/block4_conv1/Relu",
+                "input1": "main/block4_conv2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878247590,
+            "dur": 137,
+            "args": {
+                "name": "main/block4_conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block4_conv2/convolution",
+                "input1": "main/block4_conv2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878247732,
+            "dur": 82,
+            "args": {
+                "name": "main/block4_conv2/Relu",
+                "op": "Relu",
+                "input0": "main/block4_conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878247818,
+            "dur": 16098,
+            "args": {
+                "name": "main/block4_conv3/convolution",
+                "op": "Conv2D",
+                "input0": "main/block4_conv2/Relu",
+                "input1": "main/block4_conv3/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878263926,
+            "dur": 147,
+            "args": {
+                "name": "main/block4_conv3/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block4_conv3/convolution",
+                "input1": "main/block4_conv3/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878264076,
+            "dur": 73,
+            "args": {
+                "name": "main/block4_conv3/Relu",
+                "op": "Relu",
+                "input0": "main/block4_conv3/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878264153,
+            "dur": 403,
+            "args": {
+                "name": "main/block4_pool/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/block4_conv3/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878264563,
+            "dur": 4788,
+            "args": {
+                "name": "main/block5_conv1/convolution",
+                "op": "Conv2D",
+                "input0": "main/block4_pool/MaxPool",
+                "input1": "main/block5_conv1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878269363,
+            "dur": 73,
+            "args": {
+                "name": "main/block5_conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block5_conv1/convolution",
+                "input1": "main/block5_conv1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878269442,
+            "dur": 54,
+            "args": {
+                "name": "main/block5_conv1/Relu",
+                "op": "Relu",
+                "input0": "main/block5_conv1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878269499,
+            "dur": 4884,
+            "args": {
+                "name": "main/block5_conv2/convolution",
+                "op": "Conv2D",
+                "input0": "main/block5_conv1/Relu",
+                "input1": "main/block5_conv2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878274398,
+            "dur": 63,
+            "args": {
+                "name": "main/block5_conv2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block5_conv2/convolution",
+                "input1": "main/block5_conv2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878274467,
+            "dur": 55,
+            "args": {
+                "name": "main/block5_conv2/Relu",
+                "op": "Relu",
+                "input0": "main/block5_conv2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878274527,
+            "dur": 5952,
+            "args": {
+                "name": "main/block5_conv3/convolution",
+                "op": "Conv2D",
+                "input0": "main/block5_conv2/Relu",
+                "input1": "main/block5_conv3/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280493,
+            "dur": 72,
+            "args": {
+                "name": "main/block5_conv3/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/block5_conv3/convolution",
+                "input1": "main/block5_conv3/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280570,
+            "dur": 46,
+            "args": {
+                "name": "main/block5_conv3/Relu",
+                "op": "Relu",
+                "input0": "main/block5_conv3/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280620,
+            "dur": 137,
+            "args": {
+                "name": "main/block5_pool/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/block5_conv3/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280761,
+            "dur": 7,
+            "args": {
+                "name": "main/flatten/Shape",
+                "op": "Shape",
+                "input0": "main/block5_pool/MaxPool"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280771,
+            "dur": 10,
+            "args": {
+                "name": "main/flatten/strided_slice",
+                "op": "StridedSlice",
+                "input0": "main/flatten/Shape",
+                "input1": "main/flatten/strided_slice/stack",
+                "input2": "main/flatten/strided_slice/stack_1",
+                "input3": "main/flatten/strided_slice/stack"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280784,
+            "dur": 10,
+            "args": {
+                "name": "main/flatten/Prod",
+                "op": "Prod",
+                "input0": "main/flatten/strided_slice",
+                "input1": "main/flatten/strided_slice/stack_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280797,
+            "dur": 9,
+            "args": {
+                "name": "main/flatten/stack",
+                "op": "Pack",
+                "input0": "main/flatten/stack/0",
+                "input1": "main/flatten/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Reshape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280808,
+            "dur": 5,
+            "args": {
+                "name": "main/flatten/Reshape",
+                "op": "Reshape",
+                "input0": "main/block5_pool/MaxPool",
+                "input1": "main/flatten/stack"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878280815,
+            "dur": 43640,
+            "args": {
+                "name": "main/fc1/MatMul",
+                "op": "MatMul",
+                "input0": "main/flatten/Reshape",
+                "input1": "main/fc1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878324464,
+            "dur": 20,
+            "args": {
+                "name": "main/fc1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/fc1/MatMul",
+                "input1": "main/fc1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878324487,
+            "dur": 7,
+            "args": {
+                "name": "main/fc1/Relu",
+                "op": "Relu",
+                "input0": "main/fc1/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878324497,
+            "dur": 6504,
+            "args": {
+                "name": "main/fc2/MatMul",
+                "op": "MatMul",
+                "input0": "main/fc1/Relu",
+                "input1": "main/fc2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878331007,
+            "dur": 12,
+            "args": {
+                "name": "main/fc2/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/fc2/MatMul",
+                "input1": "main/fc2/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878331021,
+            "dur": 4,
+            "args": {
+                "name": "main/fc2/Relu",
+                "op": "Relu",
+                "input0": "main/fc2/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878331027,
+            "dur": 1635,
+            "args": {
+                "name": "main/predictions/MatMul",
+                "op": "MatMul",
+                "input0": "main/fc2/Relu",
+                "input1": "main/predictions/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878332669,
+            "dur": 10,
+            "args": {
+                "name": "main/predictions/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/predictions/MatMul",
+                "input1": "main/predictions/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Softmax",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878332681,
+            "dur": 27,
+            "args": {
+                "name": "main/predictions/Softmax",
+                "op": "Softmax",
+                "input0": "main/predictions/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878332710,
+            "dur": 3,
+            "args": {
+                "name": "main/output_node0",
+                "op": "Identity",
+                "input0": "main/predictions/Softmax"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Retval",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1514469878332715,
+            "dur": 6,
+            "args": {
+                "name": "_retval_main/output_node0_0_0",
+                "op": "_Retval",
+                "input0": "main/output_node0"
+            }
+        }
+    ]
+}
