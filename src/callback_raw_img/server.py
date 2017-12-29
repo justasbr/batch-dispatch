@@ -1,12 +1,9 @@
 import _thread as thread
-from concurrent.futures import ThreadPoolExecutor
-
 import rpyc
+from concurrent.futures import ThreadPoolExecutor
 from rpyc.utils.server import ThreadedServer
-
 import queue
 import time
-
 import torch
 import torchvision
 from torch.autograd import Variable
@@ -15,9 +12,7 @@ import argparse
 import random
 import os
 from utils import round_ms
-
 import cProfile, pstats, io as io2
-
 import tensorflow as tf
 from numpy import prod
 import numpy as np
@@ -25,8 +20,9 @@ import numpy as np
 BATCH_SIZE = 4
 BATCH_TIMEOUT = 0.1
 FRAMEWORK = ""
+MODEL = "alexnet"
 
-tpe = ThreadPoolExecutor(max_workers=4)
+tpe = ThreadPoolExecutor(max_workers=8)
 
 image_queue = queue.Queue()
 time_q = queue.Queue()
@@ -41,22 +37,27 @@ global classify, t1
 graph = None
 
 
-def prepare_torch():
-    from alexnet_torch import alexnet
-    global net, transform
-    net = alexnet(pretrained=True)
-    transform = torchvision.transforms.ToTensor()
-
-
-def prepare_keras():
-    import alexnet_keras
-    print("Preparing keras")
+def prepare_keras(model):
+    print("Preparing Keras")
+    import models_keras
     global net, graph
-    net = alexnet_keras.create_model_alex()
+
+    if model == "alexnet":
+        net = models_keras.create_model_alex()
+    elif model == "vgg":
+        net = models_keras.create_model_vgg16()
+    elif model == "inception":
+        net = models_keras.create_model_inception_v3()
+    elif model == "resnet":
+        net = models_keras.create_model_resnet50()
+
+    # net.save('keras_alex2.h5')
+    # print("Saved")
+
     graph = tf.get_default_graph()
 
     # Easiest way to make the model build and compute the prediction function
-    net.predict(np.random.randint(0, 200, size=(1, 224, 224, 3)))
+    net.predict(np.random.randint(0, 256, size=(1, 224, 224, 3), dtype=np.uint8))
     # net.build()
     # net.model._make_predict_function()
 
@@ -75,6 +76,28 @@ def keras_classify(imgs):
         return output
 
 
+def prepare_torch(model):
+    print("Preparing Torch")
+    global net, transform
+
+    if model == "alexnet":
+        from torch_models.torch_alexnet import alexnet
+        net = alexnet(pretrained=True)  # works
+    elif model == "vgg":
+        from torch_models.torch_vgg import vgg16
+        net = vgg16(pretrained=True)  # works
+    elif model == "inception":
+        from torch_models.torch_inception import inception_v3
+        net = inception_v3(pretrained=True)  # 299 x 299 x 3
+    elif model == "resnet":
+        from torch_models.torch_resnet import resnet50
+        net = resnet50(pretrained=True)  # works
+
+    print(net)
+
+    transform = torchvision.transforms.ToTensor()
+
+
 def torch_classify(imgs):
     img_data = []
     for img in imgs:
@@ -82,44 +105,94 @@ def torch_classify(imgs):
         data = Variable(data)
         img_data.append(data)
 
+    # print(img_data)
+    # print("Batch", batch)
     batch = torch.stack(img_data)
-    output = net.forward(batch)
+
+    try:
+        output = net.forward(batch)
+    except Exception as e:
+        print(e)
+
+    # print("Output", output)
     max_val, max_index = torch.max(output, 1)
     output = max_index.data.numpy()
 
     return output
 
 
-def prepare_tf():
-    from alexnet_tf import alexnet_inference
-    global fnames, enq_op, prob, main_sess, images_placeholder
-    g = tf.Graph()
-    with g.as_default():
-        images_placeholder = tf.placeholder(tf.uint8, shape=(None, 224, 224, 3))
+def load_frozen_tensorflow_graph(model):
+    model_file = "tf_frozen/"
 
-        img_batch_float = tf.cast(images_placeholder, tf.float32)
-        img_batch_float = tf.map_fn(tf.image.per_image_standardization, img_batch_float)
-        img_batch_float = tf.map_fn(lambda frame: tf.clip_by_value(frame, -1.0, 1.0), img_batch_float)
+    if model == "alexnet":
+        # model_file += "tf_alexnetOP.pb"
+        model_file += "tf_alex.pb"
+    elif model == "vgg":
+        model_file += "tf_vgg_frozen.pb"
+    elif model == "inception":
+        model_file += "tf_inception.pb"
+    elif model == "resnet":
+        model_file += "tf_resnet.pb"
+    print("TF model file", model_file)
+
+    with tf.gfile.GFile(model_file, "rb") as f:
+        graph_def = tf.GraphDef()
+        graph_def.ParseFromString(f.read())
+    with tf.Graph().as_default() as graph:
+        tf.import_graph_def(graph_def, name="main")
+    return graph
+
+
+def prepare_tf(model):
+    print("Preparing TensorFlow")
+    from alexnet_tf import alexnet_inference
+
+    global fnames, enq_op, prob, main_sess, images_placeholder, g, g_input, g_output
+
+    g = load_frozen_tensorflow_graph(model)
+
+    for op in g.get_operations():
+        print(op.name, op.type)
+
+    input_tensor_name = g.get_operations()[0].name + ":0"
+    output_tensor_name = g.get_operations()[-1].name + ":0"
+    print(input_tensor_name, "<->", output_tensor_name)
+
+    with g.as_default():
+        g_input = g.get_tensor_by_name(input_tensor_name)
+        g_output = g.get_tensor_by_name(output_tensor_name)
+
+        # g_input = tf.placeholder(tf.uint8, shape=(None, 224, 224, 3))
+        #
+        # img_batch_float = tf.cast(g_input, tf.float32)
+        # img_batch_float = tf.map_fn(tf.image.per_image_standardization, img_batch_float)
+        # img_batch_float = tf.map_fn(lambda frame: tf.clip_by_value(frame, -1.0, 1.0), img_batch_float)
+        # g_output, __ = alexnet_inference(img_batch_float)
+
 
         # image_batch = tf.stack(images)
         # print(image_batch) #/image_batch.dtype)
 
-        prob, __ = alexnet_inference(img_batch_float)
-
+        # prob, __ = vgg_16(img_batch_float)
+        # print(main_sess.run(prob))
         init_global = tf.global_variables_initializer()
+
     main_sess = tf.Session(graph=g)
     main_sess.run(init_global)
+    main_sess.run(g_output, feed_dict={g_input: (np.random.randint(0, 200, size=(1, 224, 224, 3)))})
 
 
 def tf_classify(imgs):
+    global g, g_input, g_output
     # img_data = np.empty(shape=(len(imgs), 224, 224, 3))
     # for i, img in enumerate(imgs):
     #     print(img)
     # img_data[i] = img
 
     imgs = np.stack(imgs, axis=0)
-    result = main_sess.run(prob, feed_dict={images_placeholder: imgs})
 
+    result = main_sess.run(g_output, feed_dict={g_input: imgs})
+    # print(result)
     return result.argmax(axis=1)
 
 
@@ -142,17 +215,21 @@ class MyService(rpyc.Service):
         print("Executive has disconnected...")
 
     def exposed_RemoteCallbackTest(self, raw_img, callback):
-        img = np.fromstring(raw_img, dtype=np.uint8).reshape(224, 224, 3)
+        img = np.fromstring(raw_img, dtype=np.uint8)
+        elems = int(img.shape[0])
+        dim = int((elems / 3) ** 0.5)
+        img = img.reshape(dim, dim, 3)
         image_queue.put((img, callback))
         time_q.put(time.time())
 
 
 def parse_arguments():
-    global BATCH_SIZE, FRAMEWORK, BATCH_TIMEOUT
+    global BATCH_SIZE, FRAMEWORK, BATCH_TIMEOUT, MODEL
     parser = argparse.ArgumentParser()
-    parser.add_argument("--batch_size", help="batch_size", type=int)
+    parser.add_argument("-b", "--batch_size", help="batch_size", type=int)
     parser.add_argument("-t", "--timeout", help="timeout for batch", type=float)
     parser.add_argument("-f", "--framework", help="framework")
+    parser.add_argument("-m", "--model", help="convnet model")
 
     args = parser.parse_args()
     if args.batch_size is not None:
@@ -164,6 +241,17 @@ def parse_arguments():
     if args.timeout is not None:
         BATCH_TIMEOUT = args.timeout
 
+    if args.model is not None:
+        if args.model.startswith("vgg"):
+            MODEL = "vgg"
+        elif args.model.startswith("incep"):
+            MODEL = "inception"
+        elif args.model.startswith("res"):
+            MODEL = "resnet"
+        else:
+            MODEL = "alexnet"
+
+    print("Model:", MODEL)
     print("Batch sizes:", BATCH_SIZE)
     print("Batch timeout:", BATCH_TIMEOUT)
 
@@ -197,7 +285,10 @@ def process_and_return(batch_size):
 
     # pr.enable()
     # THE CLASSIFICATION
-    outputs = classify(inputs)
+    try:
+        outputs = classify(inputs)
+    except Exception as e:
+        print("Classification error:", e)
     # pr.disable()
 
     classify_time = time.time() - classify_start
@@ -230,21 +321,20 @@ def perform_function(f, arg):
 def prepare_framework():
     global classify
     if FRAMEWORK == "tf" or FRAMEWORK == "tensorflow":
-        prepare_tf()
+        prepare_tf(MODEL)
         classify = tf_classify
         print("Using TensorFlow")
     elif FRAMEWORK == "torch" or FRAMEWORK == "pytorch":
-        prepare_torch()
+        prepare_torch(MODEL)
         classify = torch_classify
         print("Using PyTorch")
     elif FRAMEWORK == "keras":
-        prepare_keras()
+        prepare_keras(MODEL)
         classify = keras_classify
         print("Using Keras")
     else:
         classify = mock_classify
         print("using MOCK framework")
-    time.sleep(0.1)
 
 
 if __name__ == '__main__':
