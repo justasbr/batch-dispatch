@@ -1,0 +1,24 @@
+2018-01-02 12:39:41.194329: torch, inception, batch_size 1 | across 10 steps, 0.372 +/- 0.006 sec / batch
+	Command being timed: "python benchmark.py --batch_size 1 --num_batches 10 --framework torch --model inception"
+	User time (seconds): 16.11
+	System time (seconds): 3.15
+	Percent of CPU this job got: 152%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 552924
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 364
+	Minor (reclaiming a frame) page faults: 1265995
+	Voluntary context switches: 95
+	Involuntary context switches: 23700
+	Swaps: 0
+	File system inputs: 2
+	File system outputs: 5
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
