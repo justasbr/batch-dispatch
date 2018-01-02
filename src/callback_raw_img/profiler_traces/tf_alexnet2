@@ -1,107 +1,179 @@
-         2260 function calls in 0.501 seconds
+         8330 function calls in 0.595 seconds
 
    Ordered by: cumulative time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-       10    0.000    0.000    0.501    0.050 benchmark.py:135(tf_classify)
-       10    0.000    0.000    0.501    0.050 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:781(run)
-       10    0.000    0.000    0.500    0.050 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1036(_run)
-       10    0.000    0.000    0.498    0.050 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1258(_do_run)
-       10    0.000    0.000    0.498    0.050 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1321(_do_call)
-       10    0.000    0.000    0.497    0.050 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1290(_run_fn)
-       10    0.497    0.050    0.497    0.050 {built-in method _pywrap_tensorflow_internal.TF_Run}
-       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:401(__init__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/nest.py:226(flatten_dict_items)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:693(is_compatible_with)
-      390    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:458(build_results)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:215(for_fetch)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:844(as_shape)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3002(as_graph_element)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:420(__init__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py:467(__exit__)
-       30    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:302(name)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:251(__init__)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3037(_as_graph_element_locked)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/nest.py:114(is_sequence)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/message.py:178(ParseFromString)
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_NewBuffer}
+       10    0.000    0.000    0.595    0.060 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1070(wrapper)
+       10    0.000    0.000    0.588    0.059 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:656(f)
+       10    0.002    0.000    0.588    0.059 benchmark.py:138(tf_classify)
+       10    0.000    0.000    0.586    0.059 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:781(run)
+       10    0.002    0.000    0.584    0.058 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1036(_run)
+       10    0.000    0.000    0.577    0.058 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1258(_do_run)
+       10    0.000    0.000    0.576    0.058 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1321(_do_call)
+       10    0.000    0.000    0.575    0.058 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1290(_run_fn)
+       10    0.575    0.057    0.575    0.057 {built-in method _pywrap_tensorflow_internal.TF_Run}
+       10    0.000    0.000    0.006    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:625(__call__)
+       10    0.000    0.000    0.006    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:640(add_function)
+       10    0.000    0.000    0.006    0.001 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:560(add)
+       10    0.000    0.000    0.006    0.001 /Users/justas/miniconda3/lib/python3.6/inspect.py:916(getsourcelines)
+       10    0.000    0.000    0.004    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:905(getblock)
+      460    0.001    0.000    0.003    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:492(_tokenize)
+       10    0.001    0.000    0.002    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:401(__init__)
+       10    0.000    0.000    0.002    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:730(findsource)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:215(for_fetch)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:753(show_results)
+       20    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3002(as_graph_element)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:693(is_compatible_with)
+      420    0.001    0.000    0.001    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:684(getmodule)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:844(as_shape)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:251(__init__)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:672(getabsfile)
+       20    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3037(_as_graph_element_locked)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/nest.py:226(flatten_dict_items)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:420(__init__)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:367(abspath)
+       10    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:458(build_results)
+      410    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:152(_compile)
+       30    0.000    0.000    0.001    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:302(name)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:455(<listcomp>)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3237(as_default)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/message.py:178(ParseFromString)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1381(_update_with_movers)
+      620    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:650(getsourcefile)
        70    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:1623(name)
        40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:381(as_dimension)
-       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/compat.py:46(as_bytes)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/abc.py:178(__instancecheck__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1381(_update_with_movers)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:545(<lambda>)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1286(<genexpr>)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:157(helper)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1290(_Clear)
-       90    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:649(getter)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:86(__exit__)
+      420    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/re.py:231(compile)
+       70    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/nest.py:114(is_sequence)
        20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:507(_name_list)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:58(_swig_setattr)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/numpy/core/numeric.py:463(asarray)
-       20    0.000    0.000    0.000    0.000 {built-in method builtins.next}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4542(get_default_graph)
-       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:27(__init__)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:109(_as_graph_element)
-       90    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:473(__hash__)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:516(<listcomp>)
-      120    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
-       10    0.000    0.000    0.000    0.000 {built-in method numpy.core.multiarray.array}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py:463(__enter__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:60(__init__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:39(_swig_setattr_nondynamic)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:2611(version)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4500(get_default)
-       30    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      450    0.000    0.000    0.000    0.000 <string>:12(__new__)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1080(MergeFromString)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4334(get_controller)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/_weakrefset.py:70(__contains__)
+       10    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1286(<genexpr>)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py:467(__exit__)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/genericpath.py:16(exists)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/abc.py:178(__instancecheck__)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:516(<listcomp>)
+      450    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:861(tokeneater)
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_NewBuffer}
+       30    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:3237(as_default)
+      420    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/re.py:286(_compile)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/tensor_shape.py:27(__init__)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:614(__init__)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/ops/session_ops.py:273(_get_handle_mover)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1038(_feed_fn)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/six.py:586(iteritems)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:1925(type)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:80(__enter__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1338(_extend_graph)
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_GetCode}
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_GetBuffer}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:437(_assert_fetchable)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/ops/session_ops.py:253(_get_handle_feeder)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:297(graph)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/c_api_util.py:32(__del__)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:287(build_results)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/c_api_util.py:29(__init__)
-       30    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4224(is_feedable)
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_DeleteBuffer}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:123(as_numpy_dtype)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4317(get_default)
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1345(Modified)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4232(is_fetchable)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:435(<listcomp>)
-       50    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_NewStatus}
-       90    0.000    0.000    0.000    0.000 {built-in method builtins.id}
-       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_DeleteStatus}
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/util/compat.py:46(as_bytes)
+       90    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:649(getter)
+       90    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:545(<lambda>)
+       90    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:473(__hash__)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:157(helper)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4542(get_default_graph)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:613(getfile)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:86(__exit__)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1100(InternalParse)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:372(get_shape)
-       10    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
-       50    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
-       20    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
-       40    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:1942(graph)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:329(normpath)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:1925(type)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:58(_swig_setattr)
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:60(__init__)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1038(_feed_fn)
+      450    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x1061c44e0}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1085(choose_backend)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4500(get_default)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/ops/session_ops.py:253(_get_handle_feeder)
+      200    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1290(_Clear)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:109(_as_graph_element)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:1338(_extend_graph)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:2611(version)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:297(graph)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py:463(__enter__)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:682(disable_by_count)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/_weakrefset.py:70(__contains__)
+      410    0.000    0.000    0.000    0.000 {method 'span' of '_sre.SRE_Match' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/contextlib.py:80(__enter__)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4334(get_controller)
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:39(_swig_setattr_nondynamic)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:437(_assert_fetchable)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/linecache.py:53(checkcache)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:73(join)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/numpy/core/numeric.py:463(asarray)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:287(build_results)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:458(unwrap)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:435(<listcomp>)
+      380    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/c_api_util.py:32(__del__)
        40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:287(op)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:292(dtype)
        40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:708(graph)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:125(<lambda>)
-       10    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:569(<lambda>)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:62(isabs)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4224(is_feedable)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:372(get_shape)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:675(enable_by_count)
+       30    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       10    0.000    0.000    0.000    0.000 {built-in method numpy.core.multiarray.array}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4317(get_default)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/c_api_util.py:29(__init__)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:601(items)
+      180    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:63(ismodule)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:475(_is_wrapper)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/six.py:586(iteritems)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/linecache.py:37(getlines)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:252(iscode)
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_GetCode}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/google/protobuf/internal/python_message.py:1345(Modified)
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_GetBuffer}
+       30    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:657(<genexpr>)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:749(disable)
+       70    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:39(_get_sep)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:4232(is_fetchable)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:1942(graph)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:607(<genexpr>)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:742(enable)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:660(<genexpr>)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:852(__init__)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:123(as_numpy_dtype)
+      140    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       30    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:53(unicode)
+       40    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+       30    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       50    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/posixpath.py:50(normcase)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:124(<lambda>)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:442(fetches)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:125(<lambda>)
+       20    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       40    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_DeleteBuffer}
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:284(unique_fetches)
-       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:450(targets)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:158(isfunction)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:228(istraceback)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:238(isframe)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py:569(<lambda>)
+      100    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:72(isclass)
+       20    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/inspect.py:80(ismethod)
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_NewStatus}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:292(dtype)
        10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/framework/ops.py:314(shape)
+       30    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/tokenize.py:729(generate_tokens)
+       10    0.000    0.000    0.000    0.000 {built-in method _pywrap_tensorflow_internal.TF_DeleteStatus}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:442(fetches)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py:450(targets)
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:555(__init__)
+       40    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:1097(<genexpr>)
+       10    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       20    0.000    0.000    0.000    0.000 {built-in method sys.settrace}
+       10    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       10    0.000    0.000    0.000    0.000 /Users/justas/miniconda3/lib/python3.6/site-packages/memory_profiler.py:652(wrap_function)
+       10    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method sys.gettrace}
 
 
