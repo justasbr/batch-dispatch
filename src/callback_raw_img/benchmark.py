@@ -3,6 +3,8 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import cProfile, pstats, io as io2
+
 from datetime import datetime
 import math
 import sys
@@ -16,8 +18,18 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 import torchvision
+from memory_profiler import profile
+
+from keras import backend as K
+
+from utils import get_image_size, round_ms
 
 FLAGS = None
+g = None
+run_metadata = tf.RunMetadata()
+options = None
+
+output_trace = False
 
 
 def prepare_torch(model):
@@ -41,48 +53,40 @@ def prepare_torch(model):
     print(net)
 
 
-def torch_classify(imgs):
-    transform = torchvision.transforms.ToTensor()
-    imgs = list(map(transform, imgs))
-
-    imgs = torch.stack(imgs)
-    batch = Variable(imgs)
-
-    try:
-        net.forward(batch)
-    except Exception as e:
-        print(e)
+# @profile
+def torch_classify(imgs, opts=None, run_md=None):
+    batch = Variable(torch.from_numpy(imgs))
+    net.forward(batch)
 
 
 def prepare_keras(model):
     print("Preparing Keras")
     import models_keras
-    from keras import backend as K
     global net, graph
 
-    if model == "alexnet":
-        net = models_keras.create_model_alex()
-    elif model == "vgg":
-        net = models_keras.create_model_vgg16()
-    elif model == "inception":
-        net = models_keras.create_model_inception_v3()
-    elif model == "resnet":
-        net = models_keras.create_model_resnet50()
+    net = models_keras.create_model(model)
 
     graph = tf.get_default_graph()
-
     keras_session = K.get_session()
 
-    print("Keras sesssion:", keras_session)
+    if output_trace:
+        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+        net.compile(loss='MSE', optimizer='Adam', options=run_options, run_metadata=run_metadata)
 
-    # Easiest way to make the model build and compute the prediction function
-    net.predict(np.random.randint(0, 256, size=(1, 224, 224, 3), dtype=np.uint8))
+        # old_run = keras_session.run
+        # print("old_run", old_run)
+        # print("K.sess 1", keras_session)
+        #
+        # def new_run(*args, **kwargs):
+        #     # print("X", self)
+        #     print("NewRunning", *args)
+        #     old_run(*args, **kwargs)
 
-    # net.build()
-    # net.model._make_predict_function()
+        # keras_session.run = new_run
 
 
-def keras_classify(imgs):
+# @profile
+def keras_classify(imgs, opts=None, run_md=None):
     global graph
     with graph.as_default():
         net.predict(imgs)
@@ -110,7 +114,6 @@ def prepare_tf(model):
 
     main_sess = tf.Session(graph=g, config=config)
     main_sess.run(init_global)
-    main_sess.run(g_output, feed_dict={g_input: (np.random.randint(256, size=(1, 224, 224, 3)))})
 
 
 def load_frozen_tensorflow_graph(model):
@@ -134,13 +137,13 @@ def load_frozen_tensorflow_graph(model):
     return graph
 
 
+# @profile
 def tf_classify(imgs, opts=None, run_md=None):
-    # global g, g_input, g_output
     main_sess.run(g_output, options=opts, run_metadata=run_md, feed_dict={g_input: imgs})
 
 
-def time_run(session, target, info_string, imgs, model):
-    global run_inference
+def time_run(info_string, imgs, fw, model):
+    global run_inference, run_metadata
     """Run the computation and print timing stats.
 
     Args:
@@ -154,28 +157,43 @@ def time_run(session, target, info_string, imgs, model):
     num_steps_burn_in = 10
     total_duration = 0.0
     total_duration_squared = 0.0
-    file_name = 'tf_traces/batch_' + str(model) + str(FLAGS.batch_size) + '.json'
+
+    total_process_duration = 0.0
+    total_process_duration_squared = 0.0
+
+    file_name = 'tf_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
+    profiler_file_name = 'profiler_traces/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size)
+
+    pr = cProfile.Profile()
 
     for i in xrange(FLAGS.num_batches + num_steps_burn_in):
 
-        options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-        run_metadata = tf.RunMetadata()
+        options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE) if output_trace else None
+        # run_metadata = tf.RunMetadata()
 
+        start_p_time = time.process_time()
         start_time = time.time()
 
-        run_inference(imgs)  # , opts=options, run_md=run_metadata)
-
-        # with torch.autograd.profiler.profile() as prof:
-        #     torch_classify(imgs)
-        # print(prof)
+        if output_trace and fw in {"torch", "pytorch"}:
+            with torch.autograd.profiler.profile() as prof:
+                run_inference(imgs)
+            print(prof)
+        else:
+            # if i >= num_steps_burn_in:
+            #     pr.enable()
+            run_inference(imgs, opts=options, run_md=run_metadata)
+            # if i >= num_steps_burn_in:
+            #     pr.disable()
 
         duration = time.time() - start_time
+        p_duration = time.process_time() - start_p_time
 
-        fetched_timeline = timeline.Timeline(run_metadata.step_stats)
-        chrome_trace = fetched_timeline.generate_chrome_trace_format()
+        if output_trace:
+            fetched_timeline = timeline.Timeline(run_metadata.step_stats)
+            chrome_trace = fetched_timeline.generate_chrome_trace_format()
 
-        with open(file_name, 'w') as f:
-            f.write(chrome_trace)
+            with open(file_name, 'w') as f:
+                f.write(chrome_trace)
 
         if i >= num_steps_burn_in:
             if not i % 10:
@@ -183,52 +201,59 @@ def time_run(session, target, info_string, imgs, model):
                       (datetime.now(), i - num_steps_burn_in, duration))
             total_duration += duration
             total_duration_squared += duration * duration
+            total_process_duration += p_duration
+            total_process_duration_squared += p_duration * p_duration
+
+    # s = io2.StringIO()
+    # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
+    # ps.print_stats()
+    #
+    # print(s.getvalue())
+    # with open(profiler_file_name, 'w') as f:
+    #     f.write(s.getvalue())
+
     mn = total_duration / FLAGS.num_batches
     vr = total_duration_squared / FLAGS.num_batches - mn * mn
     sd = math.sqrt(vr)
-    print('%s: %s across %d steps, %.3f +/- %.3f sec / batch' %
+
+    mean_process = total_process_duration / FLAGS.num_batches
+    var_process = total_process_duration_squared / FLAGS.num_batches - mean_process * mean_process
+    sd_process = math.sqrt(var_process)
+
+    print('%s: %s across %d steps (WALL TIME), %.3f +/- %.3f sec / batch' %
           (datetime.now(), info_string, FLAGS.num_batches, mn, sd))
+    print('%s: PROCESS_TIME: %.3f +/- %.3f sec / batch' %
+          (datetime.now(), mean_process, sd_process))
 
 
-def run_benchmark(model):
-    main_sess = None
+def generate_dummy_images(fw, batch_size, image_size):
+    if fw in {"torch", "pytorch"}:
+        images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.
+    elif fw in {"tensorflow", "tf", "keras"}:
+        images = np.random.randint(256, size=(batch_size, image_size, image_size, 3)) / 255.
+    else:
+        raise RuntimeError("Mock images not defined for framework: " + str(fw))
 
-    try:
-        g is not None
-    except:
-        g = tf.get_default_graph()
-
-    """Run the benchmark on AlexNet."""
-    with g.as_default():
-        if model in {"alexnet", "resnet", "vgg"}:
-            image_size = 224
-        elif model in {"inception"}:
-            image_size = 299
-
-        # Generate some dummy images.
-        # Note that our padding definition is slightly different the cuda-convnet.
-        # In order to force the model to start with the same activations sizes,
-        # we add 3 to the image_size and employ VALID padding above.
-
-        # Build an initialization operation.
-        # init_local = tf.local_variables_initializer()
-        # init = tf.global_variables_initializer()
-        #
-        # # Start running operations on the Graph.
-        #
-        # main_sess.run(init)
-        # main_sess.run(init_local)
-
-        # Run the forward benchmark.
-        images = np.random.randint(256, size=(FLAGS.batch_size, image_size, image_size, 3)) / 255.
-        print("Images shape", images.shape)
-        time_run(main_sess, None, "Forward", images, model)
+    print("Images shape", images.shape)
+    return images.astype(np.float32)
 
 
-def prepare_benchmark():
+def run_benchmark(fw, model):
+    global g
+    if fw in {"keras"}:
+        g = g or tf.get_default_graph()
+
+    image_size = get_image_size(model)
+    # Generate some dummy images.
+    images = generate_dummy_images(fw, FLAGS.batch_size, image_size)
+
+    info_string = str(fw) + ", " + str(model) + ", batch_size " + str(FLAGS.batch_size) + " |"
+    time_run(info_string, images, fw, model)
+
+
+def prepare_benchmark(fw, model):
     global run_inference
-    model = FLAGS.model.lower()
-    fw = FLAGS.framework.lower()
+
     print("Params: ", fw, "running", model)
 
     if fw in {"tensorflow", "tf"}:
@@ -245,8 +270,16 @@ def prepare_benchmark():
 
 
 def main(_):
-    prepare_benchmark()
-    run_benchmark(FLAGS.model)
+    model = FLAGS.model.lower()
+    framework = FLAGS.framework.lower()
+
+    prep_start = time.time()
+
+    prepare_benchmark(framework, model)
+
+    prep_end = time.time()
+    print("PREP_TIME (ms)", round_ms(prep_end - prep_start))
+    run_benchmark(framework, model)
 
 
 def get_argument_parser():
@@ -281,7 +314,5 @@ def get_argument_parser():
 
 if __name__ == '__main__':
     parser = get_argument_parser()
-
     FLAGS, unparsed = parser.parse_known_args()
-
     tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
