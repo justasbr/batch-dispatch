@@ -11,6 +11,19 @@ import numpy as np
 import h5py
 
 
+def create_model(model):
+    if model == "alexnet":
+        return create_model_alex()
+    elif model == "vgg":
+        return create_model_vgg16()
+    elif model == "inception":
+        return create_model_inception_v3()
+    elif model == "resnet":
+        return create_model_resnet50()
+    else:
+        raise RuntimeError("No such model exists: " + str(model))
+
+
 # AlexNet with batch normalization in Keras
 # input image is 224x224
 
@@ -42,7 +55,7 @@ def create_model_alex():
     model.add(Flatten())
 
     # model.add(Dropout(0.5))
-    model.add(Dense(4096, kernel_initializer="normal",  use_bias=True))
+    model.add(Dense(4096, kernel_initializer="normal", use_bias=True))
     model.add(Activation('relu'))
 
     # model.add(Dropout(0.5))
