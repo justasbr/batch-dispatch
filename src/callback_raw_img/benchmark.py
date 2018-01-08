@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import tensorflow as tf
 import argparse
 import cProfile, pstats, io as io2
 
@@ -17,7 +18,6 @@ import torch
 from tensorflow.python.client import timeline
 
 from six.moves import xrange
-import tensorflow as tf
 
 import torchvision
 from memory_profiler import profile
