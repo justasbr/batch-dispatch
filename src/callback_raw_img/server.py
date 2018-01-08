@@ -22,7 +22,7 @@ BATCH_TIMEOUT = 0.1
 FRAMEWORK = ""
 MODEL = "alexnet"
 
-tpe = ThreadPoolExecutor(max_workers=8)
+tpe = ThreadPoolExecutor(max_workers=2)
 
 image_queue = queue.Queue()
 time_q = queue.Queue()
@@ -80,18 +80,21 @@ def prepare_torch(model):
     print("Preparing Torch")
     global net, transform
 
-    if model == "alexnet":
-        from torch_models.torch_alexnet import alexnet
-        net = alexnet(pretrained=True)  # works
-    elif model == "vgg":
-        from torch_models.torch_vgg import vgg16
-        net = vgg16(pretrained=True)  # works
-    elif model == "inception":
-        from torch_models.torch_inception import inception_v3
-        net = inception_v3(pretrained=True)  # 299 x 299 x 3
-    elif model == "resnet":
-        from torch_models.torch_resnet import resnet50
-        net = resnet50(pretrained=True)  # works
+    model_file = "torch_frozen/torch_" + str(model) + ".out"
+
+    net = torch.load(model_file)
+    # if model == "alexnet":
+    #     from torch_models.torch_alexnet import alexnet
+    #     net = alexnet(pretrained=True)  # works
+    # elif model == "vgg":
+    #     from torch_models.torch_vgg import vgg16
+    #     net = vgg16(pretrained=True)  # works
+    # elif model == "inception":
+    #     from torch_models.torch_inception import inception_v3
+    #     net = inception_v3(pretrained=True)  # 299 x 299 x 3
+    # elif model == "resnet":
+    #     from torch_models.torch_resnet import resnet50
+    #     net = resnet50(pretrained=True)  # works
 
     print(net)
 
@@ -99,11 +102,11 @@ def prepare_torch(model):
 
 
 def torch_classify(imgs):
-    img_data = []
-    for img in imgs:
-        data = transform(img)
-        data = Variable(data)
-        img_data.append(data)
+    # img_data = []
+    # for img in imgs:
+    #     img_data.append(Variable(transform(img)))
+
+    img_data = list(map(lambda x: Variable(transform(x)), imgs))
 
     # print(img_data)
     # print("Batch", batch)
@@ -112,7 +115,7 @@ def torch_classify(imgs):
     try:
         output = net.forward(batch)
     except Exception as e:
-        print(e)
+        print("Torch_classify failed, err: " + str(e))
 
     # print("Output", output)
     max_val, max_index = torch.max(output, 1)
@@ -128,7 +131,7 @@ def load_frozen_tensorflow_graph(model):
         # model_file += "tf_alexnetOP.pb"
         model_file += "tf_alex.pb"
     elif model == "vgg":
-        model_file += "tf_vgg_frozen.pb"
+        model_file += "tf_vgg.pb"
     elif model == "inception":
         model_file += "tf_inception.pb"
     elif model == "resnet":
@@ -212,7 +215,11 @@ class MyService(rpyc.Service):
         print("Executive connected", thread.get_ident())
 
     def on_disconnect(self):
+        global total_latency, total_done
         print("Executive has disconnected...")
+        print("Total latency (server side)", total_latency)
+        print("Toral done", total_done)
+        print("Avg latency server side (ms)", round_ms(total_latency / total_done))
 
     def exposed_RemoteCallbackTest(self, raw_img, callback):
         img = np.fromstring(raw_img, dtype=np.uint8)
@@ -220,7 +227,9 @@ class MyService(rpyc.Service):
         dim = int((elems / 3) ** 0.5)
         img = img.reshape(dim, dim, 3)
         image_queue.put((img, callback))
-        time_q.put(time.time())
+        t = time.time()
+        # print("GOT", round_ms(t) % 10000)
+        time_q.put(t)
 
 
 def parse_arguments():
@@ -306,12 +315,11 @@ def process_and_return(batch_size):
 
     global total_latency, total_done
     for i in range(batch_size):
-        curr_latency = time.time() - time_q.get()
+        perform_function(callbacks[i], outputs[i])
 
+        curr_latency = time.time() - time_q.get()
         total_latency += curr_latency
         total_done += 1
-
-        perform_function(callbacks[i], outputs[i])
 
 
 def perform_function(f, arg):

@@ -9,12 +9,14 @@ from datetime import datetime
 import math
 import sys
 import time
+
+import gc
 import numpy as np
 from torch.autograd import Variable
 import torch
 from tensorflow.python.client import timeline
 
-from six.moves import xrange  # pylint: disable=redefined-builtin
+from six.moves import xrange
 import tensorflow as tf
 
 import torchvision
@@ -28,37 +30,26 @@ FLAGS = None
 g = None
 run_metadata = tf.RunMetadata()
 options = None
-
-output_trace = False
+prep_start = 0
 
 
 def prepare_torch(model):
     print("Preparing Torch")
     global net
 
-    if model == "alexnet":
-        from torch_models.torch_alexnet import alexnet
-        net = alexnet(pretrained=True)  # works
-    elif model == "vgg":
-        from torch_models.torch_vgg import vgg16
-        net = vgg16(pretrained=True)  # works
-    elif model == "inception":
-        from torch_models.torch_inception import inception_v3
-        net = inception_v3(pretrained=True)  # 299 x 299 x 3
-    elif model == "resnet":
-        from torch_models.torch_resnet import resnet50
-        net = resnet50(pretrained=True)  # works
-    # torch.set_num_threads(4)
+    model_file = "torch_frozen/torch_" + str(model) + ".out"
 
+    net = torch.load(model_file)
+    # torch.set_num_threads(4)
     print(net)
 
 
-# @profile
 def torch_classify(imgs, opts=None, run_md=None):
     batch = Variable(torch.from_numpy(imgs))
     net.forward(batch)
 
 
+# #@profile
 def prepare_keras(model):
     print("Preparing Keras")
     import models_keras
@@ -69,23 +60,23 @@ def prepare_keras(model):
     graph = tf.get_default_graph()
     keras_session = K.get_session()
 
-    if output_trace:
-        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-        net.compile(loss='MSE', optimizer='Adam', options=run_options, run_metadata=run_metadata)
+    # if FLAGS.trace:
+    # run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+    # net.compile(loss='MSE', optimizer='Adam', options=run_options, run_metadata=run_metadata)
 
-        # old_run = keras_session.run
-        # print("old_run", old_run)
-        # print("K.sess 1", keras_session)
-        #
-        # def new_run(*args, **kwargs):
-        #     # print("X", self)
-        #     print("NewRunning", *args)
-        #     old_run(*args, **kwargs)
+    # old_run = keras_session.run
+    # print("old_run", old_run)
+    # print("K.sess 1", keras_session)
+    #
+    # def new_run(*args, **kwargs):
+    #     # print("X", self)
+    #     print("NewRunning", *args)
+    #     old_run(*args, **kwargs)
 
-        # keras_session.run = new_run
+    # keras_session.run = new_run
 
 
-# @profile
+# #@profile
 def keras_classify(imgs, opts=None, run_md=None):
     global graph
     with graph.as_default():
@@ -122,7 +113,7 @@ def load_frozen_tensorflow_graph(model):
     if model == "alexnet":
         model_file += "tf_alex.pb"
     elif model == "vgg":
-        model_file += "tf_vgg_frozen.pb"
+        model_file += "tf_vgg.pb"
     elif model == "inception":
         model_file += "tf_inception.pb"
     elif model == "resnet":
@@ -137,13 +128,13 @@ def load_frozen_tensorflow_graph(model):
     return graph
 
 
-# @profile
+# #@profile
 def tf_classify(imgs, opts=None, run_md=None):
     main_sess.run(g_output, options=opts, run_metadata=run_md, feed_dict={g_input: imgs})
 
 
 def time_run(info_string, imgs, fw, model):
-    global run_inference, run_metadata
+    global run_inference, run_metadata, prep_start
     """Run the computation and print timing stats.
 
     Args:
@@ -162,35 +153,47 @@ def time_run(info_string, imgs, fw, model):
     total_process_duration_squared = 0.0
 
     file_name = 'tf_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
-    profiler_file_name = 'profiler_traces/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size)
+    torch_chrome_file_name = 'torch_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
+    dump_profiler_file_name = 'profiler_traces/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.pstats'
 
     pr = cProfile.Profile()
 
+    output_trace = FLAGS.trace
+    print("Output trace: " + str(output_trace))
+
     for i in xrange(FLAGS.num_batches + num_steps_burn_in):
 
-        options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE) if output_trace else None
+        # options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE) if output_trace else None
         # run_metadata = tf.RunMetadata()
 
         start_p_time = time.process_time()
         start_time = time.time()
 
-        if output_trace and fw in {"torch", "pytorch"}:
-            with torch.autograd.profiler.profile() as prof:
-                run_inference(imgs)
-            print(prof)
+        if output_trace:
+            if fw in {"torch", "pytorch"}:
+                with torch.autograd.profiler.profile() as torch_prof:
+                    run_inference(imgs)
+                # print(torch_prof.key_averages())
+                torch_prof.export_chrome_trace(torch_chrome_file_name)
+
+            else:
+                if i >= num_steps_burn_in:
+                    pr.enable()
+
+                # run_inference(imgs, opts=options, run_md=run_metadata)
+                run_inference(imgs)  # , opts=options, run_md=run_metadata)
+
+                if i >= num_steps_burn_in:
+                    pr.disable()
         else:
-            # if i >= num_steps_burn_in:
-            #     pr.enable()
-            run_inference(imgs, opts=options, run_md=run_metadata)
-            # if i >= num_steps_burn_in:
-            #     pr.disable()
+            run_inference(imgs)
 
         duration = time.time() - start_time
         p_duration = time.process_time() - start_p_time
 
         if output_trace:
             fetched_timeline = timeline.Timeline(run_metadata.step_stats)
-            chrome_trace = fetched_timeline.generate_chrome_trace_format()
+            chrome_trace = fetched_timeline.generate_chrome_trace_format(show_dataflow=True, show_memory=False)
 
             with open(file_name, 'w') as f:
                 f.write(chrome_trace)
@@ -204,13 +207,15 @@ def time_run(info_string, imgs, fw, model):
             total_process_duration += p_duration
             total_process_duration_squared += p_duration * p_duration
 
-    # s = io2.StringIO()
-    # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
-    # ps.print_stats()
-    #
-    # print(s.getvalue())
-    # with open(profiler_file_name, 'w') as f:
-    #     f.write(s.getvalue())
+            # if i == 0:
+            #     print(datetime.now(), "Classified first batch, time since start (ms): ",
+            #           int(round_ms(time.time() - prep_start)))
+
+    if output_trace:
+        s = io2.StringIO()
+        ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
+        ps.dump_stats(dump_profiler_file_name)
+        # ps.print_stats()
 
     mn = total_duration / FLAGS.num_batches
     vr = total_duration_squared / FLAGS.num_batches - mn * mn
@@ -251,6 +256,7 @@ def run_benchmark(fw, model):
     time_run(info_string, images, fw, model)
 
 
+# #@profile
 def prepare_benchmark(fw, model):
     global run_inference
 
@@ -269,16 +275,28 @@ def prepare_benchmark(fw, model):
         raise RuntimeError("No framework with this name")
 
 
+# @profile
 def main(_):
+    # pr = cProfile.Profile()
+
+    global prep_start
     model = FLAGS.model.lower()
     framework = FLAGS.framework.lower()
 
-    prep_start = time.time()
+    # prep_start = time.time()
+    # pr.enable()
 
     prepare_benchmark(framework, model)
 
-    prep_end = time.time()
-    print("PREP_TIME (ms)", round_ms(prep_end - prep_start))
+    # pr.disable()
+
+    # s = io2.StringIO()
+    # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
+    # prep_pstats = str(framework) + "_" + str(model) + "_prep.pstats"
+    # ps.dump_stats(prep_pstats)
+    # prep_end = time.time()
+
+    # print("PREP_TIME (ms)", int(round_ms(prep_end - prep_start)))
     run_benchmark(framework, model)
 
 
@@ -308,6 +326,12 @@ def get_argument_parser():
         type=str,
         default="alexnet",
         help='ConvNet model to use'
+    )
+    parser.add_argument(
+        '--trace',
+        type=bool,
+        default=False,
+        help='trace'
     )
     return parser
 

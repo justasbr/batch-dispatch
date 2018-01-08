@@ -43,6 +43,7 @@ def callback_func_higher(i, start_time):
 
 
 def report_stats():
+    global last_packet_time, first_packet_time
     print("COUNT:", TOTAL_RECEIVED)
     time_to_send_all = last_packet_time - first_packet_time
     time_to_send_one = time_to_send_all / TOTAL_RECEIVED
@@ -82,6 +83,7 @@ def main():
     rpyc.BgServingThread.SLEEP_INTERVAL = 0
     rpyc.BgServingThread(conn)
     # tpe.submit(rpyc.BgServingThread, conn)
+
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
     random.shuffle(filenames)
 
@@ -105,7 +107,6 @@ def main():
 
         tpe.submit(send_img, conn, i, raw_data)
         time.sleep(TIME_BETWEEN_REQUESTS)
-    last_packet_time = time.time()
 
     while TOTAL_RECEIVED < TOTAL_SENT:
         time.sleep(0.01)
@@ -116,7 +117,15 @@ def send_img(conn, i, raw_data):
     # print("Sent img", time.time())
     # pr.enable()
     conn.root.RemoteCallbackTest(raw_data, callback_func_higher(i, start_time=time.time()), )
-    # pr.disable()
+
+    if i == 0:
+        global first_packet_time
+        first_packet_time = time.time()
+    if i == (TOTAL_SENT - 1):
+        global last_packet_time
+        last_packet_time = time.time()
+
+        # pr.disable()
 
     # s = io2.StringIO()
     # sortby = 'cumulative'

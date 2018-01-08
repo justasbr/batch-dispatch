@@ -9,9 +9,25 @@ from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
 import numpy as np
 import h5py
+from keras.models import load_model
 
 
 def create_model(model):
+    print("Loading Keras model from a h5 file.")
+    model_folder = "keras_frozen/"
+    if model == "alexnet":
+        return load_model(model_folder + "keras_alexnet.h5", compile=False)
+    elif model == "vgg":
+        return load_model(model_folder + "keras_vgg.h5", compile=False)
+    elif model == "inception":
+        return load_model(model_folder + "keras_inception.h5", compile=False)
+    elif model == "resnet":
+        return load_model(model_folder + "keras_resnet.h5", compile=False)
+    else:
+        raise RuntimeError("No such model exists: " + str(model))
+
+
+def create_model_old(model):
     if model == "alexnet":
         return create_model_alex()
     elif model == "vgg":
