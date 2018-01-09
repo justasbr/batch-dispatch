@@ -40,13 +40,15 @@ def prepare_torch(model):
     model_file = "torch_frozen/torch_" + str(model) + ".out"
 
     net = torch.load(model_file)
+    net.cuda()
     # torch.set_num_threads(4)
     print(net)
 
 
 def torch_classify(imgs, opts=None, run_md=None):
     batch = Variable(torch.from_numpy(imgs))
-    net.forward(batch)
+    r = net.forward(batch.cuda())
+    r.cpu()
 
 
 # #@profile

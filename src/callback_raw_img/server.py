@@ -95,7 +95,7 @@ def prepare_torch(model):
     # elif model == "resnet":
     #     from torch_models.torch_resnet import resnet50
     #     net = resnet50(pretrained=True)  # works
-
+    net.cuda()
     print(net)
 
     transform = torchvision.transforms.ToTensor()
@@ -106,7 +106,7 @@ def torch_classify(imgs):
     # for img in imgs:
     #     img_data.append(Variable(transform(img)))
 
-    img_data = list(map(lambda x: Variable(transform(x)), imgs))
+    img_data = list(map(lambda x: Variable(transform(x)).cuda(), imgs))
 
     # print(img_data)
     # print("Batch", batch)
