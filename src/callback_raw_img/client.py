@@ -12,7 +12,7 @@ import cProfile, pstats, io as io2
 
 # from gprof import GProfiler
 
-tpe = ThreadPoolExecutor(max_workers=2)
+tpe = ThreadPoolExecutor(max_workers=4)
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02

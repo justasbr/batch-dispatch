@@ -1,11 +1,12 @@
+import tensorflow as tf
 import _thread as thread
 import rpyc
 from concurrent.futures import ThreadPoolExecutor
 from rpyc.utils.server import ThreadedServer
 import queue
 import time
-import torch
-import torchvision
+#import torch
+#import torchvision
 from torch.autograd import Variable
 from skimage import io
 import argparse
@@ -13,7 +14,6 @@ import random
 import os
 from utils import round_ms
 import cProfile, pstats, io as io2
-import tensorflow as tf
 from numpy import prod
 import numpy as np
 
@@ -23,6 +23,7 @@ FRAMEWORK = ""
 MODEL = "alexnet"
 
 tpe = ThreadPoolExecutor(max_workers=2)
+tpe_out = ThreadPoolExecutor(max_workers=4)
 
 image_queue = queue.Queue()
 time_q = queue.Queue()
@@ -42,15 +43,7 @@ def prepare_keras(model):
     import models_keras
     global net, graph
 
-    if model == "alexnet":
-        net = models_keras.create_model_alex()
-    elif model == "vgg":
-        net = models_keras.create_model_vgg16()
-    elif model == "inception":
-        net = models_keras.create_model_inception_v3()
-    elif model == "resnet":
-        net = models_keras.create_model_resnet50()
-
+    net = models_keras.create_model(model)
     # net.save('keras_alex2.h5')
     # print("Saved")
 
@@ -77,6 +70,10 @@ def keras_classify(imgs):
 
 
 def prepare_torch(model):
+    global torch
+    global torchvision
+    import torch
+    import torchvision
     print("Preparing Torch")
     global net, transform
 
@@ -119,7 +116,7 @@ def torch_classify(imgs):
 
     # print("Output", output)
     max_val, max_index = torch.max(output, 1)
-    output = max_index.data.numpy()
+    output = max_index.cpu().data.numpy()
 
     return output
 
@@ -313,18 +310,18 @@ def process_and_return(batch_size):
     # ps.print_stats()
     # print(s.getvalue())
 
-    global total_latency, total_done
     for i in range(batch_size):
-        perform_function(callbacks[i], outputs[i])
-
-        curr_latency = time.time() - time_q.get()
-        total_latency += curr_latency
-        total_done += 1
+        #send_response(callbacks[i], outputs[i])
+        tpe_out.submit(send_response, callbacks[i],outputs[i])
 
 
-def perform_function(f, arg):
-    tpe.submit(f, arg)
+def send_response(callback, result):
+    global total_latency, total_done
+    callback(result)
+    curr_latency = time.time() - time_q.get()
 
+    total_done += 1
+    total_latency += curr_latency
 
 def prepare_framework():
     global classify
