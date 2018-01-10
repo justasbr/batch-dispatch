@@ -5,16 +5,14 @@ from concurrent.futures import ThreadPoolExecutor
 from rpyc.utils.server import ThreadedServer
 import queue
 import time
-#import torch
-#import torchvision
 from torch.autograd import Variable
-from skimage import io
+# import os
+# from skimage import io
+# from numpy import prod
 import argparse
 import random
-import os
 from utils import round_ms
 import cProfile, pstats, io as io2
-from numpy import prod
 import numpy as np
 
 BATCH_SIZE = 4
@@ -311,17 +309,16 @@ def process_and_return(batch_size):
     # print(s.getvalue())
 
     for i in range(batch_size):
-        #send_response(callbacks[i], outputs[i])
-        tpe_out.submit(send_response, callbacks[i],outputs[i])
+        tpe_out.submit(send_response, callbacks[i], outputs[i])
 
 
 def send_response(callback, result):
     global total_latency, total_done
     callback(result)
     curr_latency = time.time() - time_q.get()
-
     total_done += 1
     total_latency += curr_latency
+
 
 def prepare_framework():
     global classify

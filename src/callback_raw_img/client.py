@@ -127,11 +127,11 @@ def send_img(conn, i, raw_data):
 
         # pr.disable()
 
-    # s = io2.StringIO()
-    # sortby = 'cumulative'
-    # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
-    # ps.print_stats()
-    # print(s.getvalue())
+        # s = io2.StringIO()
+        # sortby = 'cumulative'
+        # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+        # ps.print_stats()
+        # print(s.getvalue())
 
 
 if __name__ == '__main__':
