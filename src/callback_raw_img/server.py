@@ -48,20 +48,33 @@ def prepare_keras(model):
     graph = tf.get_default_graph()
 
     # Easiest way to make the model build and compute the prediction function
-    net.predict(np.random.randint(0, 256, size=(1, 224, 224, 3), dtype=np.uint8))
-    # net.build()
-    # net.model._make_predict_function()
+    if model in {"inception"}:
+        net.predict((np.random.randint(0, 256, size=(1, 299, 299, 3), dtype=np.uint8) / 255.0).astype(dtype=np.float32))
+    else:
+        net.predict((np.random.randint(0, 256, size=(1, 224, 224, 3), dtype=np.uint8) / 255.0).astype(dtype=np.float32))
+
+        # json_string = net.to_json()
+        # with open("mmdnn/alex.json", "w") as of:
+        #     of.write(json_string)
+        #
+        # net.save_weights('mmdnn/alex.h5')
+        # print("Done!")
+        # net.build()
+        # net.model._make_predict_function()
 
 
 def keras_classify(imgs):
     global graph
     with graph.as_default():
         imgs = np.stack(imgs, axis=0)
+        imgs = (imgs / 255.0).astype(dtype=np.float32)
+
         # try:
         res = net.predict(imgs)
         # except Exception as e:
         #     print(e)
         # print(res)
+
         output = res.argmax(axis=1)
         # print(output)
         return output
@@ -90,9 +103,11 @@ def prepare_torch(model):
     # elif model == "resnet":
     #     from torch_models.torch_resnet import resnet50
     #     net = resnet50(pretrained=True)  # works
-    net.cuda()
-    print(net)
 
+    if torch.cuda.is_available():
+        net.cuda()
+
+    print(net)
     transform = torchvision.transforms.ToTensor()
 
 
@@ -101,44 +116,57 @@ def torch_classify(imgs):
     # for img in imgs:
     #     img_data.append(Variable(transform(img)))
 
-    img_data = list(map(lambda x: Variable(transform(x)).cuda(), imgs))
-
-    # print(img_data)
-    # print("Batch", batch)
+    img_data = list(map(lambda x: Variable(transform(x), requires_grad=False), imgs))
     batch = torch.stack(img_data)
 
+    # batch = batch.permute(0,3,1,2)
+    # print("Batch", batch)
+
     try:
-        output = net.forward(batch)
+        if torch.cuda.is_available():
+            output = net.forward(batch.cuda()).cpu()
+        else:
+            output = net.forward(batch)
     except Exception as e:
         print("Torch_classify failed, err: " + str(e))
 
-    # print("Output", output)
     max_val, max_index = torch.max(output, 1)
-    output = max_index.cpu().data.numpy()
+    output = max_index.data.numpy()
 
     return output
 
 
 def load_frozen_tensorflow_graph(model):
-    model_file = "tf_frozen/"
+    global main_sess, g
+    # saver = tf.train.import_meta_graph('./tmp/model.ckpt-55695.meta')
+    # saver.restore(session, './tmp/model.ckpt-55695')
+
+    model_file = "./tf_frozen/" if model in {"alexnet"} else "tf_frozen/"
 
     if model == "alexnet":
         # model_file += "tf_alexnetOP.pb"
-        model_file += "tf_alex.pb"
-    elif model == "vgg":
-        model_file += "tf_vgg.pb"
-    elif model == "inception":
-        model_file += "tf_inception.pb"
-    elif model == "resnet":
-        model_file += "tf_resnet.pb"
-    print("TF model file", model_file)
+        model_file += "tf_alexnet.ckpt"
 
-    with tf.gfile.GFile(model_file, "rb") as f:
-        graph_def = tf.GraphDef()
-        graph_def.ParseFromString(f.read())
-    with tf.Graph().as_default() as graph:
-        tf.import_graph_def(graph_def, name="main")
-    return graph
+        with tf.Graph().as_default() as g, tf.Session() as sess:
+            saver = tf.train.import_meta_graph(model_file + ".meta")
+            saver.restore(sess, model_file)
+        print("TF model file", model_file)
+    else:
+        if model == "vgg":
+            model_file += "tf_vgg.pb"
+        elif model == "inception":
+            model_file += "tf_inception.pb"
+        elif model == "resnet":
+            model_file += "tf_resnet.pb"
+        print("TF model file", model_file)
+
+        with tf.gfile.GFile(model_file, "rb") as f:
+            graph_def = tf.GraphDef()
+            graph_def.ParseFromString(f.read())
+
+        with tf.Graph().as_default() as g:
+            tf.import_graph_def(graph_def, name="main")
+    return g
 
 
 def prepare_tf(model):
@@ -153,7 +181,12 @@ def prepare_tf(model):
         print(op.name, op.type)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
-    output_tensor_name = g.get_operations()[-1].name + ":0"
+
+    if model in {"alexnet"}:
+        output_tensor_name = "dense_3/BiasAdd:0"
+    else:
+        output_tensor_name = g.get_operations()[-1].name + ":0"
+
     print(input_tensor_name, "<->", output_tensor_name)
 
     with g.as_default():
@@ -177,7 +210,9 @@ def prepare_tf(model):
 
     main_sess = tf.Session(graph=g)
     main_sess.run(init_global)
-    main_sess.run(g_output, feed_dict={g_input: (np.random.randint(0, 200, size=(1, 224, 224, 3)))})
+    main_sess.run(g_output,
+                  feed_dict={
+                      g_input: (np.random.randint(0, 255, size=(1, 224, 224, 3)) / 255.0).astype(dtype=np.float32)})
 
 
 def tf_classify(imgs):
@@ -188,6 +223,8 @@ def tf_classify(imgs):
     # img_data[i] = img
 
     imgs = np.stack(imgs, axis=0)
+
+    imgs = (imgs / 255.0).astype(dtype=np.float32)
 
     result = main_sess.run(g_output, feed_dict={g_input: imgs})
     # print(result)
@@ -221,6 +258,7 @@ class MyService(rpyc.Service):
         elems = int(img.shape[0])
         dim = int((elems / 3) ** 0.5)
         img = img.reshape(dim, dim, 3)
+        # print(img)
         image_queue.put((img, callback))
         t = time.time()
         # print("GOT", round_ms(t) % 10000)

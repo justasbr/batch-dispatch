@@ -85,7 +85,9 @@ def main():
     # tpe.submit(rpyc.BgServingThread, conn)
 
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
-    random.shuffle(filenames)
+    #random.shuffle(filenames)
+
+    np.random.seed(100)
 
     t1 = time.time()
     first_packet_time = time.time()
@@ -100,6 +102,7 @@ def main():
             # print(img_numpy.shape)
         else:
             file_name = filenames[i]
+            print(file_name)
             img_numpy = io.imread(file_name)
             # print(img_numpy)
 
