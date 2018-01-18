@@ -16,7 +16,8 @@ def create_model(model):
     print("Loading Keras model from a h5 file.")
     model_folder = "keras_frozen/"
     if model == "alexnet":
-        return load_model(model_folder + "keras_alexnet.h5", compile=False)
+        return create_model_alex()
+        # return load_model(model_folder + "keras_alexnet.h5", compile=False)
     elif model == "vgg":
         return load_model(model_folder + "keras_vgg.h5", compile=False)
     elif model == "inception":
@@ -79,7 +80,9 @@ def create_model_alex():
     model.add(Activation('relu'))
 
     model.add(Dense(1000, kernel_initializer="normal", use_bias=True))
-    # model.add(Activation('softmax'))
+    model.add(Activation('softmax'))
+
+    model.load_weights('keras_frozen/keras_alexnet_weights.h5')
 
     print(model.summary())
 

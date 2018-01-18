@@ -87,7 +87,9 @@ def main():
     #tpe.submit(rpyc.BgServingThread, conn)
 
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
-    random.shuffle(filenames)
+    #random.shuffle(filenames)
+
+    np.random.seed(100)
 
     t1 = time.time()
     first_packet_time = time.time()
@@ -102,6 +104,7 @@ def main():
             # print(img_numpy.shape)
         else:
             file_name = filenames[i]
+            print(file_name)
             img_numpy = io.imread(file_name)
             # print(img_numpy)
 
@@ -131,11 +134,11 @@ def send_img(conn, i, raw_data):
 
         # pr.disable()
 
-    # s = io2.StringIO()
-    # sortby = 'cumulative'
-    # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
-    # ps.print_stats()
-    # print(s.getvalue())
+        # s = io2.StringIO()
+        # sortby = 'cumulative'
+        # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+        # ps.print_stats()
+        # print(s.getvalue())
 
 
 if __name__ == '__main__':

@@ -2,28 +2,22 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import tensorflow as tf
 import argparse
-import cProfile, pstats, io as io2
-
-from datetime import datetime
+import cProfile
+import io as io2
 import math
+import pstats
 import sys
 import time
+from datetime import datetime
 
-import gc
 import numpy as np
-from torch.autograd import Variable
+import tensorflow as tf
 import torch
-from tensorflow.python.client import timeline
-
-from six.moves import xrange
-
-import torchvision
-from memory_profiler import profile
-
 from keras import backend as K
-
+from six.moves import xrange
+from tensorflow.python.client import timeline
+from torch.autograd import Variable
 from utils import get_image_size, round_ms
 
 FLAGS = None
@@ -40,15 +34,19 @@ def prepare_torch(model):
     model_file = "torch_frozen/torch_" + str(model) + ".out"
 
     net = torch.load(model_file)
-    net.cuda()
+    if torch.cuda.is_available():
+        net.cuda()
     # torch.set_num_threads(4)
     print(net)
 
 
 def torch_classify(imgs, opts=None, run_md=None):
-    batch = Variable(torch.from_numpy(imgs))
-    r = net.forward(batch.cuda())
-    r.cpu()
+    batch = Variable(torch.from_numpy(imgs), requires_grad=False)
+    if torch.cuda.is_available():
+        r = net.forward(batch.cuda())
+        r.cpu()
+    else:
+        net.forward(batch)
 
 
 # #@profile
@@ -58,6 +56,7 @@ def prepare_keras(model):
     global net, graph
 
     net = models_keras.create_model(model)
+    net.summary()
 
     graph = tf.get_default_graph()
     keras_session = K.get_session()
@@ -92,7 +91,13 @@ def prepare_tf(model):
     g = load_frozen_tensorflow_graph(model)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
-    output_tensor_name = g.get_operations()[-1].name + ":0"
+    if model in {"alexnet"}:
+        output_tensor_name = "dense_3/BiasAdd:0"
+    else:
+        output_tensor_name = g.get_operations()[-1].name + ":0"
+
+    print("I:", input_tensor_name)
+    print("O:", output_tensor_name)
 
     with g.as_default():
         g_input = g.get_tensor_by_name(input_tensor_name)
@@ -110,24 +115,36 @@ def prepare_tf(model):
 
 
 def load_frozen_tensorflow_graph(model):
-    model_file = "tf_frozen/"
+    global main_sess, g
+    # saver = tf.train.import_meta_graph('./tmp/model.ckpt-55695.meta')
+    # saver.restore(session, './tmp/model.ckpt-55695')
+
+    model_file = "./tf_frozen/" if model in {"alexnet"} else "tf_frozen/"
 
     if model == "alexnet":
-        model_file += "tf_alex.pb"
-    elif model == "vgg":
-        model_file += "tf_vgg.pb"
-    elif model == "inception":
-        model_file += "tf_inception.pb"
-    elif model == "resnet":
-        model_file += "tf_resnet.pb"
-    print("TF model file", model_file)
+        # model_file += "tf_alexnetOP.pb"
+        model_file += "tf_alexnet.ckpt"
 
-    with tf.gfile.GFile(model_file, "rb") as f:
-        graph_def = tf.GraphDef()
-        graph_def.ParseFromString(f.read())
-    with tf.Graph().as_default() as graph:
-        tf.import_graph_def(graph_def, name="main")
-    return graph
+        with tf.Graph().as_default() as g, tf.Session() as sess:
+            saver = tf.train.import_meta_graph(model_file + ".meta")
+            saver.restore(sess, model_file)
+        print("TF model file", model_file)
+    else:
+        if model == "vgg":
+            model_file += "tf_vgg.pb"
+        elif model == "inception":
+            model_file += "tf_inception.pb"
+        elif model == "resnet":
+            model_file += "tf_resnet.pb"
+        print("TF model file", model_file)
+
+        with tf.gfile.GFile(model_file, "rb") as f:
+            graph_def = tf.GraphDef()
+            graph_def.ParseFromString(f.read())
+
+        with tf.Graph().as_default() as g:
+            tf.import_graph_def(graph_def, name="main")
+    return g
 
 
 # #@profile
@@ -156,7 +173,7 @@ def time_run(info_string, imgs, fw, model):
 
     file_name = 'tf_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
     torch_chrome_file_name = 'torch_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
-    dump_profiler_file_name = 'profiler_traces/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.pstats'
+    dump_profiler_file_name = 'profiler_traces_NEW/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.pstats'
 
     pr = cProfile.Profile()
 
@@ -172,21 +189,21 @@ def time_run(info_string, imgs, fw, model):
         start_time = time.time()
 
         if output_trace:
+            if i >= num_steps_burn_in:
+                pr.enable()
+
             if fw in {"torch", "pytorch"}:
-                with torch.autograd.profiler.profile() as torch_prof:
-                    run_inference(imgs)
+                # with torch.autograd.profiler.profile() as torch_prof:
+                run_inference(imgs)
                 # print(torch_prof.key_averages())
-                torch_prof.export_chrome_trace(torch_chrome_file_name)
+                # torch_prof.export_chrome_trace(torch_chrome_file_name)
 
             else:
-                if i >= num_steps_burn_in:
-                    pr.enable()
-
                 # run_inference(imgs, opts=options, run_md=run_metadata)
                 run_inference(imgs)  # , opts=options, run_md=run_metadata)
 
-                if i >= num_steps_burn_in:
-                    pr.disable()
+            if i >= num_steps_burn_in:
+                pr.disable()
         else:
             run_inference(imgs)
 
@@ -209,15 +226,15 @@ def time_run(info_string, imgs, fw, model):
             total_process_duration += p_duration
             total_process_duration_squared += p_duration * p_duration
 
-            # if i == 0:
-            #     print(datetime.now(), "Classified first batch, time since start (ms): ",
-            #           int(round_ms(time.time() - prep_start)))
+        if i == 0:
+            print(datetime.now(), "Classified first batch, time since start (ms): ",
+                  int(round_ms(time.time() - prep_start)))
 
     if output_trace:
-        s = io2.StringIO()
-        ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
-        ps.dump_stats(dump_profiler_file_name)
+        # s = io2.StringIO()
+        ps = pstats.Stats(pr).sort_stats("cumulative")
         # ps.print_stats()
+        ps.dump_stats(dump_profiler_file_name)
 
     mn = total_duration / FLAGS.num_batches
     vr = total_duration_squared / FLAGS.num_batches - mn * mn
@@ -236,6 +253,8 @@ def time_run(info_string, imgs, fw, model):
 def generate_dummy_images(fw, batch_size, image_size):
     if fw in {"torch", "pytorch"}:
         images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.
+    # elif True:
+    #     images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.  # tmp
     elif fw in {"tensorflow", "tf", "keras"}:
         images = np.random.randint(256, size=(batch_size, image_size, image_size, 3)) / 255.
     else:
@@ -279,27 +298,39 @@ def prepare_benchmark(fw, model):
 
 # @profile
 def main(_):
-    # pr = cProfile.Profile()
+    pr = cProfile.Profile()
 
     global prep_start
     model = FLAGS.model.lower()
     framework = FLAGS.framework.lower()
 
-    # prep_start = time.time()
+    prep_start = time.time()
     # pr.enable()
 
     prepare_benchmark(framework, model)
 
     # pr.disable()
 
-    # s = io2.StringIO()
-    # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
-    # prep_pstats = str(framework) + "_" + str(model) + "_prep.pstats"
-    # ps.dump_stats(prep_pstats)
+
     # prep_end = time.time()
 
     # print("PREP_TIME (ms)", int(round_ms(prep_end - prep_start)))
+
+    # pr.enable()
     run_benchmark(framework, model)
+    # pr.disable()
+
+    # s = io2.StringIO()
+    # ps = pstats.Stats(pr).sort_stats("cumulative")
+    # ps.print_stats()
+    # print("AYO")
+
+    # ps.print_stats()
+    # print(ps)
+    # ps.print_stats(10)
+    # prep_pstats = str(framework) + "_" + str(model) + "_prep.pstats"
+    # print(ps)
+    # ps.dump_stats(prep_pstats)
 
 
 def get_argument_parser():
