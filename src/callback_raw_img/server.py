@@ -5,14 +5,12 @@ from concurrent.futures import ThreadPoolExecutor
 from rpyc.utils.server import ThreadedServer
 import queue
 import time
-#import torch
-#import torchvision
 from torch.autograd import Variable
 from skimage import io
 import argparse
 import random
 import os
-from utils import round_ms
+from utils import round_ms,get_image_size
 import cProfile, pstats, io as io2
 from numpy import prod
 import numpy as np
@@ -22,13 +20,15 @@ BATCH_TIMEOUT = 0.1
 FRAMEWORK = ""
 MODEL = "alexnet"
 
-tpe = ThreadPoolExecutor(max_workers=2)
-tpe_out = ThreadPoolExecutor(max_workers=4)
+tpe_in = ThreadPoolExecutor(max_workers=8)
+#tpe_out = tpe
+tpe_out = ThreadPoolExecutor(max_workers=None)
 
 image_queue = queue.Queue()
 time_q = queue.Queue()
 
 total_latency = 0.0
+count_lat = 0 
 total_done = 0
 
 total_classification_time = 0
@@ -36,6 +36,17 @@ classification_batches = 0
 
 global classify, t1
 graph = None
+
+def generate_dummy_images(fw, batch_size, image_size):
+    if fw in {"torch", "pytorch"}:
+        images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.
+    elif fw in {"tensorflow", "tf", "keras"}:
+        images = np.random.randint(256, size=(batch_size, image_size, image_size, 3)) / 255.
+    else:
+        raise RuntimeError("Mock images not defined for framework: " + str(fw))
+
+    print("Images shape", images.shape)
+    return images.astype(np.float32)
 
 
 def prepare_keras(model):
@@ -75,7 +86,7 @@ def prepare_torch(model):
     import torch
     import torchvision
     print("Preparing Torch")
-    global net, transform
+    global net
 
     model_file = "torch_frozen/torch_" + str(model) + ".out"
 
@@ -94,15 +105,14 @@ def prepare_torch(model):
     #     net = resnet50(pretrained=True)  # works
     net.cuda()
     print(net)
-
-    transform = torchvision.transforms.ToTensor()
+    image_size = get_image_size(model)
+    # Generate one dummy img.
+    images = generate_dummy_images("torch", 1, image_size)
+    net.forward(Variable(torch.from_numpy(images)).cuda())
 
 
 def torch_classify(imgs):
-    # img_data = []
-    # for img in imgs:
-    #     img_data.append(Variable(transform(img)))
-
+    transform = torchvision.transforms.ToTensor()
     img_data = list(map(lambda x: Variable(transform(x)).cuda(), imgs))
 
     # print(img_data)
@@ -151,8 +161,8 @@ def prepare_tf(model):
 
     g = load_frozen_tensorflow_graph(model)
 
-    for op in g.get_operations():
-        print(op.name, op.type)
+    #for op in g.get_operations():
+    #    print(op.name, op.type)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
     output_tensor_name = g.get_operations()[-1].name + ":0"
@@ -179,7 +189,10 @@ def prepare_tf(model):
 
     main_sess = tf.Session(graph=g)
     main_sess.run(init_global)
-    main_sess.run(g_output, feed_dict={g_input: (np.random.randint(0, 200, size=(1, 224, 224, 3)))})
+
+    image_size = get_image_size(model)
+    dummy_images = generate_dummy_images("tf", BATCH_SIZE, image_size)
+    main_sess.run(g_output, feed_dict={g_input: dummy_images})
 
 
 def tf_classify(imgs):
@@ -212,11 +225,10 @@ class MyService(rpyc.Service):
         print("Executive connected", thread.get_ident())
 
     def on_disconnect(self):
-        global total_latency, total_done
+        global total_latency, count_lat
         print("Executive has disconnected...")
-        print("Total latency (server side)", total_latency)
-        print("Toral done", total_done)
-        print("Avg latency server side (ms)", round_ms(total_latency / total_done))
+        print("count_lat=", count_lat)
+        print("Avg latency server side (ms)", round_ms(total_latency / count_lat))
 
     def exposed_RemoteCallbackTest(self, raw_img, callback):
         img = np.fromstring(raw_img, dtype=np.uint8)
@@ -301,9 +313,10 @@ def process_and_return(batch_size):
     total_classification_time += classify_time
     classification_batches += 1
 
-    print("batch=" + str(batch_size) +
-          ", took (ms) " + str(round_ms(classify_time)) +
-          ", avg (ms) " + str(round_ms(total_classification_time / classification_batches)))
+    if not classification_batches % 20:
+        print("batch=" + str(batch_size) +
+              ", took (ms) " + str(round_ms(classify_time)) +
+              ", avg (ms) " + str(round_ms(total_classification_time / classification_batches)))
 
     # s = io2.StringIO()
     # ps = pstats.Stats(pr, stream=s).sort_stats("cumulative")
@@ -316,12 +329,15 @@ def process_and_return(batch_size):
 
 
 def send_response(callback, result):
-    global total_latency, total_done
-    callback(result)
+    global total_latency, count_lat, total_done
     curr_latency = time.time() - time_q.get()
 
     total_done += 1
-    total_latency += curr_latency
+    if total_done > 50:
+        count_lat += 1
+        total_latency += curr_latency
+    #print("S",end="")
+    callback(result)
 
 def prepare_framework():
     global classify
@@ -351,6 +367,5 @@ if __name__ == '__main__':
     my_service = ThreadedServer(MyService, port=1200,
                                 protocol_config={"allow_public_attrs": True})
     print("Waiting for a connection...")
-    tpe.submit(run_job_batcher)
+    tpe_in.submit(run_job_batcher)
     my_service.start()
-    # tpe.submit(my_service.start)

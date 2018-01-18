@@ -10,9 +10,10 @@ from utils import round_ms
 from concurrent.futures import ThreadPoolExecutor
 import cProfile, pstats, io as io2
 
-# from gprof import GProfiler
 
-tpe = ThreadPoolExecutor(max_workers=4)
+tpe = ThreadPoolExecutor(max_workers=None)
+#print(tpe)
+tpe_out = ThreadPoolExecutor(max_workers=15)
 
 TOTAL_SENT = 500
 TIME_BETWEEN_REQUESTS = 0.02
@@ -33,9 +34,10 @@ def callback_func_higher(i, start_time):
         latency = time.time() - start_time
 
         moving_latency_average = ALPHA * moving_latency_average + (1 - ALPHA) * latency
-        print("GOT " + str(i) + " c: " + str(x) +
-              " LAT: " + str(round_ms(latency)) +
-              " Moving LAT avg:" + str(round_ms(moving_latency_average)))
+        if not i % 100:
+            print("GOT " + str(i) + " c: " + str(x) +
+                  " LAT: " + str(round_ms(latency)) +
+                  " Moving LAT avg:" + str(round_ms(moving_latency_average)))
         total_latency += latency
         TOTAL_RECEIVED += 1
 
@@ -82,7 +84,7 @@ def main():
     conn = rpyc.connect(host, port)
     rpyc.BgServingThread.SLEEP_INTERVAL = 0
     rpyc.BgServingThread(conn)
-    # tpe.submit(rpyc.BgServingThread, conn)
+    #tpe.submit(rpyc.BgServingThread, conn)
 
     filenames = glob.glob("/Users/justas/PycharmProjects/ugproject/img/*.jpg")  # assuming gif
     random.shuffle(filenames)
@@ -91,8 +93,8 @@ def main():
     first_packet_time = time.time()
     for i in range(TOTAL_SENT):
         t2 = time.time()
-        if not ((i + 1) % 50):
-            print("SENT", i, t2 - t1)
+        #if not ((i + 1) % 50):
+        #    print("SENT", i, t2 - t1)
         t1 = t2
 
         if IMG_SIZE is not None:
@@ -105,7 +107,7 @@ def main():
 
         raw_data = img_numpy.tobytes()
 
-        tpe.submit(send_img, conn, i, raw_data)
+        tpe_out.submit(send_img, conn, i, raw_data)
         time.sleep(TIME_BETWEEN_REQUESTS)
 
     while TOTAL_RECEIVED < TOTAL_SENT:
@@ -114,9 +116,11 @@ def main():
 
 
 def send_img(conn, i, raw_data):
+    conn.root.RemoteCallbackTest(raw_data, callback_func_higher(i, start_time=time.time()), )
+    if not i % 50:
+        print("SENT\t" +  str(i) + " " + str(time.time()))
     # print("Sent img", time.time())
     # pr.enable()
-    conn.root.RemoteCallbackTest(raw_data, callback_func_higher(i, start_time=time.time()), )
 
     if i == 0:
         global first_packet_time
