@@ -1,0 +1,10 @@
+Framework	tf
+Model____	inception
+Bsize____	6
+TP (Img/s)	109.67
+99pct LAT	0.0562
+90pct LAT	0.0549
+
+75pct LAT	0.0548
+50pct LAT	0.0547
+ 

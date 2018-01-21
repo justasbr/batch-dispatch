@@ -1,0 +1,10 @@
+Framework	torch
+Model____	resnet
+Bsize____	5
+TP (Img/s)	166.94
+99pct LAT	0.0309
+90pct LAT	0.0300
+
+75pct LAT	0.0299
+50pct LAT	0.0299
+ 

@@ -1,0 +1,10 @@
+Framework	keras
+Model____	resnet
+Bsize____	6
+TP (Img/s)	98.46
+99pct LAT	0.0637
+90pct LAT	0.0616
+
+75pct LAT	0.0612
+50pct LAT	0.0609
+ 

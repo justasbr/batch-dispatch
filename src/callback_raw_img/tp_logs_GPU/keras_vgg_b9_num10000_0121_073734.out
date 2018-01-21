@@ -1,0 +1,10 @@
+Framework	keras
+Model____	vgg
+Bsize____	9
+TP (Img/s)	85.45
+99pct LAT	0.1265
+90pct LAT	0.1144
+
+75pct LAT	0.1091
+50pct LAT	0.1063
+ 
