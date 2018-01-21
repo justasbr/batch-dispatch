@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+#from memory_profiler import profile
 import argparse
 import cProfile
 import io as io2
@@ -61,9 +62,6 @@ def prepare_keras(model):
     graph = tf.get_default_graph()
     keras_session = K.get_session()
 
-    # if FLAGS.trace:
-    # run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-    # net.compile(loss='MSE', optimizer='Adam', options=run_options, run_metadata=run_metadata)
 
     # old_run = keras_session.run
     # print("old_run", old_run)
@@ -171,10 +169,11 @@ def time_run(info_string, imgs, fw, model):
     total_process_duration = 0.0
     total_process_duration_squared = 0.0
 
-    file_name = 'tf_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
-    torch_chrome_file_name = 'torch_traces/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
-    dump_profiler_file_name = 'profiler_traces_NEW/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.pstats'
+    file_name = 'tf_traces_GPU/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
+    torch_chrome_file_name = 'torch_traces_GPU/batch_' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.json'
+    dump_profiler_file_name = 'profiler_traces_GPU/' + str(fw) + "_" + str(model) + str(FLAGS.batch_size) + '.pstats'
 
+    chrome = True
     pr = cProfile.Profile()
 
     output_trace = FLAGS.trace
@@ -182,27 +181,31 @@ def time_run(info_string, imgs, fw, model):
 
     for i in xrange(FLAGS.num_batches + num_steps_burn_in):
 
-        # options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE) if output_trace else None
-        # run_metadata = tf.RunMetadata()
+        options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE) if output_trace else None
+        run_metadata = tf.RunMetadata()
 
         start_p_time = time.process_time()
         start_time = time.time()
 
         if output_trace:
-            if i >= num_steps_burn_in:
+            if not chrome and i >= num_steps_burn_in:
                 pr.enable()
 
             if fw in {"torch", "pytorch"}:
-                # with torch.autograd.profiler.profile() as torch_prof:
-                run_inference(imgs)
-                # print(torch_prof.key_averages())
-                # torch_prof.export_chrome_trace(torch_chrome_file_name)
-
+                if chrome:
+                    with torch.autograd.profiler.profile() as torch_prof:
+                        run_inference(imgs)
+                    # print(torch_prof.key_averages())
+                    torch_prof.export_chrome_trace(torch_chrome_file_name)
+                else:
+                    run_inference(imgs)
             else:
-                # run_inference(imgs, opts=options, run_md=run_metadata)
-                run_inference(imgs)  # , opts=options, run_md=run_metadata)
+                if chrome:
+                    run_inference(imgs, opts=options, run_md=run_metadata)
+                else:
+                    run_inference(imgs)  # , opts=options, run_md=run_metadata)
 
-            if i >= num_steps_burn_in:
+            if not chrome and i >= num_steps_burn_in:
                 pr.disable()
         else:
             run_inference(imgs)
@@ -210,10 +213,10 @@ def time_run(info_string, imgs, fw, model):
         duration = time.time() - start_time
         p_duration = time.process_time() - start_p_time
 
-        if output_trace:
+        if chrome and output_trace:
             fetched_timeline = timeline.Timeline(run_metadata.step_stats)
             chrome_trace = fetched_timeline.generate_chrome_trace_format(show_dataflow=True, show_memory=False)
-
+        
             with open(file_name, 'w') as f:
                 f.write(chrome_trace)
 
@@ -230,7 +233,7 @@ def time_run(info_string, imgs, fw, model):
             print(datetime.now(), "Classified first batch, time since start (ms): ",
                   int(round_ms(time.time() - prep_start)))
 
-    if output_trace:
+    if not chrome and output_trace:
         # s = io2.StringIO()
         ps = pstats.Stats(pr).sort_stats("cumulative")
         # ps.print_stats()
@@ -244,7 +247,7 @@ def time_run(info_string, imgs, fw, model):
     var_process = total_process_duration_squared / FLAGS.num_batches - mean_process * mean_process
     sd_process = math.sqrt(var_process)
 
-    print('%s: %s across %d steps (WALL TIME), %.3f +/- %.3f sec / batch' %
+    print('%s: %s across %d steps (WALL TIME), %.4f +/- %.4f sec / batch' %
           (datetime.now(), info_string, FLAGS.num_batches, mn, sd))
     print('%s: PROCESS_TIME: %.3f +/- %.3f sec / batch' %
           (datetime.now(), mean_process, sd_process))
@@ -253,8 +256,6 @@ def time_run(info_string, imgs, fw, model):
 def generate_dummy_images(fw, batch_size, image_size):
     if fw in {"torch", "pytorch"}:
         images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.
-    # elif True:
-    #     images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.  # tmp
     elif fw in {"tensorflow", "tf", "keras"}:
         images = np.random.randint(256, size=(batch_size, image_size, image_size, 3)) / 255.
     else:
@@ -306,30 +307,19 @@ def main(_):
 
     prep_start = time.time()
     # pr.enable()
-
     prepare_benchmark(framework, model)
-
     # pr.disable()
 
 
     # prep_end = time.time()
-
     # print("PREP_TIME (ms)", int(round_ms(prep_end - prep_start)))
 
-    # pr.enable()
     run_benchmark(framework, model)
-    # pr.disable()
 
     # s = io2.StringIO()
     # ps = pstats.Stats(pr).sort_stats("cumulative")
     # ps.print_stats()
-    # print("AYO")
-
-    # ps.print_stats()
-    # print(ps)
-    # ps.print_stats(10)
     # prep_pstats = str(framework) + "_" + str(model) + "_prep.pstats"
-    # print(ps)
     # ps.dump_stats(prep_pstats)
 
 
