@@ -15,7 +15,7 @@ import uff
 
 OUTPUT_NAMES = ["predictions/Softmax"]
 BATCH_SIZE = 1
-PB_DIR = "../tf_frozen/"
+PB_DIR = "./tf_frozen/"
 uff_model = uff.from_tensorflow_frozen_model(PB_DIR + "tf_vgg.pb", OUTPUT_NAMES)
 G_LOGGER = trt.infer.ConsoleLogger(trt.infer.LogSeverity.ERROR)
 
@@ -44,8 +44,7 @@ d_output = cuda.mem_alloc(BATCH_SIZE * output.size * output.dtype.itemsize)
 bindings = [int(d_input), int(d_output)]
 stream = cuda.Stream()
 
-def infer():
-    global img
+def infer(img):
     #transfer input data to device
     cuda.memcpy_htod_async(d_input, img, stream)
     #execute model
@@ -54,11 +53,11 @@ def infer():
     cuda.memcpy_dtoh_async(output, d_output, stream)
     #syncronize threads
     stream.synchronize()
-for i in range(1000):
-    img = np.random.randint(256, size=(3, 224, 224)) / 255.
-    img = img.astype(np.float32)
-    start = time.time()
-    infer()
-    end = time.time()
-    print("Test vs Pred: " + str(label) + " " + str(np.argmax(output)))
-    print("Ran for: " + str(1000 * (end-start)) + " ms")
+    return output
+#    img = np.random.randint(256, size=(3, 224, 224)) / 255.
+#    img = img.astype(np.float32)
+#    start = time.time()
+#    infer(img, output)
+#    end = time.time()
+#    print("Test vs Pred: " + str(label) + " " + str(np.argmax(output)))
+#    print("Ran for: " + str(1000 * (end-start)) + " ms")

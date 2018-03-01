@@ -14,7 +14,7 @@ import os
 import uff
 
 OUTPUT_NAMES = ["predictions/Softmax"]
-PB_DIR =  "../tf_frozen/"
+PB_DIR =  "./tf_frozen/"
 uff_model = uff.from_tensorflow_frozen_model(PB_DIR + "tf_inception.pb", OUTPUT_NAMES)
 G_LOGGER = trt.infer.ConsoleLogger(trt.infer.LogSeverity.ERROR)
 
@@ -54,7 +54,7 @@ stream.synchronize()
 print("Test Case: " + str(label))
 print ("Prediction: " + str(np.argmax(output)))
 
-def infer():
+def infer(img):
     #transfer input data to device
     cuda.memcpy_htod_async(d_input, img, stream)
     #execute model
@@ -63,20 +63,21 @@ def infer():
     cuda.memcpy_dtoh_async(output, d_output, stream)
     #syncronize threads
     stream.synchronize()
+    return output
 
-RUNS = 1000
-total_run_time = 0
+#RUNS = 1000
+#total_run_time = 0
 
-for i in range(1000):
-    img = np.random.randint(256, size=(3, 299, 299)) / 255.
-    img = img.astype(np.float32)
-    start = time.time()
-    infer()
-    end = time.time()
-
-    run_time = end-start
-    total_run_time += run_time
-    print("Test vs Pred: " + str(label) + " " + str(np.argmax(output)))
-    print("Ran for: " + str(1000 * (end-start)) + " ms")
-print("Done.")
-print("Avg: " + str(1000 * (total_run_time / RUNS)) + " ms")
+#for i in range(1000):
+#    img = np.random.randint(256, size=(3, 299, 299)) / 255.
+#    img = img.astype(np.float32)
+#    start = time.time()
+#  infer(img, output)
+#   end = time.time()
+#
+#    run_time = end-start
+#  total_run_time += run_time
+#   print("Test vs Pred: " + str(label) + " " + str(np.argmax(output)))
+#    print("Ran for: " + str(1000 * (end-start)) + " ms")
+#print("Done.")
+#print("Avg: " + str(1000 * (total_run_time / RUNS)) + " ms")
