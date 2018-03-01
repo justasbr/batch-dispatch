@@ -7,7 +7,8 @@ def get_inference_handle(model, batch_size):
     if model not in {"alexnet","vgg","resnet","inception"}:
         raise Exception("TRT did not have model:" +model)
     if model == "alexnet":
-        from tensorRT.alexnet import infer
+        from tensorRT.alexnet import create_infer
+        infer = create_infer(batch_size)
     elif model == "vgg":
         from tensorRT.vgg import infer
     elif model == "resnet":

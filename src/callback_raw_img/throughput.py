@@ -87,7 +87,7 @@ def prepare_tf(model):
     g = load_frozen_tensorflow_graph(model)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
-    if model in {"alexnet"}:
+    if model in {"alexnet____"}:
         output_tensor_name = "dense_3/BiasAdd:0"
     else:
         output_tensor_name = g.get_operations()[-1].name + ":0"
@@ -115,9 +115,9 @@ def load_frozen_tensorflow_graph(model):
     # saver = tf.train.import_meta_graph('./tmp/model.ckpt-55695.meta')
     # saver.restore(session, './tmp/model.ckpt-55695')
 
-    model_file = "./tf_frozen/" if model in {"alexnet"} else "tf_frozen/"
+    model_file = "./tf_frozen/" if model in {"____alexnet"} else "tf_frozen/"
 
-    if model == "alexnet":
+    if model == "____alexnet":
         model_file += "tf_alexnet.ckpt"
 
         with tf.Graph().as_default() as g, tf.Session() as sess:
@@ -125,6 +125,8 @@ def load_frozen_tensorflow_graph(model):
             saver.restore(sess, model_file)
         print("TF model file", model_file)
     else:
+        if model == "alexnet":
+            model_file += "tf_alex.pb"
         if model == "vgg":
             model_file += "tf_vgg.pb"
         elif model == "inception":
@@ -158,7 +160,7 @@ def time_run(info_string, imgs, fw, model):
     Returns:
       None
     """
-    num_steps_burn_in = 25
+    num_steps_burn_in = 100
     total_duration = 0.0
     total_duration_squared = 0.0
 
@@ -277,7 +279,7 @@ def get_argument_parser():
         help='Batch size.'
     )
     parser.add_argument(
-        '--num_batches',
+        '--num_batches','-n',
         type=int,
         default=1000,
         help='Number of batches to run.'
