@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-#from memory_profiler import profile
+# from memory_profiler import profile
 import argparse
 import cProfile
 import io as io2
@@ -20,7 +20,6 @@ from six.moves import xrange
 from tensorflow.python.client import timeline
 from torch.autograd import Variable
 from utils import get_image_size, round_ms
-import trt
 
 FLAGS = None
 g = None
@@ -38,8 +37,7 @@ def prepare_torch(model):
     net = torch.load(model_file)
     if torch.cuda.is_available():
         net.cuda()
-    
-    #torch.set_num_threads(1)
+
     print(net)
 
 
@@ -56,22 +54,21 @@ def torch_classify(imgs, opts=None, run_md=None):
 def prepare_keras(model):
     print("Preparing Keras")
     import models_keras
-    global run_metadata, net, graph,run_options
-   
+    global run_metadata, net, graph, run_options
+
     K.set_learning_phase(False)
-    
+
     graph = tf.get_default_graph()
-    keras_sess = tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1  ))
+    keras_sess = tf.Session(config=tf.ConfigProto()) #intra_op_parallelism_threads=1, inter_op_parallelism_threads=1))
     run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
     run_metadata = tf.RunMetadata()
-    
-    K.set_session(keras_sess) #keras_session = K.get_session()
-    
+
+    K.set_session(keras_sess)  # keras_session = K.get_session()
+
     net = models_keras.create_model(model)
     assert net.uses_learning_phase == False
     # net.compile(loss="MSE",optimizer="SGD", options=run_options, run_metadata=run_metadata)
-    #net.summary()
-    
+    # net.summary()
 
 
 # #@profile
@@ -102,7 +99,7 @@ def prepare_tf(model):
 
         init_global = tf.global_variables_initializer()
 
-    config = tf.ConfigProto( intra_op_parallelism_threads=1 , inter_op_parallelism_threads=1)
+    config = tf.ConfigProto() #intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
 
     # Not relevant for non-GPU
     # config.gpu_options.allocator_type = 'BFC'
@@ -114,32 +111,24 @@ def prepare_tf(model):
 def load_frozen_tensorflow_graph(model):
     global main_sess, g
 
-    model_file = "./tf_frozen/" if model in {"alexnet___"} else "tf_frozen/"
+    model_file = "tf_frozen/"
 
-    if model == "alexnet___":
-        model_file += "tf_alexnet.ckpt"
+    if model == "vgg":
+        model_file += "tf_vgg.pb"
+    elif model == "inception":
+        model_file += "tf_inception.pb"
+    elif model == "resnet":
+        model_file += "tf_resnet.pb"
+    elif model == "alexnet":
+        model_file += "tf_alex.pb"
+    print("TF model file", model_file)
 
-        #with tf.Graph().as_default() as g, tf.Session(config=tf.ConfigProto()) as sess: #intra_op_parallelism_threads=1 , inter_op_parallelism_threads=1)) as sess:
-        #    saver = tf.train.import_meta_graph(model_file + ".meta")
-        #    saver.restore(sess, model_file)
-        #print("TF model file", model_file)
-    else:
-        if model == "vgg":
-            model_file += "tf_vgg.pb"
-        elif model == "inception":
-            model_file += "tf_inception.pb"
-        elif model == "resnet":
-            model_file += "tf_resnet.pb"
-        elif model == "alexnet":
-            model_file += "tf_alex.pb"
-        print("TF model file", model_file)
+    with tf.gfile.GFile(model_file, "rb") as f:
+        graph_def = tf.GraphDef()
+        graph_def.ParseFromString(f.read())
 
-        with tf.gfile.GFile(model_file, "rb") as f:
-            graph_def = tf.GraphDef()
-            graph_def.ParseFromString(f.read())
-
-        with tf.Graph().as_default() as g:
-            tf.import_graph_def(graph_def, name="main")
+    with tf.Graph().as_default() as g:
+        tf.import_graph_def(graph_def, name="main")
     return g
 
 
@@ -179,10 +168,10 @@ def time_run(info_string, imgs, fw, model):
     if fw == "keras":
         print("keras")
         print(K.get_session().graph)
-    #FIX FOR 2.7
+    # FIX FOR 2.7
 
     if 'process_time' not in dir(time):
-        time.process_time = time.clock #Processor time
+        time.process_time = time.clock  # Processor time
 
     for i in xrange(FLAGS.num_batches + num_steps_burn_in):
 
@@ -219,10 +208,10 @@ def time_run(info_string, imgs, fw, model):
         duration = time.time() - start_time
         p_duration = time.process_time() - start_p_time
 
-        if chrome and output_trace and fw not in {"pytorch","torch"}:
+        if chrome and output_trace and fw not in {"pytorch", "torch"}:
             fetched_timeline = timeline.Timeline(run_metadata.step_stats)
             chrome_trace = fetched_timeline.generate_chrome_trace_format(show_dataflow=True, show_memory=False)
-        
+
             with open(file_name, 'w') as f:
                 f.write(chrome_trace)
 
@@ -253,17 +242,16 @@ def time_run(info_string, imgs, fw, model):
     var_process = total_process_duration_squared / FLAGS.num_batches - mean_process * mean_process
     sd_process = math.sqrt(var_process)
 
-    img_per_sec = FLAGS.batch_size * (1.0 / mn) 
+    img_per_sec = FLAGS.batch_size * (1.0 / mn)
 
     info_str1 = ('%s: %s across %d steps (WALL TIME), %.4f +/- %.4f sec / batch, throughput (IPS) - %.3f %.4f\n' %
-                (datetime.now(), info_string, FLAGS.num_batches, mn, sd, img_per_sec, mn))
+                 (datetime.now(), info_string, FLAGS.num_batches, mn, sd, img_per_sec, mn))
     info_str2 = ('%s: PROCESS_TIME: %.3f +/- %.3f sec / batch\n' %
-                (datetime.now(), mean_process, sd_process))
+                 (datetime.now(), mean_process, sd_process))
     info_str1 = info_str1 + info_str2
     print(info_str1, end="")
-    with open("bench_logs/" + str(fw) + "log.out","a") as myfile:
+    with open("bench_logs/" + str(fw) + "log.out", "a") as myfile:
         myfile.write(info_str1)
-    
 
 
 def generate_dummy_images(fw, batch_size, image_size):
@@ -307,6 +295,7 @@ def prepare_benchmark(fw, model):
         prepare_keras(model)
         run_inference = keras_classify
     elif fw in {"trt", "tensorrt"}:
+        import trt
         run_inference = trt.get_inference_handle(model, FLAGS.batch_size)
     else:
         raise RuntimeError("No framework with this name")

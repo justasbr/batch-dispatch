@@ -1,9 +1,8 @@
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-#from memory_profiler import profile
+# from memory_profiler import profile
 import argparse
 import cProfile
 import io as io2
@@ -38,8 +37,6 @@ def prepare_torch(model):
     net = torch.load(model_file)
     if torch.cuda.is_available():
         net.cuda()
-    # torch.set_num_threads(4)
-    # print(net)
 
 
 def torch_classify(imgs, opts=None, run_md=None):
@@ -56,22 +53,12 @@ def prepare_keras(model):
     import models_keras
     global net, graph
 
-    net = models_keras.create_model(model)
-    net.summary()
+    K.set_learning_phase(False)
 
     graph = tf.get_default_graph()
-    keras_session = K.get_session()
 
-    # old_run = keras_session.run
-    # print("old_run", old_run)
-    # print("K.sess 1", keras_session)
-    #
-    # def new_run(*args, **kwargs):
-    #     # print("X", self)
-    #     print("NewRunning", *args)
-    #     old_run(*args, **kwargs)
-
-    # keras_session.run = new_run
+    net = models_keras.create_model(model)
+    assert not net.uses_learning_phase
 
 
 def keras_classify(imgs, opts=None, run_md=None):
@@ -87,10 +74,7 @@ def prepare_tf(model):
     g = load_frozen_tensorflow_graph(model)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
-    if model in {"alexnet____"}:
-        output_tensor_name = "dense_3/BiasAdd:0"
-    else:
-        output_tensor_name = g.get_operations()[-1].name + ":0"
+    output_tensor_name = g.get_operations()[-1].name + ":0"
 
     print("I:", input_tensor_name)
     print("O:", output_tensor_name)
@@ -115,32 +99,24 @@ def load_frozen_tensorflow_graph(model):
     # saver = tf.train.import_meta_graph('./tmp/model.ckpt-55695.meta')
     # saver.restore(session, './tmp/model.ckpt-55695')
 
-    model_file = "./tf_frozen/" if model in {"____alexnet"} else "tf_frozen/"
+    model_file = "tf_frozen/"
 
-    if model == "____alexnet":
-        model_file += "tf_alexnet.ckpt"
+    if model == "alexnet":
+        model_file += "tf_alex.pb"
+    if model == "vgg":
+        model_file += "tf_vgg.pb"
+    elif model == "inception":
+        model_file += "tf_inception.pb"
+    elif model == "resnet":
+        model_file += "tf_resnet.pb"
+    print("TF model file", model_file)
 
-        with tf.Graph().as_default() as g, tf.Session() as sess:
-            saver = tf.train.import_meta_graph(model_file + ".meta")
-            saver.restore(sess, model_file)
-        print("TF model file", model_file)
-    else:
-        if model == "alexnet":
-            model_file += "tf_alex.pb"
-        if model == "vgg":
-            model_file += "tf_vgg.pb"
-        elif model == "inception":
-            model_file += "tf_inception.pb"
-        elif model == "resnet":
-            model_file += "tf_resnet.pb"
-        print("TF model file", model_file)
+    with tf.gfile.GFile(model_file, "rb") as f:
+        graph_def = tf.GraphDef()
+        graph_def.ParseFromString(f.read())
 
-        with tf.gfile.GFile(model_file, "rb") as f:
-            graph_def = tf.GraphDef()
-            graph_def.ParseFromString(f.read())
-
-        with tf.Graph().as_default() as g:
-            tf.import_graph_def(graph_def, name="main")
+    with tf.Graph().as_default() as g:
+        tf.import_graph_def(graph_def, name="main")
     return g
 
 
@@ -186,22 +162,22 @@ def time_run(info_string, imgs, fw, model):
     mn = total_duration / FLAGS.num_batches
     vr = total_duration_squared / FLAGS.num_batches - mn * mn
     sd = math.sqrt(vr)
-    
+
     batches_per_second = 1.0 / mn
     images_per_second = batches_per_second * FLAGS.batch_size
-    #durs 
-    durs50 = np.percentile(durs,50)
-    durs75 = np.percentile(durs,75)
-    durs90 = np.percentile(durs,90)
-    durs99 = np.percentile(durs,99)
+    # durs
+    durs50 = np.percentile(durs, 50)
+    durs75 = np.percentile(durs, 75)
+    durs90 = np.percentile(durs, 90)
+    durs99 = np.percentile(durs, 99)
     print('%s: %s across %d steps (WALL TIME), %.4f +/- %.4f sec / batch' %
           (datetime.now(), info_string, FLAGS.num_batches, mn, sd))
     print('%s: PERCENTILES - 50: %.4f, 75: %.4f, 90: %.4f sec/batch' %
-          (datetime.now(), durs50, durs75, durs90)) 
+          (datetime.now(), durs50, durs75, durs90))
     print('%s: 99LAT - %.4f s/batch, THROUGHPUT (IPS) - %.3f' % (datetime.now(), durs99, images_per_second))
-    
-    result_file = ("tp_logs/" + str(fw) + "_" + str(model) + "_b" + str(FLAGS.batch_size) + "_num" + 
-                  str(FLAGS.num_batches) + "_" + datetime.now().strftime("%m%d_%H%M%S") + ".out")
+
+    result_file = ("tp_logs/" + str(fw) + "_" + str(model) + "_b" + str(FLAGS.batch_size) + "_num" +
+                   str(FLAGS.num_batches) + "_" + datetime.now().strftime("%m%d_%H%M%S") + ".out")
     with open(result_file, "w") as f:
         f.write("Framework\t" + str(fw) + "\n")
         f.write("Model____\t" + str(model) + "\n")
@@ -210,10 +186,11 @@ def time_run(info_string, imgs, fw, model):
         f.write("99pct LAT\t%.4f\n" % (durs99))
         f.write("90pct LAT\t%.4f\n" % (durs90))
         f.write("\n75pct LAT\t%.4f\n" % (durs75))
-        f.write("50pct LAT\t%.4f\n "% (durs50))
+        f.write("50pct LAT\t%.4f\n " % (durs50))
+
 
 def generate_dummy_images(fw, batch_size, image_size):
-    if fw in {"torch", "pytorch"}:
+    if fw in {"torch", "pytorch", "trt", "tensorrt"}:
         images = np.random.randint(256, size=(batch_size, 3, image_size, image_size)) / 255.
     elif fw in {"tensorflow", "tf", "keras"}:
         images = np.random.randint(256, size=(batch_size, image_size, image_size, 3)) / 255.
@@ -251,6 +228,9 @@ def prepare_benchmark(fw, model):
     elif fw in {"keras"}:
         prepare_keras(model)
         run_inference = keras_classify
+    elif fw in {"trt", "tensorrt"}:
+        import trt
+        run_inference = trt.get_inference_handle(model, FLAGS.batch_size)
     else:
         raise RuntimeError("No framework with this name")
 
@@ -279,7 +259,7 @@ def get_argument_parser():
         help='Batch size.'
     )
     parser.add_argument(
-        '--num_batches','-n',
+        '--num_batches', '-n',
         type=int,
         default=1000,
         help='Number of batches to run.'
