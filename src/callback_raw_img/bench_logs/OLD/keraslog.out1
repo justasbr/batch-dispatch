@@ -1,0 +1,196 @@
+2018-01-23 19:49:34.026488: keras, alexnet, batch_size 1 | across 250 steps (WALL TIME), 0.0295 +/- 0.0014 sec / batch
+2018-01-23 19:49:34.026514: PROCESS_TIME: 0.059 +/- 0.002 sec / batch
+2018-01-23 19:50:04.573117: keras, inception, batch_size 1 | across 250 steps (WALL TIME), 0.0756 +/- 0.0035 sec / batch
+2018-01-23 19:50:04.573143: PROCESS_TIME: 0.489 +/- 0.009 sec / batch
+2018-01-23 19:50:32.063818: keras, resnet, batch_size 1 | across 250 steps (WALL TIME), 0.0737 +/- 0.0033 sec / batch
+2018-01-23 19:50:32.063845: PROCESS_TIME: 0.446 +/- 0.007 sec / batch
+2018-01-23 19:51:13.201483: keras, vgg, batch_size 1 | across 250 steps (WALL TIME), 0.1346 +/- 0.0034 sec / batch
+2018-01-23 19:51:13.201510: PROCESS_TIME: 0.695 +/- 0.010 sec / batch
+2018-01-23 19:57:12.046543: keras, alexnet, batch_size 2 | across 250 steps (WALL TIME), 0.0275 +/- 0.0025 sec / batch
+2018-01-23 19:57:12.046570: PROCESS_TIME: 0.176 +/- 0.005 sec / batch
+2018-01-23 19:57:57.512285: keras, inception, batch_size 2 | across 250 steps (WALL TIME), 0.1304 +/- 0.0035 sec / batch
+2018-01-23 19:57:57.512312: PROCESS_TIME: 0.926 +/- 0.012 sec / batch
+2018-01-23 19:58:37.833147: keras, resnet, batch_size 2 | across 250 steps (WALL TIME), 0.1220 +/- 0.0049 sec / batch
+2018-01-23 19:58:37.833175: PROCESS_TIME: 0.825 +/- 0.011 sec / batch
+2018-01-23 19:59:37.743909: keras, vgg, batch_size 2 | across 250 steps (WALL TIME), 0.2111 +/- 0.0058 sec / batch
+2018-01-23 19:59:37.743936: PROCESS_TIME: 1.559 +/- 0.025 sec / batch
+2018-01-23 20:09:27.342828: keras, alexnet, batch_size 4 | across 250 steps (WALL TIME), 0.0347 +/- 0.0025 sec / batch
+2018-01-23 20:09:27.342856: PROCESS_TIME: 0.228 +/- 0.006 sec / batch
+2018-01-23 20:10:43.374359: keras, inception, batch_size 4 | across 250 steps (WALL TIME), 0.2443 +/- 0.0053 sec / batch
+2018-01-23 20:10:43.374387: PROCESS_TIME: 1.826 +/- 0.026 sec / batch
+2018-01-23 20:11:48.637368: keras, resnet, batch_size 4 | across 250 steps (WALL TIME), 0.2143 +/- 0.0050 sec / batch
+2018-01-23 20:11:48.637395: PROCESS_TIME: 1.550 +/- 0.019 sec / batch
+2018-01-23 20:13:38.792191: keras, vgg, batch_size 4 | across 250 steps (WALL TIME), 0.3970 +/- 0.0075 sec / batch
+2018-01-23 20:13:38.792219: PROCESS_TIME: 3.002 +/- 0.042 sec / batch
+2018-01-23 20:32:01.220236: keras, alexnet, batch_size 8 | across 250 steps (WALL TIME), 0.0515 +/- 0.0025 sec / batch
+2018-01-23 20:32:01.220264: PROCESS_TIME: 0.364 +/- 0.008 sec / batch
+2018-01-23 20:34:21.368105: keras, inception, batch_size 8 | across 250 steps (WALL TIME), 0.4812 +/- 0.0071 sec / batch
+2018-01-23 20:34:21.368133: PROCESS_TIME: 3.706 +/- 0.043 sec / batch
+2018-01-23 20:36:24.363711: keras, resnet, batch_size 8 | across 250 steps (WALL TIME), 0.4287 +/- 0.0079 sec / batch
+2018-01-23 20:36:24.363738: PROCESS_TIME: 3.223 +/- 0.040 sec / batch
+2018-01-23 20:39:58.485814: keras, vgg, batch_size 8 | across 250 steps (WALL TIME), 0.7826 +/- 0.0109 sec / batch
+2018-01-23 20:39:58.485841: PROCESS_TIME: 6.055 +/- 0.076 sec / batch
+2018-01-23 21:15:31.688943: keras, alexnet, batch_size 16 | across 250 steps (WALL TIME), 0.0851 +/- 0.0029 sec / batch
+2018-01-23 21:15:31.688970: PROCESS_TIME: 0.618 +/- 0.012 sec / batch
+2018-01-23 21:20:15.464709: keras, inception, batch_size 16 | across 250 steps (WALL TIME), 1.0121 +/- 0.0114 sec / batch
+2018-01-23 21:20:15.464737: PROCESS_TIME: 7.859 +/- 0.070 sec / batch
+2018-01-23 21:24:27.359722: keras, resnet, batch_size 16 | across 250 steps (WALL TIME), 0.9059 +/- 0.0128 sec / batch
+2018-01-23 21:24:27.359751: PROCESS_TIME: 6.958 +/- 0.071 sec / batch
+2018-01-23 21:31:30.355100: keras, vgg, batch_size 16 | across 250 steps (WALL TIME), 1.5559 +/- 0.0166 sec / batch
+2018-01-23 21:31:30.355128: PROCESS_TIME: 12.162 +/- 0.114 sec / batch
+2018-01-23 22:41:04.343369: keras, alexnet, batch_size 32 | across 250 steps (WALL TIME), 0.1566 +/- 0.0039 sec / batch
+2018-01-23 22:41:04.343396: PROCESS_TIME: 1.164 +/- 0.019 sec / batch
+2018-01-23 22:50:34.929429: keras, inception, batch_size 32 | across 250 steps (WALL TIME), 2.0747 +/- 0.0168 sec / batch
+2018-01-23 22:50:34.929457: PROCESS_TIME: 16.288 +/- 0.120 sec / batch
+2018-01-23 22:59:15.102100: keras, resnet, batch_size 32 | across 250 steps (WALL TIME), 1.8992 +/- 0.0175 sec / batch
+2018-01-23 22:59:15.102126: PROCESS_TIME: 14.798 +/- 0.117 sec / batch
+2018-01-23 23:13:09.115350: keras, vgg, batch_size 32 | across 250 steps (WALL TIME), 3.0785 +/- 0.0196 sec / batch
+2018-01-23 23:13:09.115378: PROCESS_TIME: 24.240 +/- 0.149 sec / batch
+2018-01-25 13:51:42.452443: keras, alexnet, batch_size 64 | across 250 steps (WALL TIME), 0.3237 +/- 0.0087 sec / batch
+2018-01-25 13:51:42.452470: PROCESS_TIME: 2.377 +/- 0.048 sec / batch
+2018-01-25 13:57:40.089323: keras, alexnet, batch_size 128 | across 250 steps (WALL TIME), 0.6466 +/- 0.0135 sec / batch
+2018-01-25 13:57:40.089351: PROCESS_TIME: 4.751 +/- 0.074 sec / batch
+2018-01-31 13:59:19.562400: keras, alexnet, batch_size 2 | across 3 steps (WALL TIME), 0.0284 +/- 0.0004 sec / batch
+2018-01-31 13:59:19.562431: PROCESS_TIME: 0.186 +/- 0.002 sec / batch
+2018-01-31 13:59:48.999935: keras, vgg, batch_size 2 | across 3 steps (WALL TIME), 0.2236 +/- 0.0045 sec / batch
+2018-01-31 13:59:48.999960: PROCESS_TIME: 1.652 +/- 0.005 sec / batch
+2018-01-31 14:00:03.049910: keras, resnet, batch_size 2 | across 3 steps (WALL TIME), 0.1221 +/- 0.0037 sec / batch
+2018-01-31 14:00:03.049935: PROCESS_TIME: 0.834 +/- 0.013 sec / batch
+2018-01-31 14:00:20.823145: keras, inception, batch_size 2 | across 3 steps (WALL TIME), 0.1328 +/- 0.0020 sec / batch
+2018-01-31 14:00:20.823168: PROCESS_TIME: 0.947 +/- 0.007 sec / batch
+2018-01-31 14:00:24.160493: keras, alexnet, batch_size 4 | across 3 steps (WALL TIME), 0.0358 +/- 0.0004 sec / batch
+2018-01-31 14:00:24.160517: PROCESS_TIME: 0.243 +/- 0.001 sec / batch
+2018-01-31 14:00:36.785972: keras, vgg, batch_size 4 | across 3 steps (WALL TIME), 0.4308 +/- 0.0046 sec / batch
+2018-01-31 14:00:36.785996: PROCESS_TIME: 3.249 +/- 0.022 sec / batch
+2018-01-31 14:00:48.807670: keras, resnet, batch_size 4 | across 3 steps (WALL TIME), 0.2199 +/- 0.0023 sec / batch
+2018-01-31 14:00:48.807695: PROCESS_TIME: 1.602 +/- 0.009 sec / batch
+2018-01-31 14:01:05.207872: keras, inception, batch_size 4 | across 3 steps (WALL TIME), 0.2550 +/- 0.0045 sec / batch
+2018-01-31 14:01:05.207896: PROCESS_TIME: 1.906 +/- 0.009 sec / batch
+2018-01-31 14:01:09.032619: keras, alexnet, batch_size 8 | across 3 steps (WALL TIME), 0.0547 +/- 0.0007 sec / batch
+2018-01-31 14:01:09.032645: PROCESS_TIME: 0.390 +/- 0.005 sec / batch
+2018-01-31 14:01:31.271294: keras, vgg, batch_size 8 | across 3 steps (WALL TIME), 0.8545 +/- 0.0072 sec / batch
+2018-01-31 14:01:31.271320: PROCESS_TIME: 6.609 +/- 0.051 sec / batch
+2018-01-31 14:01:48.821851: keras, resnet, batch_size 8 | across 3 steps (WALL TIME), 0.4554 +/- 0.0054 sec / batch
+2018-01-31 14:01:48.821877: PROCESS_TIME: 3.423 +/- 0.016 sec / batch
+2018-01-31 14:02:11.550180: keras, inception, batch_size 8 | across 3 steps (WALL TIME), 0.5180 +/- 0.0010 sec / batch
+2018-01-31 14:02:11.550206: PROCESS_TIME: 4.012 +/- 0.006 sec / batch
+2018-01-31 14:02:16.266549: keras, alexnet, batch_size 16 | across 3 steps (WALL TIME), 0.0916 +/- 0.0006 sec / batch
+2018-01-31 14:02:16.266574: PROCESS_TIME: 0.661 +/- 0.006 sec / batch
+2018-01-31 14:02:58.307699: keras, vgg, batch_size 16 | across 3 steps (WALL TIME), 1.6921 +/- 0.0019 sec / batch
+2018-01-31 14:02:58.307725: PROCESS_TIME: 13.265 +/- 0.026 sec / batch
+2018-01-31 14:03:28.206523: keras, resnet, batch_size 16 | across 3 steps (WALL TIME), 0.9912 +/- 0.0050 sec / batch
+2018-01-31 14:03:28.206548: PROCESS_TIME: 7.646 +/- 0.048 sec / batch
+2018-01-31 14:04:04.255184: keras, inception, batch_size 16 | across 3 steps (WALL TIME), 1.1189 +/- 0.0076 sec / batch
+2018-01-31 14:04:04.255210: PROCESS_TIME: 8.686 +/- 0.043 sec / batch
+2018-01-31 14:04:10.786580: keras, alexnet, batch_size 32 | across 3 steps (WALL TIME), 0.1778 +/- 0.0121 sec / batch
+2018-01-31 14:04:10.786605: PROCESS_TIME: 1.272 +/- 0.038 sec / batch
+2018-01-31 14:05:31.432240: keras, vgg, batch_size 32 | across 3 steps (WALL TIME), 3.3916 +/- 0.0077 sec / batch
+2018-01-31 14:05:31.432268: PROCESS_TIME: 26.700 +/- 0.034 sec / batch
+2018-01-31 14:06:27.242698: keras, resnet, batch_size 32 | across 3 steps (WALL TIME), 2.1249 +/- 0.0075 sec / batch
+2018-01-31 14:06:27.242723: PROCESS_TIME: 16.565 +/- 0.062 sec / batch
+2018-01-31 14:07:32.554396: keras, inception, batch_size 32 | across 3 steps (WALL TIME), 2.4733 +/- 0.0335 sec / batch
+2018-01-31 14:07:32.554422: PROCESS_TIME: 19.260 +/- 0.226 sec / batch
+2018-01-31 14:07:43.396308: keras, alexnet, batch_size 64 | across 3 steps (WALL TIME), 0.3489 +/- 0.0047 sec / batch
+2018-01-31 14:07:43.396333: PROCESS_TIME: 2.496 +/- 0.018 sec / batch
+2018-01-31 14:10:30.808365: keras, vgg, batch_size 64 | across 3 steps (WALL TIME), 7.0814 +/- 0.0828 sec / batch
+2018-01-31 14:10:30.808391: PROCESS_TIME: 55.748 +/- 0.630 sec / batch
+2018-01-31 14:12:19.090943: keras, resnet, batch_size 64 | across 3 steps (WALL TIME), 4.3299 +/- 0.0288 sec / batch
+2018-01-31 14:12:19.090986: PROCESS_TIME: 33.683 +/- 0.121 sec / batch
+2018-01-31 14:14:17.835242: keras, inception, batch_size 64 | across 3 steps (WALL TIME), 4.6619 +/- 0.0145 sec / batch
+2018-01-31 14:14:17.835267: PROCESS_TIME: 36.613 +/- 0.110 sec / batch
+2018-01-31 14:14:35.870234: keras, alexnet, batch_size 128 | across 3 steps (WALL TIME), 0.6665 +/- 0.0139 sec / batch
+2018-01-31 14:14:35.870268: PROCESS_TIME: 4.909 +/- 0.040 sec / batch
+2018-01-31 14:19:52.547766: keras, vgg, batch_size 128 | across 3 steps (WALL TIME), 13.6559 +/- 0.0618 sec / batch
+2018-01-31 14:19:52.547819: PROCESS_TIME: 107.601 +/- 0.481 sec / batch
+2018-01-31 14:23:17.519362: keras, resnet, batch_size 128 | across 3 steps (WALL TIME), 8.5254 +/- 0.0415 sec / batch
+2018-01-31 14:23:17.519387: PROCESS_TIME: 66.546 +/- 0.250 sec / batch
+2018-01-31 14:27:09.481081: keras, inception, batch_size 128 | across 3 steps (WALL TIME), 9.5952 +/- 0.1495 sec / batch
+2018-01-31 14:27:09.481107: PROCESS_TIME: 75.280 +/- 1.018 sec / batch
+2018-01-31 15:32:54.477860: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0288 +/- 0.0006 sec / batch
+2018-01-31 15:32:54.477886: PROCESS_TIME: 0.059 +/- 0.001 sec / batch
+2018-01-31 15:37:44.723509: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0269 +/- 0.0002 sec / batch
+2018-01-31 15:37:44.723533: PROCESS_TIME: 0.057 +/- 0.000 sec / batch
+2018-01-31 15:41:02.111884: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0282 +/- 0.0005 sec / batch
+2018-01-31 15:41:02.111907: PROCESS_TIME: 0.059 +/- 0.001 sec / batch
+2018-01-31 15:45:21.520200: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0289 +/- 0.0002 sec / batch
+2018-01-31 15:45:21.520225: PROCESS_TIME: 0.057 +/- 0.000 sec / batch
+2018-01-31 16:10:54.466419: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0287 +/- 0.0004 sec / batch
+2018-01-31 16:10:54.466442: PROCESS_TIME: 0.061 +/- 0.003 sec / batch
+2018-01-31 16:14:38.750336: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0301 +/- 0.0006 sec / batch
+2018-01-31 16:14:38.750372: PROCESS_TIME: 0.059 +/- 0.001 sec / batch
+2018-01-31 16:15:19.340962: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0308 +/- 0.0014 sec / batch
+2018-01-31 16:15:19.340987: PROCESS_TIME: 0.061 +/- 0.001 sec / batch
+2018-01-31 16:17:17.756204: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0315 +/- 0.0016 sec / batch
+2018-01-31 16:17:17.756229: PROCESS_TIME: 0.062 +/- 0.002 sec / batch
+2018-01-31 16:17:25.770503: keras, vgg, batch_size 1 | across 3 steps (WALL TIME), 0.1418 +/- 0.0020 sec / batch
+2018-01-31 16:17:25.770527: PROCESS_TIME: 0.739 +/- 0.007 sec / batch
+2018-01-31 16:17:38.137065: keras, resnet, batch_size 1 | across 3 steps (WALL TIME), 0.0989 +/- 0.0016 sec / batch
+2018-01-31 16:17:38.137088: PROCESS_TIME: 0.477 +/- 0.005 sec / batch
+2018-01-31 16:17:55.893364: keras, inception, batch_size 1 | across 3 steps (WALL TIME), 0.1008 +/- 0.0011 sec / batch
+2018-01-31 16:17:55.893390: PROCESS_TIME: 0.539 +/- 0.003 sec / batch
+2018-01-31 16:20:23.855805: keras, alexnet, batch_size 1 | across 3 steps (WALL TIME), 0.0296 +/- 0.0005 sec / batch
+2018-01-31 16:20:23.855829: PROCESS_TIME: 0.062 +/- 0.002 sec / batch
+2018-01-31 16:20:30.068228: keras, vgg, batch_size 1 | across 3 steps (WALL TIME), 0.1426 +/- 0.0033 sec / batch
+2018-01-31 16:20:30.068269: PROCESS_TIME: 0.733 +/- 0.009 sec / batch
+2018-01-31 16:20:42.253207: keras, resnet, batch_size 1 | across 3 steps (WALL TIME), 0.0946 +/- 0.0014 sec / batch
+2018-01-31 16:20:42.253232: PROCESS_TIME: 0.474 +/- 0.004 sec / batch
+2018-01-31 16:20:59.652444: keras, inception, batch_size 1 | across 3 steps (WALL TIME), 0.1098 +/- 0.0050 sec / batch
+2018-01-31 16:20:59.652465: PROCESS_TIME: 0.554 +/- 0.003 sec / batch
+2018-01-31 16:21:03.088341: keras, alexnet, batch_size 2 | across 3 steps (WALL TIME), 0.0296 +/- 0.0005 sec / batch
+2018-01-31 16:21:03.088379: PROCESS_TIME: 0.192 +/- 0.004 sec / batch
+2018-01-31 16:21:11.289478: keras, vgg, batch_size 2 | across 3 steps (WALL TIME), 0.2314 +/- 0.0084 sec / batch
+2018-01-31 16:21:11.289501: PROCESS_TIME: 1.683 +/- 0.046 sec / batch
+2018-01-31 16:21:24.865250: keras, resnet, batch_size 2 | across 3 steps (WALL TIME), 0.1442 +/- 0.0030 sec / batch
+2018-01-31 16:21:24.865274: PROCESS_TIME: 0.874 +/- 0.017 sec / batch
+2018-01-31 16:21:43.610590: keras, inception, batch_size 2 | across 3 steps (WALL TIME), 0.1608 +/- 0.0039 sec / batch
+2018-01-31 16:21:43.610618: PROCESS_TIME: 1.000 +/- 0.009 sec / batch
+2018-01-31 16:21:47.208215: keras, alexnet, batch_size 4 | across 3 steps (WALL TIME), 0.0406 +/- 0.0034 sec / batch
+2018-01-31 16:21:47.208239: PROCESS_TIME: 0.252 +/- 0.008 sec / batch
+2018-01-31 16:22:00.707765: keras, vgg, batch_size 4 | across 3 steps (WALL TIME), 0.4313 +/- 0.0004 sec / batch
+2018-01-31 16:22:00.707789: PROCESS_TIME: 3.251 +/- 0.005 sec / batch
+2018-01-31 16:22:16.186380: keras, resnet, batch_size 4 | across 3 steps (WALL TIME), 0.2469 +/- 0.0031 sec / batch
+2018-01-31 16:22:16.186404: PROCESS_TIME: 1.639 +/- 0.005 sec / batch
+2018-01-31 16:22:38.032238: keras, inception, batch_size 4 | across 3 steps (WALL TIME), 0.2850 +/- 0.0067 sec / batch
+2018-01-31 16:22:38.032263: PROCESS_TIME: 1.956 +/- 0.038 sec / batch
+2018-01-31 16:22:42.020941: keras, alexnet, batch_size 8 | across 3 steps (WALL TIME), 0.0565 +/- 0.0005 sec / batch
+2018-01-31 16:22:42.020964: PROCESS_TIME: 0.392 +/- 0.003 sec / batch
+2018-01-31 16:23:04.881722: keras, vgg, batch_size 8 | across 3 steps (WALL TIME), 0.8549 +/- 0.0067 sec / batch
+2018-01-31 16:23:04.881744: PROCESS_TIME: 6.613 +/- 0.063 sec / batch
+2018-01-31 16:23:25.842745: keras, resnet, batch_size 8 | across 3 steps (WALL TIME), 0.4812 +/- 0.0023 sec / batch
+2018-01-31 16:23:25.842770: PROCESS_TIME: 3.505 +/- 0.010 sec / batch
+2018-01-31 16:23:53.384709: keras, inception, batch_size 8 | across 3 steps (WALL TIME), 0.5459 +/- 0.0030 sec / batch
+2018-01-31 16:23:53.384735: PROCESS_TIME: 4.052 +/- 0.015 sec / batch
+2018-01-31 16:23:58.243034: keras, alexnet, batch_size 16 | across 3 steps (WALL TIME), 0.0919 +/- 0.0007 sec / batch
+2018-01-31 16:23:58.243057: PROCESS_TIME: 0.661 +/- 0.002 sec / batch
+2018-01-31 16:24:40.914523: keras, vgg, batch_size 16 | across 3 steps (WALL TIME), 1.7248 +/- 0.0037 sec / batch
+2018-01-31 16:24:40.914548: PROCESS_TIME: 13.460 +/- 0.022 sec / batch
+2018-01-31 16:25:14.445905: keras, resnet, batch_size 16 | across 3 steps (WALL TIME), 1.0309 +/- 0.0076 sec / batch
+2018-01-31 16:25:14.445929: PROCESS_TIME: 7.822 +/- 0.028 sec / batch
+2018-01-31 16:25:56.159445: keras, inception, batch_size 16 | across 3 steps (WALL TIME), 1.1516 +/- 0.0045 sec / batch
+2018-01-31 16:25:56.159473: PROCESS_TIME: 8.776 +/- 0.023 sec / batch
+2018-01-31 16:26:02.971946: keras, alexnet, batch_size 32 | across 3 steps (WALL TIME), 0.1715 +/- 0.0022 sec / batch
+2018-01-31 16:26:02.971970: PROCESS_TIME: 1.253 +/- 0.013 sec / batch
+2018-01-31 16:27:24.622336: keras, vgg, batch_size 32 | across 3 steps (WALL TIME), 3.4168 +/- 0.0122 sec / batch
+2018-01-31 16:27:24.622360: PROCESS_TIME: 26.878 +/- 0.081 sec / batch
+2018-01-31 16:28:24.270442: keras, resnet, batch_size 32 | across 3 steps (WALL TIME), 2.1494 +/- 0.0068 sec / batch
+2018-01-31 16:28:24.270465: PROCESS_TIME: 16.601 +/- 0.042 sec / batch
+2018-01-31 16:29:34.302154: keras, inception, batch_size 32 | across 3 steps (WALL TIME), 2.3990 +/- 0.0151 sec / batch
+2018-01-31 16:29:34.302181: PROCESS_TIME: 18.640 +/- 0.112 sec / batch
+2018-01-31 16:29:45.151979: keras, alexnet, batch_size 64 | across 3 steps (WALL TIME), 0.3523 +/- 0.0074 sec / batch
+2018-01-31 16:29:45.152004: PROCESS_TIME: 2.503 +/- 0.056 sec / batch
+2018-01-31 16:32:25.616558: keras, vgg, batch_size 64 | across 3 steps (WALL TIME), 6.8267 +/- 0.0100 sec / batch
+2018-01-31 16:32:25.616582: PROCESS_TIME: 53.685 +/- 0.065 sec / batch
+2018-01-31 16:34:15.228253: keras, resnet, batch_size 64 | across 3 steps (WALL TIME), 4.3202 +/- 0.0174 sec / batch
+2018-01-31 16:34:15.228278: PROCESS_TIME: 33.387 +/- 0.132 sec / batch
+2018-01-31 16:36:20.348127: keras, inception, batch_size 64 | across 3 steps (WALL TIME), 4.7585 +/- 0.0218 sec / batch
+2018-01-31 16:36:20.348153: PROCESS_TIME: 36.981 +/- 0.142 sec / batch
+2018-01-31 16:36:38.981361: keras, alexnet, batch_size 128 | across 3 steps (WALL TIME), 0.6831 +/- 0.0082 sec / batch
+2018-01-31 16:36:38.981385: PROCESS_TIME: 4.984 +/- 0.025 sec / batch
+2018-01-31 16:41:56.383367: keras, vgg, batch_size 128 | across 3 steps (WALL TIME), 13.6448 +/- 0.0554 sec / batch
+2018-01-31 16:41:56.383390: PROCESS_TIME: 107.330 +/- 0.414 sec / batch
+2018-01-31 16:45:25.869197: keras, resnet, batch_size 128 | across 3 steps (WALL TIME), 8.6722 +/- 0.0158 sec / batch
+2018-01-31 16:45:25.869219: PROCESS_TIME: 67.093 +/- 0.110 sec / batch
+2018-01-31 16:49:22.416177: keras, inception, batch_size 128 | across 3 steps (WALL TIME), 9.5652 +/- 0.0355 sec / batch
+2018-01-31 16:49:22.416204: PROCESS_TIME: 74.176 +/- 0.252 sec / batch
+2018-01-31 19:46:09.540353: keras, resnet, batch_size 1 | across 3 steps (WALL TIME), 0.0938 +/- 0.0013 sec / batch
+2018-01-31 19:46:09.540406: PROCESS_TIME: 0.483 +/- 0.004 sec / batch

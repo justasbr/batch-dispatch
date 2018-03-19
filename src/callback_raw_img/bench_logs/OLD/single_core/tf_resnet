@@ -1,0 +1,8 @@
+2018-02-06 02:08:43.362694: tf, resnet, batch_size 1 | across 50 steps (WALL TIME), 0.2913 +/- 0.0137 sec / batch, throughput (IPS) - 3.433 0.2913
+2018-02-06 02:14:40.157450: tf, resnet, batch_size 2 | across 50 steps (WALL TIME), 0.5472 +/- 0.0172 sec / batch, throughput (IPS) - 3.655 0.5472
+2018-02-06 02:25:11.991465: tf, resnet, batch_size 4 | across 50 steps (WALL TIME), 1.1094 +/- 0.0329 sec / batch, throughput (IPS) - 3.606 1.1094
+2018-02-06 02:44:47.433945: tf, resnet, batch_size 8 | across 50 steps (WALL TIME), 2.2137 +/- 0.0441 sec / batch, throughput (IPS) - 3.614 2.2137
+2018-02-06 03:22:50.654102: tf, resnet, batch_size 16 | across 50 steps (WALL TIME), 4.5295 +/- 0.1191 sec / batch, throughput (IPS) - 3.532 4.5295
+2018-02-06 04:38:18.102104: tf, resnet, batch_size 32 | across 50 steps (WALL TIME), 8.9706 +/- 0.0887 sec / batch, throughput (IPS) - 3.567 8.9706
+2018-02-06 07:09:40.894630: tf, resnet, batch_size 64 | across 50 steps (WALL TIME), 18.3036 +/- 0.1705 sec / batch, throughput (IPS) - 3.497 18.3036
+2018-02-06 12:11:22.764291: tf, resnet, batch_size 128 | across 50 steps (WALL TIME), 36.5546 +/- 0.2461 sec / batch, throughput (IPS) - 3.502 36.5546

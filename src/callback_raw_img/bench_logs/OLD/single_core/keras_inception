@@ -1,0 +1,8 @@
+2018-02-07 01:18:37.188084: keras, inception, batch_size 1 | across 52 steps (WALL TIME), 0.3724 +/- 0.0148 sec / batch, throughput (IPS) - 2.685 0.3724
+2018-02-07 01:21:51.185759: keras, inception, batch_size 2 | across 52 steps (WALL TIME), 0.6900 +/- 0.0207 sec / batch, throughput (IPS) - 2.899 0.6900
+2018-02-07 01:27:32.126566: keras, inception, batch_size 4 | across 52 steps (WALL TIME), 1.3319 +/- 0.0377 sec / batch, throughput (IPS) - 3.003 1.3319
+2018-02-07 01:38:16.405593: keras, inception, batch_size 8 | across 52 steps (WALL TIME), 2.6701 +/- 0.0578 sec / batch, throughput (IPS) - 2.996 2.6701
+2018-02-07 01:59:16.080682: keras, inception, batch_size 16 | across 52 steps (WALL TIME), 5.3334 +/- 0.0881 sec / batch, throughput (IPS) - 3.000 5.3334
+2018-02-07 02:40:52.155520: keras, inception, batch_size 32 | across 52 steps (WALL TIME), 10.7938 +/- 0.1250 sec / batch, throughput (IPS) - 2.965 10.7938
+2018-02-07 04:03:49.410255: keras, inception, batch_size 64 | across 52 steps (WALL TIME), 21.6410 +/- 0.2311 sec / batch, throughput (IPS) - 2.957 21.6410
+2018-02-07 06:49:11.615879: keras, inception, batch_size 128 | across 52 steps (WALL TIME), 43.1102 +/- 0.2361 sec / batch, throughput (IPS) - 2.969 43.1102

@@ -1,0 +1,8 @@
+2018-02-06 02:12:08.635937: torch, resnet, batch_size 1 | across 50 steps (WALL TIME), 0.2419 +/- 0.0115 sec / batch, throughput (IPS) - 4.134 0.2419
+2018-02-06 02:20:36.787960: torch, resnet, batch_size 2 | across 50 steps (WALL TIME), 0.4221 +/- 0.0250 sec / batch, throughput (IPS) - 4.739 0.4221
+2018-02-06 02:36:00.429976: torch, resnet, batch_size 4 | across 50 steps (WALL TIME), 0.7594 +/- 0.0215 sec / batch, throughput (IPS) - 5.268 0.7594
+2018-02-06 03:05:33.294230: torch, resnet, batch_size 8 | across 50 steps (WALL TIME), 1.5009 +/- 0.0355 sec / batch, throughput (IPS) - 5.330 1.5009
+2018-02-06 04:04:08.983658: torch, resnet, batch_size 16 | across 50 steps (WALL TIME), 2.9744 +/- 0.0527 sec / batch, throughput (IPS) - 5.379 2.9744
+2018-02-06 06:01:03.993954: torch, resnet, batch_size 32 | across 50 steps (WALL TIME), 6.0080 +/- 0.0847 sec / batch, throughput (IPS) - 5.326 6.0080
+2018-02-06 09:54:57.552322: torch, resnet, batch_size 64 | across 50 steps (WALL TIME), 12.3179 +/- 0.2363 sec / batch, throughput (IPS) - 5.196 12.3179
+2018-02-06 17:46:59.518990: torch, resnet, batch_size 128 | across 50 steps (WALL TIME), 27.4439 +/- 0.3553 sec / batch, throughput (IPS) - 4.664 27.4439

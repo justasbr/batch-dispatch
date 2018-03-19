@@ -1,0 +1,40 @@
+2018-01-23 19:51:27.601224: torch, alexnet, batch_size 1 | across 250 steps (WALL TIME), 0.0485 +/- 0.0027 sec / batch
+2018-01-23 19:51:27.601252: PROCESS_TIME: 0.234 +/- 0.015 sec / batch
+2018-01-23 19:52:52.327115: torch, inception, batch_size 1 | across 250 steps (WALL TIME), 0.3075 +/- 0.0161 sec / batch
+2018-01-23 19:52:52.327140: PROCESS_TIME: 1.666 +/- 0.070 sec / batch
+2018-01-23 19:53:54.252388: torch, resnet, batch_size 1 | across 250 steps (WALL TIME), 0.2251 +/- 0.0216 sec / batch
+2018-01-23 19:53:54.252416: PROCESS_TIME: 1.174 +/- 0.060 sec / batch
+2018-01-23 19:57:02.610579: torch, vgg, batch_size 1 | across 250 steps (WALL TIME), 0.6940 +/- 0.0205 sec / batch
+2018-01-23 19:57:02.610608: PROCESS_TIME: 1.241 +/- 0.089 sec / batch
+2018-01-23 19:59:58.236461: torch, alexnet, batch_size 2 | across 250 steps (WALL TIME), 0.0710 +/- 0.0053 sec / batch
+2018-01-23 19:59:58.236489: PROCESS_TIME: 0.300 +/- 0.029 sec / batch
+2018-01-23 20:02:21.519795: torch, inception, batch_size 2 | across 250 steps (WALL TIME), 0.5242 +/- 0.0176 sec / batch
+2018-01-23 20:02:21.519822: PROCESS_TIME: 2.339 +/- 0.090 sec / batch
+2018-01-23 20:03:55.687867: torch, resnet, batch_size 2 | across 250 steps (WALL TIME), 0.3439 +/- 0.0183 sec / batch
+2018-01-23 20:03:55.687892: PROCESS_TIME: 1.535 +/- 0.069 sec / batch
+2018-01-23 20:09:15.944502: torch, vgg, batch_size 2 | across 250 steps (WALL TIME), 1.1802 +/- 0.0334 sec / batch
+2018-01-23 20:09:15.944532: PROCESS_TIME: 1.947 +/- 0.152 sec / batch
+2018-01-23 20:14:11.530831: torch, alexnet, batch_size 4 | across 250 steps (WALL TIME), 0.1163 +/- 0.0058 sec / batch
+2018-01-23 20:14:11.530861: PROCESS_TIME: 0.413 +/- 0.032 sec / batch
+2018-01-23 20:18:32.841770: torch, inception, batch_size 4 | across 250 steps (WALL TIME), 0.9619 +/- 0.0175 sec / batch
+2018-01-23 20:18:32.841799: PROCESS_TIME: 3.866 +/- 0.093 sec / batch
+2018-01-23 20:21:27.193341: torch, resnet, batch_size 4 | across 250 steps (WALL TIME), 0.6397 +/- 0.0195 sec / batch
+2018-01-23 20:21:27.193366: PROCESS_TIME: 2.594 +/- 0.109 sec / batch
+2018-01-23 20:31:45.295279: torch, vgg, batch_size 4 | across 250 steps (WALL TIME), 2.2840 +/- 0.0395 sec / batch
+2018-01-23 20:31:45.295310: PROCESS_TIME: 3.655 +/- 0.206 sec / batch
+2018-01-23 20:40:56.785981: torch, alexnet, batch_size 8 | across 250 steps (WALL TIME), 0.2109 +/- 0.0074 sec / batch
+2018-01-23 20:40:56.786011: PROCESS_TIME: 0.645 +/- 0.037 sec / batch
+2018-01-23 20:49:31.935472: torch, inception, batch_size 8 | across 250 steps (WALL TIME), 1.8976 +/- 0.0451 sec / batch
+2018-01-23 20:49:31.935497: PROCESS_TIME: 8.191 +/- 0.221 sec / batch
+2018-01-23 20:55:13.245726: torch, resnet, batch_size 8 | across 250 steps (WALL TIME), 1.2589 +/- 0.0205 sec / batch
+2018-01-23 20:55:13.245751: PROCESS_TIME: 5.195 +/- 0.117 sec / batch
+2018-01-23 21:15:06.618548: torch, vgg, batch_size 8 | across 250 steps (WALL TIME), 4.4136 +/- 0.0276 sec / batch
+2018-01-23 21:15:06.618579: PROCESS_TIME: 7.042 +/- 0.097 sec / batch
+2018-01-23 21:33:18.770848: torch, alexnet, batch_size 16 | across 250 steps (WALL TIME), 0.3966 +/- 0.0110 sec / batch
+2018-01-23 21:33:18.770877: PROCESS_TIME: 1.019 +/- 0.061 sec / batch
+2018-01-23 21:50:21.552187: torch, inception, batch_size 16 | across 250 steps (WALL TIME), 3.7834 +/- 0.0709 sec / batch
+2018-01-23 21:50:21.552220: PROCESS_TIME: 15.139 +/- 0.286 sec / batch
+2018-01-23 22:01:25.154618: torch, resnet, batch_size 16 | across 250 steps (WALL TIME), 2.4521 +/- 0.0269 sec / batch
+2018-01-23 22:01:25.154649: PROCESS_TIME: 9.293 +/- 0.177 sec / batch
+2018-01-23 22:40:19.933991: torch, vgg, batch_size 16 | across 250 steps (WALL TIME), 8.6410 +/- 0.0352 sec / batch
+2018-01-23 22:40:19.934022: PROCESS_TIME: 13.136 +/- 0.119 sec / batch

@@ -1,0 +1,7 @@
+2018-02-06 02:12:32.472297: torch, inception, batch_size 1 | across 50 steps (WALL TIME), 0.3679 +/- 0.0162 sec / batch, throughput (IPS) - 2.718 0.3679
+2018-02-06 02:21:17.579590: torch, inception, batch_size 2 | across 50 steps (WALL TIME), 0.6517 +/- 0.0209 sec / batch, throughput (IPS) - 3.069 0.6517
+2018-02-06 02:37:17.332219: torch, inception, batch_size 4 | across 50 steps (WALL TIME), 1.2545 +/- 0.0370 sec / batch, throughput (IPS) - 3.188 1.2545
+2018-02-06 03:08:02.856997: torch, inception, batch_size 8 | across 50 steps (WALL TIME), 2.4594 +/- 0.0572 sec / batch, throughput (IPS) - 3.253 2.4594
+2018-02-06 04:09:04.197949: torch, inception, batch_size 16 | across 50 steps (WALL TIME), 4.8702 +/- 0.0651 sec / batch, throughput (IPS) - 3.285 4.8702
+2018-02-06 06:10:59.609453: torch, inception, batch_size 32 | across 50 steps (WALL TIME), 9.8656 +/- 0.1128 sec / batch, throughput (IPS) - 3.244 9.8656
+2018-02-06 10:14:45.136607: torch, inception, batch_size 64 | across 50 steps (WALL TIME), 19.6729 +/- 0.1644 sec / batch, throughput (IPS) - 3.253 19.6729

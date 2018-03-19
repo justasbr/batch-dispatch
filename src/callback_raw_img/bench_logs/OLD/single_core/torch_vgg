@@ -1,0 +1,8 @@
+2018-02-06 02:11:52.339605: torch, vgg, batch_size 1 | across 50 steps (WALL TIME), 0.5916 +/- 0.0208 sec / batch, throughput (IPS) - 1.690 0.5916
+2018-02-06 02:20:09.964190: torch, vgg, batch_size 2 | across 50 steps (WALL TIME), 1.1597 +/- 0.0303 sec / batch, throughput (IPS) - 1.725 1.1597
+2018-02-06 02:35:13.094012: torch, vgg, batch_size 4 | across 50 steps (WALL TIME), 2.2820 +/- 0.0537 sec / batch, throughput (IPS) - 1.753 2.2820
+2018-02-06 03:04:00.935007: torch, vgg, batch_size 8 | across 50 steps (WALL TIME), 4.4711 +/- 0.0616 sec / batch, throughput (IPS) - 1.789 4.4711
+2018-02-06 04:01:08.244977: torch, vgg, batch_size 16 | across 50 steps (WALL TIME), 9.1150 +/- 0.1244 sec / batch, throughput (IPS) - 1.755 9.1150
+2018-02-06 05:54:59.324648: torch, vgg, batch_size 32 | across 50 steps (WALL TIME), 18.5744 +/- 0.1864 sec / batch, throughput (IPS) - 1.723 18.5744
+2018-02-06 09:42:27.496743: torch, vgg, batch_size 64 | across 50 steps (WALL TIME), 36.9260 +/- 0.2563 sec / batch, throughput (IPS) - 1.733 36.9260
+2018-02-06 17:19:21.647893: torch, vgg, batch_size 128 | across 50 steps (WALL TIME), 76.0782 +/- 0.6851 sec / batch, throughput (IPS) - 1.682 76.0782

@@ -1,0 +1,11 @@
+2018-02-06 02:11:13.350295: torch, alexnet, batch_size 1 | across 50 steps (WALL TIME), 0.0557 +/- 0.0029 sec / batch, throughput (IPS) - 17.947 0.0557
+2018-02-06 02:18:58.475005: torch, alexnet, batch_size 2 | across 50 steps (WALL TIME), 0.0971 +/- 0.0042 sec / batch, throughput (IPS) - 20.597 0.0971
+2018-02-06 02:32:54.549635: torch, alexnet, batch_size 4 | across 50 steps (WALL TIME), 0.1476 +/- 0.0071 sec / batch, throughput (IPS) - 27.099 0.1476
+2018-02-06 02:59:30.509601: torch, alexnet, batch_size 8 | across 50 steps (WALL TIME), 0.2521 +/- 0.0117 sec / batch, throughput (IPS) - 31.730 0.2521
+2018-02-06 03:51:58.254957: torch, alexnet, batch_size 16 | across 50 steps (WALL TIME), 0.4637 +/- 0.0190 sec / batch, throughput (IPS) - 34.505 0.4637
+2018-02-06 05:36:24.469736: torch, alexnet, batch_size 32 | across 50 steps (WALL TIME), 0.8965 +/- 0.0251 sec / batch, throughput (IPS) - 35.696 0.8965
+2018-02-06 09:05:30.421020: torch, alexnet, batch_size 64 | across 50 steps (WALL TIME), 1.7688 +/- 0.0395 sec / batch, throughput (IPS) - 36.183 1.7688
+2018-02-06 16:03:09.372327: torch, alexnet, batch_size 128 | across 50 steps (WALL TIME), 3.4641 +/- 0.0701 sec / batch, throughput (IPS) - 36.950 3.4641
+2018-02-06 18:11:52.093441: torch, alexnet, batch_size 256 | across 50 steps (WALL TIME), 7.1409 +/- 0.0983 sec / batch, throughput (IPS) - 35.850 7.1409
+2018-02-06 20:40:49.808639: torch, alexnet, batch_size 512 | across 50 steps (WALL TIME), 14.3084 +/- 0.1503 sec / batch, throughput (IPS) - 35.783 14.3084
+2018-02-06 22:12:42.417267: torch, alexnet, batch_size 1024 | across 50 steps (WALL TIME), 28.5712 +/- 0.2598 sec / batch, throughput (IPS) - 35.840 28.5712

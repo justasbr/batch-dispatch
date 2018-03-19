@@ -1,0 +1,170 @@
+2018-03-01 13:07:16.023855: torch, resnet, batch_size 1 | across 11 steps (WALL TIME), 0.2436 +/- 0.0028 sec / batch, throughput (IPS) - 4.106 0.2436
+2018-03-01 13:07:16.023866: PROCESS_TIME: 0.244 +/- 0.003 sec / batch
+2018-03-01 13:07:26.009349: torch, resnet, batch_size 2 | across 11 steps (WALL TIME), 0.4166 +/- 0.0060 sec / batch, throughput (IPS) - 4.801 0.4166
+2018-03-01 13:07:26.009360: PROCESS_TIME: 0.417 +/- 0.006 sec / batch
+2018-03-01 13:07:43.209953: torch, resnet, batch_size 4 | across 11 steps (WALL TIME), 0.7575 +/- 0.0043 sec / batch, throughput (IPS) - 5.281 0.7575
+2018-03-01 13:07:43.209964: PROCESS_TIME: 0.757 +/- 0.004 sec / batch
+2018-03-01 13:08:16.252673: torch, resnet, batch_size 8 | across 11 steps (WALL TIME), 1.5471 +/- 0.2691 sec / batch, throughput (IPS) - 5.171 1.5471
+2018-03-01 13:08:16.252684: PROCESS_TIME: 1.547 +/- 0.269 sec / batch
+2018-03-01 13:09:19.953294: torch, resnet, batch_size 16 | across 11 steps (WALL TIME), 2.9881 +/- 0.2827 sec / batch, throughput (IPS) - 5.355 2.9881
+2018-03-01 13:09:19.953306: PROCESS_TIME: 2.987 +/- 0.283 sec / batch
+2018-03-01 13:11:28.065135: torch, resnet, batch_size 32 | across 11 steps (WALL TIME), 5.8984 +/- 0.2823 sec / batch, throughput (IPS) - 5.425 5.8984
+2018-03-01 13:11:28.065147: PROCESS_TIME: 5.897 +/- 0.282 sec / batch
+2018-03-01 13:11:36.919686: torch, inception, batch_size 1 | across 11 steps (WALL TIME), 0.3611 +/- 0.0039 sec / batch, throughput (IPS) - 2.769 0.3611
+2018-03-01 13:11:36.919697: PROCESS_TIME: 0.361 +/- 0.004 sec / batch
+2018-03-01 13:11:51.707182: torch, inception, batch_size 2 | across 11 steps (WALL TIME), 0.6434 +/- 0.0045 sec / batch, throughput (IPS) - 3.109 0.6434
+2018-03-01 13:11:51.707194: PROCESS_TIME: 0.643 +/- 0.004 sec / batch
+2018-03-01 13:12:19.304330: torch, inception, batch_size 4 | across 11 steps (WALL TIME), 1.2885 +/- 0.2682 sec / batch, throughput (IPS) - 3.104 1.2885
+2018-03-01 13:12:19.304341: PROCESS_TIME: 1.288 +/- 0.268 sec / batch
+2018-03-01 13:13:10.191349: torch, inception, batch_size 8 | across 11 steps (WALL TIME), 2.3467 +/- 0.0256 sec / batch, throughput (IPS) - 3.409 2.3467
+2018-03-01 13:13:10.191361: PROCESS_TIME: 2.346 +/- 0.026 sec / batch
+2018-03-01 13:14:51.593002: torch, inception, batch_size 16 | across 11 steps (WALL TIME), 4.7279 +/- 0.2888 sec / batch, throughput (IPS) - 3.384 4.7279
+2018-03-01 13:14:51.593011: PROCESS_TIME: 4.727 +/- 0.289 sec / batch
+2018-03-01 13:18:15.000619: torch, inception, batch_size 32 | across 11 steps (WALL TIME), 9.5448 +/- 0.3729 sec / batch, throughput (IPS) - 3.353 9.5448
+2018-03-01 13:18:15.000630: PROCESS_TIME: 9.544 +/- 0.372 sec / batch
+2018-03-01 13:38:00.069398: torch, resnet, batch_size 1 | across 11 steps (WALL TIME), 0.1595 +/- 0.0023 sec / batch, throughput (IPS) - 6.270 0.1595
+2018-03-01 13:38:00.069410: PROCESS_TIME: 0.319 +/- 0.005 sec / batch
+2018-03-01 13:38:06.681245: torch, resnet, batch_size 2 | across 11 steps (WALL TIME), 0.2555 +/- 0.0024 sec / batch, throughput (IPS) - 7.828 0.2555
+2018-03-01 13:38:06.681258: PROCESS_TIME: 0.511 +/- 0.005 sec / batch
+2018-03-01 13:38:18.221535: torch, resnet, batch_size 4 | across 11 steps (WALL TIME), 0.4390 +/- 0.0041 sec / batch, throughput (IPS) - 9.111 0.4390
+2018-03-01 13:38:18.221547: PROCESS_TIME: 0.878 +/- 0.008 sec / batch
+2018-03-01 13:38:36.875640: torch, resnet, batch_size 8 | across 11 steps (WALL TIME), 0.8223 +/- 0.0044 sec / batch, throughput (IPS) - 9.728 0.8223
+2018-03-01 13:38:36.875652: PROCESS_TIME: 1.644 +/- 0.009 sec / batch
+2018-03-01 13:39:13.064879: torch, resnet, batch_size 16 | across 11 steps (WALL TIME), 1.6891 +/- 0.2921 sec / batch, throughput (IPS) - 9.473 1.6891
+2018-03-01 13:39:13.064907: PROCESS_TIME: 3.377 +/- 0.584 sec / batch
+2018-03-01 13:40:23.680280: torch, resnet, batch_size 32 | across 11 steps (WALL TIME), 3.2954 +/- 0.2978 sec / batch, throughput (IPS) - 9.711 3.2954
+2018-03-01 13:40:23.680291: PROCESS_TIME: 6.578 +/- 0.559 sec / batch
+2018-03-01 13:40:29.941377: torch, inception, batch_size 1 | across 11 steps (WALL TIME), 0.2370 +/- 0.0023 sec / batch, throughput (IPS) - 4.219 0.2370
+2018-03-01 13:40:29.941388: PROCESS_TIME: 0.474 +/- 0.005 sec / batch
+2018-03-01 13:40:39.406595: torch, inception, batch_size 2 | across 11 steps (WALL TIME), 0.3895 +/- 0.0037 sec / batch, throughput (IPS) - 5.135 0.3895
+2018-03-01 13:40:39.406607: PROCESS_TIME: 0.779 +/- 0.007 sec / batch
+2018-03-01 13:40:55.468200: torch, inception, batch_size 4 | across 11 steps (WALL TIME), 0.7021 +/- 0.0039 sec / batch, throughput (IPS) - 5.697 0.7021
+2018-03-01 13:40:55.468211: PROCESS_TIME: 1.404 +/- 0.008 sec / batch
+2018-03-01 13:41:25.879990: torch, inception, batch_size 8 | across 11 steps (WALL TIME), 1.4214 +/- 0.2702 sec / batch, throughput (IPS) - 5.628 1.4214
+2018-03-01 13:41:25.880002: PROCESS_TIME: 2.843 +/- 0.540 sec / batch
+2018-03-01 13:42:23.550350: torch, inception, batch_size 16 | across 11 steps (WALL TIME), 2.6954 +/- 0.2795 sec / batch, throughput (IPS) - 5.936 2.6954
+2018-03-01 13:42:23.550360: PROCESS_TIME: 5.389 +/- 0.557 sec / batch
+2018-03-01 13:44:17.167832: torch, inception, batch_size 32 | across 11 steps (WALL TIME), 5.2884 +/- 0.2741 sec / batch, throughput (IPS) - 6.051 5.2884
+2018-03-01 13:44:17.167841: PROCESS_TIME: 10.493 +/- 0.422 sec / batch
+2018-03-01 14:01:16.954904: torch, resnet, batch_size 1 | across 23 steps (WALL TIME), 0.1079 +/- 0.0016 sec / batch, throughput (IPS) - 9.268 0.1079
+2018-03-01 14:01:16.954930: PROCESS_TIME: 0.432 +/- 0.006 sec / batch
+2018-03-01 14:01:23.705656: torch, resnet, batch_size 2 | across 23 steps (WALL TIME), 0.1676 +/- 0.0048 sec / batch, throughput (IPS) - 11.933 0.1676
+2018-03-01 14:01:23.705681: PROCESS_TIME: 0.670 +/- 0.019 sec / batch
+2018-03-01 14:01:33.847156: torch, resnet, batch_size 4 | across 23 steps (WALL TIME), 0.2687 +/- 0.0018 sec / batch, throughput (IPS) - 14.888 0.2687
+2018-03-01 14:01:33.847183: PROCESS_TIME: 1.075 +/- 0.007 sec / batch
+2018-03-01 14:01:51.375659: torch, resnet, batch_size 8 | across 23 steps (WALL TIME), 0.4913 +/- 0.0035 sec / batch, throughput (IPS) - 16.282 0.4913
+2018-03-01 14:01:51.375686: PROCESS_TIME: 1.965 +/- 0.014 sec / batch
+2018-03-01 14:02:25.463918: torch, resnet, batch_size 16 | across 23 steps (WALL TIME), 1.0031 +/- 0.2016 sec / batch, throughput (IPS) - 15.951 1.0031
+2018-03-01 14:02:25.463957: PROCESS_TIME: 4.012 +/- 0.806 sec / batch
+2018-03-01 14:03:30.109946: torch, resnet, batch_size 32 | across 23 steps (WALL TIME), 1.9078 +/- 0.1900 sec / batch, throughput (IPS) - 16.773 1.9078
+2018-03-01 14:03:30.109974: PROCESS_TIME: 7.630 +/- 0.760 sec / batch
+2018-03-01 14:03:36.927379: torch, inception, batch_size 1 | across 23 steps (WALL TIME), 0.1687 +/- 0.0019 sec / batch, throughput (IPS) - 5.927 0.1687
+2018-03-01 14:03:36.927408: PROCESS_TIME: 0.675 +/- 0.007 sec / batch
+2018-03-01 14:03:46.768565: torch, inception, batch_size 2 | across 23 steps (WALL TIME), 0.2597 +/- 0.0019 sec / batch, throughput (IPS) - 7.700 0.2597
+2018-03-01 14:03:46.768592: PROCESS_TIME: 1.039 +/- 0.008 sec / batch
+2018-03-01 14:04:02.590036: torch, inception, batch_size 4 | across 23 steps (WALL TIME), 0.4400 +/- 0.0063 sec / batch, throughput (IPS) - 9.091 0.4400
+2018-03-01 14:04:02.590064: PROCESS_TIME: 1.760 +/- 0.025 sec / batch
+2018-03-01 14:04:31.931176: torch, inception, batch_size 8 | across 23 steps (WALL TIME), 0.8200 +/- 0.0080 sec / batch, throughput (IPS) - 9.756 0.8200
+2018-03-01 14:04:31.931205: PROCESS_TIME: 3.280 +/- 0.032 sec / batch
+2018-03-01 14:05:26.709929: torch, inception, batch_size 16 | across 23 steps (WALL TIME), 1.6311 +/- 0.1763 sec / batch, throughput (IPS) - 9.809 1.6311
+2018-03-01 14:05:26.709957: PROCESS_TIME: 6.523 +/- 0.705 sec / batch
+2018-03-01 14:07:14.118253: torch, inception, batch_size 32 | across 23 steps (WALL TIME), 3.2232 +/- 0.2439 sec / batch, throughput (IPS) - 9.928 3.2232
+2018-03-01 14:07:14.118283: PROCESS_TIME: 12.732 +/- 0.976 sec / batch
+2018-03-01 14:17:55.663058: torch, resnet, batch_size 1 | across 23 steps (WALL TIME), 0.0820 +/- 0.0026 sec / batch, throughput (IPS) - 12.191 0.0820
+2018-03-01 14:17:55.663085: PROCESS_TIME: 0.656 +/- 0.021 sec / batch
+2018-03-01 14:18:00.841368: torch, resnet, batch_size 2 | across 23 steps (WALL TIME), 0.1193 +/- 0.0037 sec / batch, throughput (IPS) - 16.765 0.1193
+2018-03-01 14:18:00.841394: PROCESS_TIME: 0.954 +/- 0.029 sec / batch
+2018-03-01 14:18:08.285956: torch, resnet, batch_size 4 | across 23 steps (WALL TIME), 0.1882 +/- 0.0034 sec / batch, throughput (IPS) - 21.249 0.1882
+2018-03-01 14:18:08.285984: PROCESS_TIME: 1.506 +/- 0.027 sec / batch
+2018-03-01 14:18:21.513431: torch, resnet, batch_size 8 | across 23 steps (WALL TIME), 0.3324 +/- 0.0059 sec / batch, throughput (IPS) - 24.067 0.3324
+2018-03-01 14:18:21.513461: PROCESS_TIME: 2.659 +/- 0.047 sec / batch
+2018-03-01 14:18:43.879077: torch, resnet, batch_size 16 | across 23 steps (WALL TIME), 0.6342 +/- 0.0088 sec / batch, throughput (IPS) - 25.230 0.6342
+2018-03-01 14:18:43.879107: PROCESS_TIME: 5.072 +/- 0.070 sec / batch
+2018-03-01 14:19:27.600292: torch, resnet, batch_size 32 | across 23 steps (WALL TIME), 1.2830 +/- 0.1748 sec / batch, throughput (IPS) - 24.941 1.2830
+2018-03-01 14:19:27.600324: PROCESS_TIME: 10.262 +/- 1.397 sec / batch
+2018-03-01 14:19:33.293500: torch, inception, batch_size 1 | across 23 steps (WALL TIME), 0.1339 +/- 0.0020 sec / batch, throughput (IPS) - 7.469 0.1339
+2018-03-01 14:19:33.293529: PROCESS_TIME: 1.071 +/- 0.015 sec / batch
+2018-03-01 14:19:41.077526: torch, inception, batch_size 2 | across 23 steps (WALL TIME), 0.1983 +/- 0.0048 sec / batch, throughput (IPS) - 10.085 0.1983
+2018-03-01 14:19:41.077554: PROCESS_TIME: 1.586 +/- 0.038 sec / batch
+2018-03-01 14:19:53.015190: torch, inception, batch_size 4 | across 23 steps (WALL TIME), 0.3244 +/- 0.0074 sec / batch, throughput (IPS) - 12.332 0.3244
+2018-03-01 14:19:53.015219: PROCESS_TIME: 2.594 +/- 0.059 sec / batch
+2018-03-01 14:20:14.111667: torch, inception, batch_size 8 | across 23 steps (WALL TIME), 0.6146 +/- 0.1980 sec / batch, throughput (IPS) - 13.017 0.6146
+2018-03-01 14:20:14.111708: PROCESS_TIME: 4.915 +/- 1.584 sec / batch
+2018-03-01 14:20:51.340459: torch, inception, batch_size 16 | across 23 steps (WALL TIME), 1.0732 +/- 0.0064 sec / batch, throughput (IPS) - 14.908 1.0732
+2018-03-01 14:20:51.340487: PROCESS_TIME: 8.585 +/- 0.051 sec / batch
+2018-03-01 14:22:04.451181: torch, inception, batch_size 32 | across 23 steps (WALL TIME), 2.1395 +/- 0.0197 sec / batch, throughput (IPS) - 14.957 2.1395
+2018-03-01 14:22:04.451211: PROCESS_TIME: 16.671 +/- 0.147 sec / batch
+2018-03-01 14:30:31.389040: torch, resnet, batch_size 1 | across 23 steps (WALL TIME), 0.0690 +/- 0.0012 sec / batch, throughput (IPS) - 14.496 0.0690
+2018-03-01 14:30:31.389068: PROCESS_TIME: 1.104 +/- 0.020 sec / batch
+2018-03-01 14:30:35.868061: torch, resnet, batch_size 2 | across 23 steps (WALL TIME), 0.0982 +/- 0.0041 sec / batch, throughput (IPS) - 20.368 0.0982
+2018-03-01 14:30:35.868091: PROCESS_TIME: 1.570 +/- 0.063 sec / batch
+2018-03-01 14:30:42.243390: torch, resnet, batch_size 4 | across 23 steps (WALL TIME), 0.1524 +/- 0.0056 sec / batch, throughput (IPS) - 26.241 0.1524
+2018-03-01 14:30:42.243420: PROCESS_TIME: 2.437 +/- 0.085 sec / batch
+2018-03-01 14:30:52.171180: torch, resnet, batch_size 8 | across 23 steps (WALL TIME), 0.2623 +/- 0.0063 sec / batch, throughput (IPS) - 30.500 0.2623
+2018-03-01 14:30:52.171208: PROCESS_TIME: 4.193 +/- 0.096 sec / batch
+2018-03-01 14:31:09.775792: torch, resnet, batch_size 16 | across 23 steps (WALL TIME), 0.4897 +/- 0.0098 sec / batch, throughput (IPS) - 32.676 0.4897
+2018-03-01 14:31:09.775820: PROCESS_TIME: 7.827 +/- 0.152 sec / batch
+2018-03-01 14:31:43.905084: torch, resnet, batch_size 32 | across 23 steps (WALL TIME), 0.9556 +/- 0.0164 sec / batch, throughput (IPS) - 33.487 0.9556
+2018-03-01 14:31:43.905115: PROCESS_TIME: 15.277 +/- 0.257 sec / batch
+2018-03-01 14:31:49.131213: torch, inception, batch_size 1 | across 23 steps (WALL TIME), 0.1198 +/- 0.0040 sec / batch, throughput (IPS) - 8.350 0.1198
+2018-03-01 14:31:49.131241: PROCESS_TIME: 1.915 +/- 0.061 sec / batch
+2018-03-01 14:31:56.025502: torch, inception, batch_size 2 | across 23 steps (WALL TIME), 0.1709 +/- 0.0113 sec / batch, throughput (IPS) - 11.700 0.1709
+2018-03-01 14:31:56.025531: PROCESS_TIME: 2.733 +/- 0.180 sec / batch
+2018-03-01 14:32:05.884977: torch, inception, batch_size 4 | across 23 steps (WALL TIME), 0.2594 +/- 0.0060 sec / batch, throughput (IPS) - 15.418 0.2594
+2018-03-01 14:32:05.885004: PROCESS_TIME: 4.148 +/- 0.090 sec / batch
+2018-03-01 14:32:23.226282: torch, inception, batch_size 8 | across 23 steps (WALL TIME), 0.4537 +/- 0.0181 sec / batch, throughput (IPS) - 17.633 0.4537
+2018-03-01 14:32:23.226313: PROCESS_TIME: 7.253 +/- 0.283 sec / batch
+2018-03-01 14:32:53.019139: torch, inception, batch_size 16 | across 23 steps (WALL TIME), 0.8590 +/- 0.0371 sec / batch, throughput (IPS) - 18.626 0.8590
+2018-03-01 14:32:53.019171: PROCESS_TIME: 13.733 +/- 0.589 sec / batch
+2018-03-01 14:33:49.785498: torch, inception, batch_size 32 | across 23 steps (WALL TIME), 1.6810 +/- 0.1882 sec / batch, throughput (IPS) - 19.037 1.6810
+2018-03-01 14:33:49.785527: PROCESS_TIME: 25.372 +/- 0.695 sec / batch
+2018-03-01 15:59:52.795194: torch, alexnet, batch_size 1 | across 10 steps (WALL TIME), 0.0151 +/- 0.0022 sec / batch, throughput (IPS) - 66.345 0.0151
+2018-03-01 15:59:52.795226: PROCESS_TIME: 0.241 +/- 0.035 sec / batch
+2018-03-01 16:02:55.632596: torch, alexnet, batch_size 10 | across 20 steps (WALL TIME), 0.0385 +/- 0.0021 sec / batch, throughput (IPS) - 259.795 0.0385
+2018-03-01 16:02:55.632628: PROCESS_TIME: 0.615 +/- 0.033 sec / batch
+2018-03-01 16:03:03.318148: torch, alexnet, batch_size 30 | across 20 steps (WALL TIME), 0.0965 +/- 0.0027 sec / batch, throughput (IPS) - 310.995 0.0965
+2018-03-01 16:03:03.318180: PROCESS_TIME: 1.542 +/- 0.039 sec / batch
+2018-03-01 16:21:27.116957: torch, alexnet, batch_size 1 | across 1000 steps (WALL TIME), 0.0139 +/- 0.0015 sec / batch, throughput (IPS) - 71.822 0.0139
+2018-03-01 16:21:27.116991: PROCESS_TIME: 0.223 +/- 0.024 sec / batch
+2018-03-01 16:21:45.991086: torch, alexnet, batch_size 2 | across 1000 steps (WALL TIME), 0.0174 +/- 0.0014 sec / batch, throughput (IPS) - 114.776 0.0174
+2018-03-01 16:21:45.991119: PROCESS_TIME: 0.279 +/- 0.022 sec / batch
+2018-03-01 16:22:06.554198: torch, alexnet, batch_size 3 | across 1000 steps (WALL TIME), 0.0191 +/- 0.0015 sec / batch, throughput (IPS) - 156.892 0.0191
+2018-03-01 16:22:06.554229: PROCESS_TIME: 0.306 +/- 0.024 sec / batch
+2018-03-01 16:22:31.283204: torch, alexnet, batch_size 4 | across 1000 steps (WALL TIME), 0.0232 +/- 0.0178 sec / batch, throughput (IPS) - 172.343 0.0232
+2018-03-01 16:22:31.283238: PROCESS_TIME: 0.371 +/- 0.286 sec / batch
+2018-03-01 16:23:00.507956: torch, alexnet, batch_size 6 | across 1000 steps (WALL TIME), 0.0277 +/- 0.0024 sec / batch, throughput (IPS) - 216.600 0.0277
+2018-03-01 16:23:00.507987: PROCESS_TIME: 0.443 +/- 0.037 sec / batch
+2018-03-01 16:23:36.917770: torch, alexnet, batch_size 8 | across 1000 steps (WALL TIME), 0.0348 +/- 0.0183 sec / batch, throughput (IPS) - 229.951 0.0348
+2018-03-01 16:23:36.917833: PROCESS_TIME: 0.556 +/- 0.292 sec / batch
+2018-03-01 16:24:23.827543: torch, alexnet, batch_size 12 | across 1000 steps (WALL TIME), 0.0452 +/- 0.0178 sec / batch, throughput (IPS) - 265.674 0.0452
+2018-03-01 16:24:23.827577: PROCESS_TIME: 0.722 +/- 0.284 sec / batch
+2018-03-01 16:25:22.248991: torch, alexnet, batch_size 16 | across 1000 steps (WALL TIME), 0.0566 +/- 0.0191 sec / batch, throughput (IPS) - 282.762 0.0566
+2018-03-01 16:25:22.249025: PROCESS_TIME: 0.905 +/- 0.305 sec / batch
+2018-03-01 16:26:33.078801: torch, alexnet, batch_size 20 | across 1000 steps (WALL TIME), 0.0688 +/- 0.0174 sec / batch, throughput (IPS) - 290.683 0.0688
+2018-03-01 16:26:33.078833: PROCESS_TIME: 1.100 +/- 0.278 sec / batch
+2018-03-01 16:27:58.217577: torch, alexnet, batch_size 25 | across 1000 steps (WALL TIME), 0.0830 +/- 0.0178 sec / batch, throughput (IPS) - 301.054 0.0830
+2018-03-01 16:27:58.217624: PROCESS_TIME: 1.328 +/- 0.284 sec / batch
+2018-03-01 16:29:47.765161: torch, alexnet, batch_size 32 | across 1000 steps (WALL TIME), 0.1072 +/- 0.0346 sec / batch, throughput (IPS) - 298.555 0.1072
+2018-03-01 16:29:47.765195: PROCESS_TIME: 1.714 +/- 0.553 sec / batch
+2018-03-01 16:31:59.278722: torch, alexnet, batch_size 40 | across 1000 steps (WALL TIME), 0.1289 +/- 0.0257 sec / batch, throughput (IPS) - 310.355 0.1289
+2018-03-01 16:31:59.278752: PROCESS_TIME: 2.061 +/- 0.411 sec / batch
+2018-03-01 16:34:43.755527: torch, alexnet, batch_size 50 | across 1000 steps (WALL TIME), 0.1614 +/- 0.0320 sec / batch, throughput (IPS) - 309.735 0.1614
+2018-03-01 16:34:43.755562: PROCESS_TIME: 2.581 +/- 0.511 sec / batch
+2018-03-01 16:46:18.533156: torch, vgg, batch_size 1 | across 1000 steps (WALL TIME), 0.1154 +/- 0.0341 sec / batch, throughput (IPS) - 8.669 0.1154
+2018-03-01 16:46:18.533217: PROCESS_TIME: 1.844 +/- 0.544 sec / batch
+2018-03-01 16:49:27.092888: torch, vgg, batch_size 2 | across 1000 steps (WALL TIME), 0.1853 +/- 0.0419 sec / batch, throughput (IPS) - 10.795 0.1853
+2018-03-01 16:49:27.092922: PROCESS_TIME: 2.962 +/- 0.670 sec / batch
+2018-03-01 16:53:53.236243: torch, vgg, batch_size 3 | across 1000 steps (WALL TIME), 0.2622 +/- 0.0431 sec / batch, throughput (IPS) - 11.443 0.2622
+2018-03-01 16:53:53.236276: PROCESS_TIME: 4.192 +/- 0.689 sec / batch
+2018-03-01 20:48:01.343774: torch, resnet, batch_size 64 | across 153 steps (WALL TIME), 1.9651 +/- 0.1737 sec / batch, throughput (IPS) - 32.568 1.9651
+2018-03-01 20:48:01.343800: PROCESS_TIME: 31.401 +/- 2.716 sec / batch
+2018-03-01 20:59:33.711225: torch, resnet, batch_size 128 | across 153 steps (WALL TIME), 4.2225 +/- 0.2650 sec / batch, throughput (IPS) - 30.314 4.2225
+2018-03-01 20:59:33.711258: PROCESS_TIME: 66.843 +/- 2.489 sec / batch
+2018-03-01 21:08:37.060532: torch, inception, batch_size 64 | across 153 steps (WALL TIME), 3.3243 +/- 0.2413 sec / batch, throughput (IPS) - 19.252 3.3243
+2018-03-01 21:08:37.060562: PROCESS_TIME: 47.658 +/- 2.421 sec / batch
+2018-03-01 21:26:28.764934: torch, inception, batch_size 128 | across 153 steps (WALL TIME), 6.5543 +/- 0.3001 sec / batch, throughput (IPS) - 19.529 6.5543
+2018-03-01 21:26:28.764962: PROCESS_TIME: 88.588 +/- 3.672 sec / batch
+2018-03-09 00:03:32.024772: torch, vgg, batch_size 1 | across 20 steps (WALL TIME), 0.1724 +/- 0.0108 sec / batch, throughput (IPS) - 5.800 0.1724
+2018-03-09 00:03:32.024800: PROCESS_TIME: 1.062 +/- 0.041 sec / batch
+2018-03-09 00:03:59.844248: torch, vgg, batch_size 4 | across 20 steps (WALL TIME), 0.4318 +/- 0.0288 sec / batch, throughput (IPS) - 9.264 0.4318
+2018-03-09 00:03:59.844277: PROCESS_TIME: 3.410 +/- 0.060 sec / batch

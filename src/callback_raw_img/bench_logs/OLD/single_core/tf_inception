@@ -1,0 +1,8 @@
+2018-02-06 02:09:06.748559: tf, inception, batch_size 1 | across 50 steps (WALL TIME), 0.3382 +/- 0.0144 sec / batch, throughput (IPS) - 2.957 0.3382
+2018-02-06 02:15:23.286831: tf, inception, batch_size 2 | across 50 steps (WALL TIME), 0.6760 +/- 0.0225 sec / batch, throughput (IPS) - 2.959 0.6760
+2018-02-06 02:26:33.653453: tf, inception, batch_size 4 | across 50 steps (WALL TIME), 1.3163 +/- 0.0353 sec / batch, throughput (IPS) - 3.039 1.3163
+2018-02-06 02:47:27.595389: tf, inception, batch_size 8 | across 50 steps (WALL TIME), 2.6189 +/- 0.0540 sec / batch, throughput (IPS) - 3.055 2.6189
+2018-02-06 03:28:16.494665: tf, inception, batch_size 16 | across 50 steps (WALL TIME), 5.3638 +/- 0.1052 sec / batch, throughput (IPS) - 2.983 5.3638
+2018-02-06 04:49:06.064091: tf, inception, batch_size 32 | across 50 steps (WALL TIME), 10.7571 +/- 0.1133 sec / batch, throughput (IPS) - 2.975 10.7571
+2018-02-06 07:31:34.154066: tf, inception, batch_size 64 | across 50 steps (WALL TIME), 21.8201 +/- 0.1817 sec / batch, throughput (IPS) - 2.933 21.8201
+2018-02-06 12:55:32.352472: tf, inception, batch_size 128 | across 50 steps (WALL TIME), 44.0735 +/- 0.2137 sec / batch, throughput (IPS) - 2.904 44.0735

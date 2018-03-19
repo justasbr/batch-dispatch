@@ -1,0 +1,8 @@
+2018-02-07 01:18:02.991734: keras, resnet, batch_size 1 | across 52 steps (WALL TIME), 0.3084 +/- 0.0110 sec / batch, throughput (IPS) - 3.242 0.3084
+2018-02-07 01:20:57.339114: keras, resnet, batch_size 2 | across 52 steps (WALL TIME), 0.5866 +/- 0.0228 sec / batch, throughput (IPS) - 3.409 0.5866
+2018-02-07 01:25:58.825035: keras, resnet, batch_size 4 | across 52 steps (WALL TIME), 1.1245 +/- 0.0344 sec / batch, throughput (IPS) - 3.557 1.1245
+2018-02-07 01:35:19.979526: keras, resnet, batch_size 8 | across 52 steps (WALL TIME), 2.2168 +/- 0.0517 sec / batch, throughput (IPS) - 3.609 2.2168
+2018-02-07 01:53:33.602764: keras, resnet, batch_size 16 | across 52 steps (WALL TIME), 4.4914 +/- 0.0573 sec / batch, throughput (IPS) - 3.562 4.4914
+2018-02-07 02:29:29.978570: keras, resnet, batch_size 32 | across 52 steps (WALL TIME), 9.0464 +/- 0.1009 sec / batch, throughput (IPS) - 3.537 9.0464
+2018-02-07 03:41:16.845946: keras, resnet, batch_size 64 | across 52 steps (WALL TIME), 18.0935 +/- 0.1334 sec / batch, throughput (IPS) - 3.537 18.0935
+2018-02-07 06:04:24.921840: keras, resnet, batch_size 128 | across 52 steps (WALL TIME), 36.4033 +/- 0.3569 sec / batch, throughput (IPS) - 3.516 36.4033

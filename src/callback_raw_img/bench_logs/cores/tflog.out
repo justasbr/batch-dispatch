@@ -1,0 +1,112 @@
+2018-03-01 00:25:39.978041: tf, alexnet, batch_size 1 | across 61 steps (WALL TIME), 0.0475 +/- 0.0012 sec / batch, throughput (IPS) - 21.032 0.0475
+2018-03-01 00:25:39.978050: PROCESS_TIME: 0.048 +/- 0.001 sec / batch
+2018-03-01 00:25:50.281258: tf, alexnet, batch_size 2 | across 61 steps (WALL TIME), 0.0917 +/- 0.0016 sec / batch, throughput (IPS) - 21.805 0.0917
+2018-03-01 00:25:50.281267: PROCESS_TIME: 0.092 +/- 0.001 sec / batch
+2018-03-01 00:26:04.043872: tf, alexnet, batch_size 4 | across 61 steps (WALL TIME), 0.1341 +/- 0.0020 sec / batch, throughput (IPS) - 29.825 0.1341
+2018-03-01 00:26:04.043882: PROCESS_TIME: 0.134 +/- 0.002 sec / batch
+2018-03-01 00:26:25.681942: tf, alexnet, batch_size 8 | across 61 steps (WALL TIME), 0.2331 +/- 0.0297 sec / batch, throughput (IPS) - 34.322 0.2331
+2018-03-01 00:26:25.681954: PROCESS_TIME: 0.233 +/- 0.030 sec / batch
+2018-03-01 00:27:01.333385: tf, alexnet, batch_size 16 | across 61 steps (WALL TIME), 0.4056 +/- 0.0046 sec / batch, throughput (IPS) - 39.445 0.4056
+2018-03-01 00:27:01.333395: PROCESS_TIME: 0.406 +/- 0.005 sec / batch
+2018-03-01 00:28:07.006542: tf, alexnet, batch_size 32 | across 61 steps (WALL TIME), 0.7718 +/- 0.0061 sec / batch, throughput (IPS) - 41.462 0.7718
+2018-03-01 00:28:07.006552: PROCESS_TIME: 0.772 +/- 0.006 sec / batch
+2018-03-01 00:30:13.712567: tf, alexnet, batch_size 64 | across 61 steps (WALL TIME), 1.5253 +/- 0.0513 sec / batch, throughput (IPS) - 41.960 1.5253
+2018-03-01 00:30:13.712578: PROCESS_TIME: 1.525 +/- 0.051 sec / batch
+2018-03-01 00:34:13.437794: tf, alexnet, batch_size 128 | across 61 steps (WALL TIME), 2.9213 +/- 0.0602 sec / batch, throughput (IPS) - 43.816 2.9213
+2018-03-01 00:34:13.437818: PROCESS_TIME: 2.921 +/- 0.060 sec / batch
+2018-03-01 00:35:00.257592: tf, vgg, batch_size 1 | across 61 steps (WALL TIME), 0.5167 +/- 0.0076 sec / batch, throughput (IPS) - 1.935 0.5167
+2018-03-01 00:35:00.257605: PROCESS_TIME: 0.517 +/- 0.008 sec / batch
+2018-03-01 00:36:28.500666: tf, vgg, batch_size 2 | across 61 steps (WALL TIME), 1.0275 +/- 0.0395 sec / batch, throughput (IPS) - 1.947 1.0275
+2018-03-01 00:36:28.500678: PROCESS_TIME: 1.027 +/- 0.039 sec / batch
+2018-03-01 00:39:11.119732: tf, vgg, batch_size 4 | across 61 steps (WALL TIME), 1.9509 +/- 0.0669 sec / batch, throughput (IPS) - 2.050 1.9509
+2018-03-01 00:39:11.119743: PROCESS_TIME: 1.951 +/- 0.067 sec / batch
+2018-03-01 00:44:28.201642: tf, vgg, batch_size 8 | across 61 steps (WALL TIME), 3.8511 +/- 0.1023 sec / batch, throughput (IPS) - 2.077 3.8511
+2018-03-01 00:44:28.201654: PROCESS_TIME: 3.851 +/- 0.102 sec / batch
+2018-03-01 00:54:45.306107: tf, vgg, batch_size 16 | across 61 steps (WALL TIME), 7.5659 +/- 0.1363 sec / batch, throughput (IPS) - 2.115 7.5659
+2018-03-01 00:54:45.306119: PROCESS_TIME: 7.565 +/- 0.136 sec / batch
+2018-03-01 01:15:12.648420: tf, vgg, batch_size 32 | across 61 steps (WALL TIME), 15.0940 +/- 0.2579 sec / batch, throughput (IPS) - 2.120 15.0940
+2018-03-01 01:15:12.648433: PROCESS_TIME: 15.094 +/- 0.258 sec / batch
+2018-03-01 03:06:18.215919: tf, alexnet, batch_size 1 | across 61 steps (WALL TIME), 0.0328 +/- 0.0231 sec / batch, throughput (IPS) - 30.509 0.0328
+2018-03-01 03:06:18.215978: PROCESS_TIME: 0.065 +/- 0.046 sec / batch
+2018-03-01 03:06:25.396417: tf, alexnet, batch_size 2 | across 61 steps (WALL TIME), 0.0525 +/- 0.0012 sec / batch, throughput (IPS) - 38.069 0.0525
+2018-03-01 03:06:25.396427: PROCESS_TIME: 0.105 +/- 0.002 sec / batch
+2018-03-01 03:06:34.266956: tf, alexnet, batch_size 4 | across 61 steps (WALL TIME), 0.0745 +/- 0.0011 sec / batch, throughput (IPS) - 53.656 0.0745
+2018-03-01 03:06:34.266965: PROCESS_TIME: 0.149 +/- 0.002 sec / batch
+2018-03-01 03:06:46.844152: tf, alexnet, batch_size 8 | across 61 steps (WALL TIME), 0.1198 +/- 0.0020 sec / batch, throughput (IPS) - 66.786 0.1198
+2018-03-01 03:06:46.844163: PROCESS_TIME: 0.239 +/- 0.004 sec / batch
+2018-03-01 03:07:06.843501: tf, alexnet, batch_size 16 | across 61 steps (WALL TIME), 0.2115 +/- 0.0027 sec / batch, throughput (IPS) - 75.655 0.2115
+2018-03-01 03:07:06.843513: PROCESS_TIME: 0.423 +/- 0.005 sec / batch
+2018-03-01 03:07:43.302518: tf, alexnet, batch_size 32 | across 61 steps (WALL TIME), 0.3983 +/- 0.0052 sec / batch, throughput (IPS) - 80.349 0.3983
+2018-03-01 03:07:43.302530: PROCESS_TIME: 0.797 +/- 0.010 sec / batch
+2018-03-01 03:08:49.226961: tf, alexnet, batch_size 64 | across 61 steps (WALL TIME), 0.7802 +/- 0.0636 sec / batch, throughput (IPS) - 82.031 0.7802
+2018-03-01 03:08:49.226972: PROCESS_TIME: 1.560 +/- 0.127 sec / batch
+2018-03-01 03:10:57.696598: tf, alexnet, batch_size 128 | across 61 steps (WALL TIME), 1.5376 +/- 0.0974 sec / batch, throughput (IPS) - 83.247 1.5376
+2018-03-01 03:10:57.696611: PROCESS_TIME: 3.073 +/- 0.189 sec / batch
+2018-03-01 03:11:25.311565: tf, vgg, batch_size 1 | across 61 steps (WALL TIME), 0.2885 +/- 0.0642 sec / batch, throughput (IPS) - 3.466 0.2885
+2018-03-01 03:11:25.311578: PROCESS_TIME: 0.576 +/- 0.125 sec / batch
+2018-03-01 03:12:13.714561: tf, vgg, batch_size 2 | across 61 steps (WALL TIME), 0.5423 +/- 0.0515 sec / batch, throughput (IPS) - 3.688 0.5423
+2018-03-01 03:12:13.714574: PROCESS_TIME: 1.084 +/- 0.103 sec / batch
+2018-03-01 03:13:42.662207: tf, vgg, batch_size 4 | across 61 steps (WALL TIME), 1.0343 +/- 0.0804 sec / batch, throughput (IPS) - 3.867 1.0343
+2018-03-01 03:13:42.662219: PROCESS_TIME: 2.068 +/- 0.161 sec / batch
+2018-03-01 03:16:28.801937: tf, vgg, batch_size 8 | across 61 steps (WALL TIME), 1.9891 +/- 0.1118 sec / batch, throughput (IPS) - 4.022 1.9891
+2018-03-01 03:16:28.801949: PROCESS_TIME: 3.978 +/- 0.223 sec / batch
+2018-03-01 03:21:52.581848: tf, vgg, batch_size 16 | across 61 steps (WALL TIME), 3.9528 +/- 0.1939 sec / batch, throughput (IPS) - 4.048 3.9528
+2018-03-01 03:21:52.581861: PROCESS_TIME: 7.905 +/- 0.388 sec / batch
+2018-03-01 03:32:31.441195: tf, vgg, batch_size 32 | across 61 steps (WALL TIME), 7.8291 +/- 0.2833 sec / batch, throughput (IPS) - 4.087 7.8291
+2018-03-01 03:32:31.441208: PROCESS_TIME: 15.656 +/- 0.564 sec / batch
+2018-03-01 04:31:41.574694: tf, alexnet, batch_size 1 | across 61 steps (WALL TIME), 0.0148 +/- 0.0009 sec / batch, throughput (IPS) - 67.387 0.0148
+2018-03-01 04:31:41.574705: PROCESS_TIME: 0.059 +/- 0.004 sec / batch
+2018-03-01 04:31:46.661410: tf, alexnet, batch_size 2 | across 61 steps (WALL TIME), 0.0282 +/- 0.0007 sec / batch, throughput (IPS) - 70.960 0.0282
+2018-03-01 04:31:46.661419: PROCESS_TIME: 0.113 +/- 0.002 sec / batch
+2018-03-01 04:31:52.737850: tf, alexnet, batch_size 4 | across 61 steps (WALL TIME), 0.0405 +/- 0.0030 sec / batch, throughput (IPS) - 98.771 0.0405
+2018-03-01 04:31:52.737862: PROCESS_TIME: 0.162 +/- 0.012 sec / batch
+2018-03-01 04:32:00.640259: tf, alexnet, batch_size 8 | across 61 steps (WALL TIME), 0.0623 +/- 0.0009 sec / batch, throughput (IPS) - 128.334 0.0623
+2018-03-01 04:32:00.640269: PROCESS_TIME: 0.249 +/- 0.003 sec / batch
+2018-03-01 04:32:12.784832: tf, alexnet, batch_size 16 | across 61 steps (WALL TIME), 0.1167 +/- 0.0510 sec / batch, throughput (IPS) - 137.054 0.1167
+2018-03-01 04:32:12.784843: PROCESS_TIME: 0.467 +/- 0.203 sec / batch
+2018-03-01 04:32:32.956391: tf, alexnet, batch_size 32 | across 61 steps (WALL TIME), 0.2012 +/- 0.0044 sec / batch, throughput (IPS) - 159.064 0.2012
+2018-03-01 04:32:32.956404: PROCESS_TIME: 0.805 +/- 0.018 sec / batch
+2018-03-01 04:33:08.096949: tf, alexnet, batch_size 64 | across 61 steps (WALL TIME), 0.3966 +/- 0.0054 sec / batch, throughput (IPS) - 161.365 0.3966
+2018-03-01 04:33:08.096961: PROCESS_TIME: 1.587 +/- 0.022 sec / batch
+2018-03-01 04:34:16.126080: tf, alexnet, batch_size 128 | across 61 steps (WALL TIME), 0.7937 +/- 0.0880 sec / batch, throughput (IPS) - 161.278 0.7937
+2018-03-01 04:34:16.126096: PROCESS_TIME: 3.177 +/- 0.351 sec / batch
+2018-03-01 04:34:32.702729: tf, vgg, batch_size 1 | across 61 steps (WALL TIME), 0.1399 +/- 0.0017 sec / batch, throughput (IPS) - 7.149 0.1399
+2018-03-01 04:34:32.702739: PROCESS_TIME: 0.559 +/- 0.007 sec / batch
+2018-03-01 04:34:59.750961: tf, vgg, batch_size 2 | across 61 steps (WALL TIME), 0.2762 +/- 0.0043 sec / batch, throughput (IPS) - 7.240 0.2762
+2018-03-01 04:34:59.750974: PROCESS_TIME: 1.104 +/- 0.016 sec / batch
+2018-03-01 04:35:47.716401: tf, vgg, batch_size 4 | across 61 steps (WALL TIME), 0.5286 +/- 0.0725 sec / batch, throughput (IPS) - 7.568 0.5286
+2018-03-01 04:35:47.716413: PROCESS_TIME: 2.114 +/- 0.290 sec / batch
+2018-03-01 04:37:15.617735: tf, vgg, batch_size 8 | across 61 steps (WALL TIME), 1.0262 +/- 0.1003 sec / batch, throughput (IPS) - 7.796 1.0262
+2018-03-01 04:37:15.617749: PROCESS_TIME: 4.105 +/- 0.401 sec / batch
+2018-03-01 04:40:03.432298: tf, vgg, batch_size 16 | across 61 steps (WALL TIME), 2.0165 +/- 0.1754 sec / batch, throughput (IPS) - 7.934 2.0165
+2018-03-01 04:40:03.432310: PROCESS_TIME: 8.065 +/- 0.697 sec / batch
+2018-03-01 04:45:32.521045: tf, vgg, batch_size 32 | across 61 steps (WALL TIME), 3.9934 +/- 0.2033 sec / batch, throughput (IPS) - 8.013 3.9934
+2018-03-01 04:45:32.521056: PROCESS_TIME: 15.973 +/- 0.813 sec / batch
+2018-03-01 05:18:04.853631: tf, alexnet, batch_size 1 | across 61 steps (WALL TIME), 0.0102 +/- 0.0002 sec / batch, throughput (IPS) - 98.089 0.0102
+2018-03-01 05:18:04.853643: PROCESS_TIME: 0.082 +/- 0.002 sec / batch
+2018-03-01 05:18:09.074950: tf, alexnet, batch_size 2 | across 61 steps (WALL TIME), 0.0165 +/- 0.0007 sec / batch, throughput (IPS) - 121.494 0.0165
+2018-03-01 05:18:09.074976: PROCESS_TIME: 0.132 +/- 0.006 sec / batch
+2018-03-01 05:18:14.426584: tf, alexnet, batch_size 4 | across 61 steps (WALL TIME), 0.0226 +/- 0.0014 sec / batch, throughput (IPS) - 176.678 0.0226
+2018-03-01 05:18:14.426596: PROCESS_TIME: 0.181 +/- 0.011 sec / batch
+2018-03-01 05:18:21.281788: tf, alexnet, batch_size 8 | across 61 steps (WALL TIME), 0.0343 +/- 0.0027 sec / batch, throughput (IPS) - 233.574 0.0343
+2018-03-01 05:18:21.281800: PROCESS_TIME: 0.274 +/- 0.022 sec / batch
+2018-03-01 05:18:28.762456: tf, alexnet, batch_size 16 | across 61 steps (WALL TIME), 0.0563 +/- 0.0015 sec / batch, throughput (IPS) - 284.303 0.0563
+2018-03-01 05:18:28.762468: PROCESS_TIME: 0.450 +/- 0.012 sec / batch
+2018-03-01 05:18:40.057832: tf, alexnet, batch_size 32 | across 61 steps (WALL TIME), 0.1037 +/- 0.0038 sec / batch, throughput (IPS) - 308.525 0.1037
+2018-03-01 05:18:40.057843: PROCESS_TIME: 0.830 +/- 0.030 sec / batch
+2018-03-01 05:19:00.002170: tf, alexnet, batch_size 64 | across 61 steps (WALL TIME), 0.2094 +/- 0.0056 sec / batch, throughput (IPS) - 305.697 0.2094
+2018-03-01 05:19:00.002183: PROCESS_TIME: 1.675 +/- 0.043 sec / batch
+2018-03-01 05:19:37.297252: tf, alexnet, batch_size 128 | across 61 steps (WALL TIME), 0.4255 +/- 0.0739 sec / batch, throughput (IPS) - 300.834 0.4255
+2018-03-01 05:19:37.297264: PROCESS_TIME: 3.405 +/- 0.591 sec / batch
+2018-03-01 05:19:48.174414: tf, vgg, batch_size 1 | across 61 steps (WALL TIME), 0.0765 +/- 0.0017 sec / batch, throughput (IPS) - 13.077 0.0765
+2018-03-01 05:19:48.174425: PROCESS_TIME: 0.612 +/- 0.014 sec / batch
+2018-03-01 05:20:04.554115: tf, vgg, batch_size 2 | across 61 steps (WALL TIME), 0.1428 +/- 0.0023 sec / batch, throughput (IPS) - 14.009 0.1428
+2018-03-01 05:20:04.554127: PROCESS_TIME: 1.142 +/- 0.018 sec / batch
+2018-03-01 05:20:32.422260: tf, vgg, batch_size 4 | across 61 steps (WALL TIME), 0.2841 +/- 0.0749 sec / batch, throughput (IPS) - 14.081 0.2841
+2018-03-01 05:20:32.422272: PROCESS_TIME: 2.272 +/- 0.599 sec / batch
+2018-03-01 05:21:20.843881: tf, vgg, batch_size 8 | across 61 steps (WALL TIME), 0.5471 +/- 0.1120 sec / batch, throughput (IPS) - 14.622 0.5471
+2018-03-01 05:21:20.843893: PROCESS_TIME: 4.376 +/- 0.895 sec / batch
+2018-03-01 05:22:49.308396: tf, vgg, batch_size 16 | across 61 steps (WALL TIME), 1.0357 +/- 0.0844 sec / batch, throughput (IPS) - 15.449 1.0357
+2018-03-01 05:22:49.308407: PROCESS_TIME: 8.284 +/- 0.671 sec / batch
+2018-03-01 05:25:41.550939: tf, vgg, batch_size 32 | across 61 steps (WALL TIME), 2.0595 +/- 0.1467 sec / batch, throughput (IPS) - 15.538 2.0595
+2018-03-01 05:25:41.550952: PROCESS_TIME: 16.471 +/- 1.165 sec / batch
