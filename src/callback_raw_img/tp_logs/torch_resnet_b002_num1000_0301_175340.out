@@ -1,0 +1,10 @@
+Framework	torch
+Model____	resnet
+Bsize____	002
+TP (Img/s)	19.49
+99pct LAT	0.1341
+90pct LAT	0.1088
+
+75pct LAT	0.1014
+MEAN LAT	0.1026
+Summary: torch resnet BATCH 002 TP 19.49 PCT99 0.1341 MEAN 0.1026

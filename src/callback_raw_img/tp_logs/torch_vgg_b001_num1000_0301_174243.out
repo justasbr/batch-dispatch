@@ -1,0 +1,10 @@
+Framework	torch
+Model____	vgg
+Bsize____	001
+TP (Img/s)	8.72
+99pct LAT	0.1366
+90pct LAT	0.1181
+
+75pct LAT	0.1130
+MEAN LAT	0.1147
+Summary: torch vgg BATCH 001 TP 8.72 PCT99 0.1366 MEAN 0.1147

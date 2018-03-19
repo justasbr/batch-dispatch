@@ -1,0 +1,10 @@
+Framework	torch
+Model____	vgg
+Bsize____	004
+TP (Img/s)	8.12
+99pct LAT	0.5350
+90pct LAT	0.5098
+
+75pct LAT	0.4997
+50pct LAT	0.4909
+ 

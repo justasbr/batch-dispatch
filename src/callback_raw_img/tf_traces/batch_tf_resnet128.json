@@ -1,0 +1,6559 @@
+{
+    "traceEvents": [
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 0,
+            "args": {
+                "name": "Allocators"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 1,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 2,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Tensors"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049876,
+            "dur": 25,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049914,
+            "dur": 10,
+            "args": {
+                "name": "main/flatten_1/stack/0",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049927,
+            "dur": 3,
+            "args": {
+                "name": "main/res5c_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049931,
+            "dur": 4,
+            "args": {
+                "name": "main/res5c_branch2a/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049936,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5c_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049940,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5c_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049943,
+            "dur": 3,
+            "args": {
+                "name": "main/res5c_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049947,
+            "dur": 2,
+            "args": {
+                "name": "main/fc1000/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049951,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5c_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049954,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5c_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049958,
+            "dur": 2,
+            "args": {
+                "name": "main/res5c_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049961,
+            "dur": 3,
+            "args": {
+                "name": "main/res5c_branch2c/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049965,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5c_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049969,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5c_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049973,
+            "dur": 4,
+            "args": {
+                "name": "main/res5b_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049978,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5b_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049983,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5b_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049987,
+            "dur": 3,
+            "args": {
+                "name": "main/res5b_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049991,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5b_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049994,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5b_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651049998,
+            "dur": 3,
+            "args": {
+                "name": "main/res5b_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050002,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4a_branch1/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050006,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5b_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050010,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5b_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050014,
+            "dur": 3,
+            "args": {
+                "name": "main/res5a_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050018,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4a_branch1/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050021,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5a_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050026,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5a_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050029,
+            "dur": 2,
+            "args": {
+                "name": "main/res5a_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050033,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5a_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050036,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5a_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050040,
+            "dur": 3,
+            "args": {
+                "name": "main/res5a_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050044,
+            "dur": 2,
+            "args": {
+                "name": "main/bn5a_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050047,
+            "dur": 4,
+            "args": {
+                "name": "main/bn5a_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050052,
+            "dur": 3,
+            "args": {
+                "name": "main/res4f_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050056,
+            "dur": 4,
+            "args": {
+                "name": "main/res4f_branch2a/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050061,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4f_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050065,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4f_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050069,
+            "dur": 2,
+            "args": {
+                "name": "main/res4f_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050072,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4f_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050076,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4f_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050080,
+            "dur": 2,
+            "args": {
+                "name": "main/res4f_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050083,
+            "dur": 4,
+            "args": {
+                "name": "main/res4f_branch2c/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050088,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4f_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050091,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4f_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050095,
+            "dur": 3,
+            "args": {
+                "name": "main/res4e_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050099,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4e_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050102,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4e_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050106,
+            "dur": 3,
+            "args": {
+                "name": "main/res4e_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050110,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4e_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050114,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4e_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050118,
+            "dur": 4,
+            "args": {
+                "name": "main/res4e_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050123,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4e_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050126,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4e_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050130,
+            "dur": 3,
+            "args": {
+                "name": "main/res4d_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050134,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4d_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050138,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4d_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050142,
+            "dur": 2,
+            "args": {
+                "name": "main/res4d_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050145,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4d_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050149,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4d_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050153,
+            "dur": 2,
+            "args": {
+                "name": "main/res4d_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050156,
+            "dur": 4,
+            "args": {
+                "name": "main/bn4d_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050161,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4d_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050165,
+            "dur": 2,
+            "args": {
+                "name": "main/res4c_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050168,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4c_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050172,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4c_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050177,
+            "dur": 2,
+            "args": {
+                "name": "main/res4c_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050181,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4c_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050184,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4c_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050188,
+            "dur": 2,
+            "args": {
+                "name": "main/res4c_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050191,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4c_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050195,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4c_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050199,
+            "dur": 3,
+            "args": {
+                "name": "main/res4b_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050203,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4b_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050207,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4b_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050210,
+            "dur": 3,
+            "args": {
+                "name": "main/res4b_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050215,
+            "dur": 2,
+            "args": {
+                "name": "main/res5a_branch1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050219,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4b_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050222,
+            "dur": 4,
+            "args": {
+                "name": "main/bn4b_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050227,
+            "dur": 3,
+            "args": {
+                "name": "main/res4b_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050231,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4b_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050235,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4b_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050238,
+            "dur": 4,
+            "args": {
+                "name": "main/res4a_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050243,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4a_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050247,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4a_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050250,
+            "dur": 3,
+            "args": {
+                "name": "main/res4a_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050255,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4a_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050259,
+            "dur": 2,
+            "args": {
+                "name": "main/bn4a_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050262,
+            "dur": 3,
+            "args": {
+                "name": "main/res4a_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050266,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4a_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050270,
+            "dur": 3,
+            "args": {
+                "name": "main/bn4a_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050274,
+            "dur": 3,
+            "args": {
+                "name": "main/res3d_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050278,
+            "dur": 4,
+            "args": {
+                "name": "main/res3d_branch2a/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050283,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3d_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050287,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3d_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050291,
+            "dur": 2,
+            "args": {
+                "name": "main/res3d_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050295,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5a_branch1/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050299,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3d_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050303,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3d_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050306,
+            "dur": 3,
+            "args": {
+                "name": "main/res3d_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050310,
+            "dur": 3,
+            "args": {
+                "name": "main/bn5a_branch1/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050315,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3d_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050318,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3d_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050321,
+            "dur": 3,
+            "args": {
+                "name": "main/res3c_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050325,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3c_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050329,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3c_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050332,
+            "dur": 3,
+            "args": {
+                "name": "main/res3c_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050336,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3c_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050339,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3c_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050343,
+            "dur": 2,
+            "args": {
+                "name": "main/res3c_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050346,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3c_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050350,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3c_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050355,
+            "dur": 2,
+            "args": {
+                "name": "main/res3b_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050359,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3b_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050362,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3b_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050366,
+            "dur": 3,
+            "args": {
+                "name": "main/res3b_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050370,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3b_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050374,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3b_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050377,
+            "dur": 4,
+            "args": {
+                "name": "main/res3b_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050382,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3b_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050385,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3b_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050388,
+            "dur": 3,
+            "args": {
+                "name": "main/res3a_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050392,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3a_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050396,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050399,
+            "dur": 2,
+            "args": {
+                "name": "main/res3a_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050403,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050407,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050410,
+            "dur": 3,
+            "args": {
+                "name": "main/res3a_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050414,
+            "dur": 3,
+            "args": {
+                "name": "main/bn3a_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050419,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050423,
+            "dur": 2,
+            "args": {
+                "name": "main/res2c_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050426,
+            "dur": 3,
+            "args": {
+                "name": "main/res2c_branch2a/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050431,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2c_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050434,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2c_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050438,
+            "dur": 2,
+            "args": {
+                "name": "main/res2c_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050441,
+            "dur": 3,
+            "args": {
+                "name": "main/flatten_1/strided_slice/stack",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050446,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2c_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050449,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2c_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050452,
+            "dur": 3,
+            "args": {
+                "name": "main/res2c_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050456,
+            "dur": 3,
+            "args": {
+                "name": "main/flatten_1/strided_slice/stack_1",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050460,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2c_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050464,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2c_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050467,
+            "dur": 3,
+            "args": {
+                "name": "main/res2b_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050471,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2b_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050474,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2b_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050477,
+            "dur": 3,
+            "args": {
+                "name": "main/res2b_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050481,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2b_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050485,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2b_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050488,
+            "dur": 3,
+            "args": {
+                "name": "main/res2b_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050492,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2b_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050497,
+            "dur": 20,
+            "args": {
+                "name": "main/bn2b_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050519,
+            "dur": 3,
+            "args": {
+                "name": "main/res2a_branch2a/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050523,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch2a/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050527,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch2a/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050531,
+            "dur": 2,
+            "args": {
+                "name": "main/res2a_branch2b/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050534,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch2b/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050538,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch2b/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050542,
+            "dur": 3,
+            "args": {
+                "name": "main/res2a_branch2c/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050546,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch2c/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050550,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2a_branch2c/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050553,
+            "dur": 3,
+            "args": {
+                "name": "main/conv1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050558,
+            "dur": 2,
+            "args": {
+                "name": "main/conv1/bias",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050561,
+            "dur": 2,
+            "args": {
+                "name": "main/bn_conv1/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050564,
+            "dur": 2,
+            "args": {
+                "name": "main/bn_conv1/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050568,
+            "dur": 3,
+            "args": {
+                "name": "main/res2a_branch1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050572,
+            "dur": 3,
+            "args": {
+                "name": "main/fc1000/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050576,
+            "dur": 2,
+            "args": {
+                "name": "main/bn2a_branch1/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050579,
+            "dur": 3,
+            "args": {
+                "name": "main/bn2a_branch1/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050584,
+            "dur": 2,
+            "args": {
+                "name": "main/res3a_branch1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050587,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch1/batchnorm/mul",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050590,
+            "dur": 2,
+            "args": {
+                "name": "main/bn3a_branch1/batchnorm/sub",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050594,
+            "dur": 2,
+            "args": {
+                "name": "main/res4a_branch1/kernel",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050598,
+            "dur": 5,
+            "args": {
+                "name": "_arg_main/input_1_0_0",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876651050605,
+            "dur": 1875616,
+            "args": {
+                "name": "main/conv1/convolution",
+                "op": "Conv2D",
+                "input0": "_arg_main/input_1_0_0",
+                "input1": "main/conv1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876652926244,
+            "dur": 66108,
+            "args": {
+                "name": "main/conv1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/conv1/convolution",
+                "input1": "main/conv1/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876652992365,
+            "dur": 970218,
+            "args": {
+                "name": "main/bn_conv1/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/conv1/BiasAdd",
+                "input1": "main/bn_conv1/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876653962599,
+            "dur": 179151,
+            "args": {
+                "name": "main/bn_conv1/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn_conv1/batchnorm/mul_1",
+                "input1": "main/bn_conv1/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876654141762,
+            "dur": 55729,
+            "args": {
+                "name": "main/activation_1/Relu",
+                "op": "Relu",
+                "input0": "main/bn_conv1/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MaxPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876654197503,
+            "dur": 114799,
+            "args": {
+                "name": "main/max_pooling2d_1/MaxPool",
+                "op": "MaxPool",
+                "input0": "main/activation_1/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876654312330,
+            "dur": 324027,
+            "args": {
+                "name": "main/res2a_branch1/convolution",
+                "op": "Conv2D",
+                "input0": "main/max_pooling2d_1/MaxPool",
+                "input1": "main/res2a_branch1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876654636382,
+            "dur": 62553,
+            "args": {
+                "name": "main/res2a_branch1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2a_branch1/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876654698948,
+            "dur": 949075,
+            "args": {
+                "name": "main/bn2a_branch1/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2a_branch1/BiasAdd",
+                "input1": "main/bn2a_branch1/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876655648036,
+            "dur": 167524,
+            "args": {
+                "name": "main/bn2a_branch1/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2a_branch1/batchnorm/mul_1",
+                "input1": "main/bn2a_branch1/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876655815574,
+            "dur": 88875,
+            "args": {
+                "name": "main/res2a_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/max_pooling2d_1/MaxPool",
+                "input1": "main/res2a_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876655904472,
+            "dur": 17906,
+            "args": {
+                "name": "main/res2a_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2a_branch2a/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876655922390,
+            "dur": 233984,
+            "args": {
+                "name": "main/bn2a_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2a_branch2a/BiasAdd",
+                "input1": "main/bn2a_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876656156386,
+            "dur": 44810,
+            "args": {
+                "name": "main/bn2a_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2a_branch2a/batchnorm/mul_1",
+                "input1": "main/bn2a_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876656201207,
+            "dur": 13111,
+            "args": {
+                "name": "main/activation_2/Relu",
+                "op": "Relu",
+                "input0": "main/bn2a_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876656214326,
+            "dur": 653690,
+            "args": {
+                "name": "main/res2a_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_2/Relu",
+                "input1": "main/res2a_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876656868041,
+            "dur": 18722,
+            "args": {
+                "name": "main/res2a_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2a_branch2b/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876656886777,
+            "dur": 246906,
+            "args": {
+                "name": "main/bn2a_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2a_branch2b/BiasAdd",
+                "input1": "main/bn2a_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876657133708,
+            "dur": 38824,
+            "args": {
+                "name": "main/bn2a_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2a_branch2b/batchnorm/mul_1",
+                "input1": "main/bn2a_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876657172545,
+            "dur": 13949,
+            "args": {
+                "name": "main/activation_3/Relu",
+                "op": "Relu",
+                "input0": "main/bn2a_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876657186505,
+            "dur": 348630,
+            "args": {
+                "name": "main/res2a_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_3/Relu",
+                "input1": "main/res2a_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876657535162,
+            "dur": 70080,
+            "args": {
+                "name": "main/res2a_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2a_branch2c/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876657605256,
+            "dur": 949699,
+            "args": {
+                "name": "main/bn2a_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2a_branch2c/BiasAdd",
+                "input1": "main/bn2a_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876658554969,
+            "dur": 179442,
+            "args": {
+                "name": "main/bn2a_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2a_branch2c/batchnorm/mul_1",
+                "input1": "main/bn2a_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876658734425,
+            "dur": 82320,
+            "args": {
+                "name": "main/add_1/add",
+                "op": "Add",
+                "input0": "main/bn2a_branch2c/batchnorm/add_1",
+                "input1": "main/bn2a_branch1/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876658816786,
+            "dur": 52579,
+            "args": {
+                "name": "main/activation_4/Relu",
+                "op": "Relu",
+                "input0": "main/add_1/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876658869377,
+            "dur": 290683,
+            "args": {
+                "name": "main/res2b_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_4/Relu",
+                "input1": "main/res2b_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876659160085,
+            "dur": 17628,
+            "args": {
+                "name": "main/res2b_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2b_branch2a/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876659177724,
+            "dur": 230830,
+            "args": {
+                "name": "main/bn2b_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2b_branch2a/BiasAdd",
+                "input1": "main/bn2b_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876659408565,
+            "dur": 39399,
+            "args": {
+                "name": "main/bn2b_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2b_branch2a/batchnorm/mul_1",
+                "input1": "main/bn2b_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876659447975,
+            "dur": 13016,
+            "args": {
+                "name": "main/activation_5/Relu",
+                "op": "Relu",
+                "input0": "main/bn2b_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876659461000,
+            "dur": 687787,
+            "args": {
+                "name": "main/res2b_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_5/Relu",
+                "input1": "main/res2b_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660148815,
+            "dur": 18038,
+            "args": {
+                "name": "main/res2b_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2b_branch2b/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660166867,
+            "dur": 257838,
+            "args": {
+                "name": "main/bn2b_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2b_branch2b/BiasAdd",
+                "input1": "main/bn2b_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660424719,
+            "dur": 45266,
+            "args": {
+                "name": "main/bn2b_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2b_branch2b/batchnorm/mul_1",
+                "input1": "main/bn2b_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660469997,
+            "dur": 14373,
+            "args": {
+                "name": "main/activation_6/Relu",
+                "op": "Relu",
+                "input0": "main/bn2b_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660484408,
+            "dur": 326165,
+            "args": {
+                "name": "main/res2b_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_6/Relu",
+                "input1": "main/res2b_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660810597,
+            "dur": 77605,
+            "args": {
+                "name": "main/res2b_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2b_branch2c/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876660888223,
+            "dur": 926493,
+            "args": {
+                "name": "main/bn2b_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2b_branch2c/BiasAdd",
+                "input1": "main/bn2b_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876661814728,
+            "dur": 169958,
+            "args": {
+                "name": "main/bn2b_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2b_branch2c/batchnorm/mul_1",
+                "input1": "main/bn2b_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876661984699,
+            "dur": 83565,
+            "args": {
+                "name": "main/add_2/add",
+                "op": "Add",
+                "input0": "main/bn2b_branch2c/batchnorm/add_1",
+                "input1": "main/activation_4/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662068277,
+            "dur": 53683,
+            "args": {
+                "name": "main/activation_7/Relu",
+                "op": "Relu",
+                "input0": "main/add_2/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662121973,
+            "dur": 275746,
+            "args": {
+                "name": "main/res2c_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_7/Relu",
+                "input1": "main/res2c_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662397740,
+            "dur": 17183,
+            "args": {
+                "name": "main/res2c_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2c_branch2a/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662414938,
+            "dur": 223788,
+            "args": {
+                "name": "main/bn2c_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2c_branch2a/BiasAdd",
+                "input1": "main/bn2c_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662638739,
+            "dur": 38635,
+            "args": {
+                "name": "main/bn2c_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2c_branch2a/batchnorm/mul_1",
+                "input1": "main/bn2c_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662677385,
+            "dur": 13963,
+            "args": {
+                "name": "main/activation_8/Relu",
+                "op": "Relu",
+                "input0": "main/bn2c_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876662691358,
+            "dur": 663652,
+            "args": {
+                "name": "main/res2c_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_8/Relu",
+                "input1": "main/res2c_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876663355038,
+            "dur": 17640,
+            "args": {
+                "name": "main/res2c_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2c_branch2b/convolution",
+                "input1": "main/res2c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876663372691,
+            "dur": 246312,
+            "args": {
+                "name": "main/bn2c_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2c_branch2b/BiasAdd",
+                "input1": "main/bn2c_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876663619017,
+            "dur": 45457,
+            "args": {
+                "name": "main/bn2c_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2c_branch2b/batchnorm/mul_1",
+                "input1": "main/bn2c_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876663664485,
+            "dur": 13939,
+            "args": {
+                "name": "main/activation_9/Relu",
+                "op": "Relu",
+                "input0": "main/bn2c_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876663678437,
+            "dur": 350092,
+            "args": {
+                "name": "main/res2c_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_9/Relu",
+                "input1": "main/res2c_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876664028553,
+            "dur": 64598,
+            "args": {
+                "name": "main/res2c_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res2c_branch2c/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876664093164,
+            "dur": 962731,
+            "args": {
+                "name": "main/bn2c_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res2c_branch2c/BiasAdd",
+                "input1": "main/bn2c_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665055909,
+            "dur": 180609,
+            "args": {
+                "name": "main/bn2c_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn2c_branch2c/batchnorm/mul_1",
+                "input1": "main/bn2c_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665236533,
+            "dur": 88922,
+            "args": {
+                "name": "main/add_3/add",
+                "op": "Add",
+                "input0": "main/bn2c_branch2c/batchnorm/add_1",
+                "input1": "main/activation_7/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665325468,
+            "dur": 53350,
+            "args": {
+                "name": "main/activation_10/Relu",
+                "op": "Relu",
+                "input0": "main/add_3/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665378833,
+            "dur": 456624,
+            "args": {
+                "name": "main/res3a_branch1/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_10/Relu",
+                "input1": "main/res3a_branch1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665835481,
+            "dur": 35194,
+            "args": {
+                "name": "main/res3a_branch1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3a_branch1/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876665870688,
+            "dur": 480067,
+            "args": {
+                "name": "main/bn3a_branch1/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3a_branch1/BiasAdd",
+                "input1": "main/bn3a_branch1/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666350766,
+            "dur": 80788,
+            "args": {
+                "name": "main/bn3a_branch1/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3a_branch1/batchnorm/mul_1",
+                "input1": "main/bn3a_branch1/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666431567,
+            "dur": 136500,
+            "args": {
+                "name": "main/res3a_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_10/Relu",
+                "input1": "main/res3a_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666568091,
+            "dur": 7985,
+            "args": {
+                "name": "main/res3a_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3a_branch2a/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666576087,
+            "dur": 114545,
+            "args": {
+                "name": "main/bn3a_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3a_branch2a/BiasAdd",
+                "input1": "main/bn3a_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666690645,
+            "dur": 22646,
+            "args": {
+                "name": "main/bn3a_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3a_branch2a/batchnorm/mul_1",
+                "input1": "main/bn3a_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666713300,
+            "dur": 9193,
+            "args": {
+                "name": "main/activation_11/Relu",
+                "op": "Relu",
+                "input0": "main/bn3a_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876666722503,
+            "dur": 569795,
+            "args": {
+                "name": "main/res3a_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_11/Relu",
+                "input1": "main/res3a_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667292322,
+            "dur": 8941,
+            "args": {
+                "name": "main/res3a_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3a_branch2b/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667301273,
+            "dur": 130441,
+            "args": {
+                "name": "main/bn3a_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3a_branch2b/BiasAdd",
+                "input1": "main/bn3a_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667431729,
+            "dur": 23851,
+            "args": {
+                "name": "main/bn3a_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3a_branch2b/batchnorm/mul_1",
+                "input1": "main/bn3a_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667455595,
+            "dur": 7820,
+            "args": {
+                "name": "main/activation_12/Relu",
+                "op": "Relu",
+                "input0": "main/bn3a_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667463427,
+            "dur": 272726,
+            "args": {
+                "name": "main/res3a_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_12/Relu",
+                "input1": "main/res3a_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667736177,
+            "dur": 32150,
+            "args": {
+                "name": "main/res3a_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3a_branch2c/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876667768343,
+            "dur": 499246,
+            "args": {
+                "name": "main/bn3a_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3a_branch2c/BiasAdd",
+                "input1": "main/bn3a_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668267602,
+            "dur": 83889,
+            "args": {
+                "name": "main/bn3a_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3a_branch2c/batchnorm/mul_1",
+                "input1": "main/bn3a_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668351502,
+            "dur": 42992,
+            "args": {
+                "name": "main/add_4/add",
+                "op": "Add",
+                "input0": "main/bn3a_branch2c/batchnorm/add_1",
+                "input1": "main/bn3a_branch1/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668394507,
+            "dur": 26610,
+            "args": {
+                "name": "main/activation_13/Relu",
+                "op": "Relu",
+                "input0": "main/add_4/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668421126,
+            "dur": 272471,
+            "args": {
+                "name": "main/res3b_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_13/Relu",
+                "input1": "main/res3b_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668693621,
+            "dur": 8885,
+            "args": {
+                "name": "main/res3b_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3b_branch2a/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668702515,
+            "dur": 130557,
+            "args": {
+                "name": "main/bn3b_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3b_branch2a/BiasAdd",
+                "input1": "main/bn3b_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668833086,
+            "dur": 21095,
+            "args": {
+                "name": "main/bn3b_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3b_branch2a/batchnorm/mul_1",
+                "input1": "main/bn3b_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668854194,
+            "dur": 6921,
+            "args": {
+                "name": "main/activation_14/Relu",
+                "op": "Relu",
+                "input0": "main/bn3b_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876668861124,
+            "dur": 562542,
+            "args": {
+                "name": "main/res3b_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_14/Relu",
+                "input1": "main/res3b_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669423692,
+            "dur": 9311,
+            "args": {
+                "name": "main/res3b_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3b_branch2b/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669433016,
+            "dur": 115044,
+            "args": {
+                "name": "main/bn3b_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3b_branch2b/BiasAdd",
+                "input1": "main/bn3b_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669548074,
+            "dur": 20407,
+            "args": {
+                "name": "main/bn3b_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3b_branch2b/batchnorm/mul_1",
+                "input1": "main/bn3b_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669568493,
+            "dur": 6842,
+            "args": {
+                "name": "main/activation_15/Relu",
+                "op": "Relu",
+                "input0": "main/bn3b_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669575344,
+            "dur": 267599,
+            "args": {
+                "name": "main/res3b_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_15/Relu",
+                "input1": "main/res3b_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669842967,
+            "dur": 32426,
+            "args": {
+                "name": "main/res3b_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3b_branch2c/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876669875405,
+            "dur": 503345,
+            "args": {
+                "name": "main/bn3b_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3b_branch2c/BiasAdd",
+                "input1": "main/bn3b_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670378764,
+            "dur": 92976,
+            "args": {
+                "name": "main/bn3b_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3b_branch2c/batchnorm/mul_1",
+                "input1": "main/bn3b_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670471753,
+            "dur": 47142,
+            "args": {
+                "name": "main/add_5/add",
+                "op": "Add",
+                "input0": "main/bn3b_branch2c/batchnorm/add_1",
+                "input1": "main/activation_13/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670518926,
+            "dur": 30072,
+            "args": {
+                "name": "main/activation_16/Relu",
+                "op": "Relu",
+                "input0": "main/add_5/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670549011,
+            "dur": 256160,
+            "args": {
+                "name": "main/res3c_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_16/Relu",
+                "input1": "main/res3c_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670805193,
+            "dur": 8528,
+            "args": {
+                "name": "main/res3c_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3c_branch2a/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670813733,
+            "dur": 118013,
+            "args": {
+                "name": "main/bn3c_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3c_branch2a/BiasAdd",
+                "input1": "main/bn3c_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670931760,
+            "dur": 20838,
+            "args": {
+                "name": "main/bn3c_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3c_branch2a/batchnorm/mul_1",
+                "input1": "main/bn3c_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670952609,
+            "dur": 6708,
+            "args": {
+                "name": "main/activation_17/Relu",
+                "op": "Relu",
+                "input0": "main/bn3c_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876670959327,
+            "dur": 567156,
+            "args": {
+                "name": "main/res3c_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_17/Relu",
+                "input1": "main/res3c_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671526504,
+            "dur": 8847,
+            "args": {
+                "name": "main/res3c_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3c_branch2b/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671535362,
+            "dur": 113363,
+            "args": {
+                "name": "main/bn3c_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3c_branch2b/BiasAdd",
+                "input1": "main/bn3c_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671648737,
+            "dur": 19849,
+            "args": {
+                "name": "main/bn3c_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3c_branch2b/batchnorm/mul_1",
+                "input1": "main/bn3c_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671668596,
+            "dur": 6599,
+            "args": {
+                "name": "main/activation_18/Relu",
+                "op": "Relu",
+                "input0": "main/bn3c_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671675203,
+            "dur": 271678,
+            "args": {
+                "name": "main/res3c_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_18/Relu",
+                "input1": "main/res3c_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671946914,
+            "dur": 31426,
+            "args": {
+                "name": "main/res3c_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3c_branch2c/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876671978351,
+            "dur": 462525,
+            "args": {
+                "name": "main/bn3c_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3c_branch2c/BiasAdd",
+                "input1": "main/bn3c_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672440890,
+            "dur": 84817,
+            "args": {
+                "name": "main/bn3c_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3c_branch2c/batchnorm/mul_1",
+                "input1": "main/bn3c_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672525719,
+            "dur": 44003,
+            "args": {
+                "name": "main/add_6/add",
+                "op": "Add",
+                "input0": "main/bn3c_branch2c/batchnorm/add_1",
+                "input1": "main/activation_16/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672569736,
+            "dur": 27855,
+            "args": {
+                "name": "main/activation_19/Relu",
+                "op": "Relu",
+                "input0": "main/add_6/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672597604,
+            "dur": 250070,
+            "args": {
+                "name": "main/res3d_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_19/Relu",
+                "input1": "main/res3d_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672847698,
+            "dur": 9038,
+            "args": {
+                "name": "main/res3d_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3d_branch2a/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672856749,
+            "dur": 132291,
+            "args": {
+                "name": "main/bn3d_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3d_branch2a/BiasAdd",
+                "input1": "main/bn3d_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876672989054,
+            "dur": 23014,
+            "args": {
+                "name": "main/bn3d_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3d_branch2a/batchnorm/mul_1",
+                "input1": "main/bn3d_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673012080,
+            "dur": 7117,
+            "args": {
+                "name": "main/activation_20/Relu",
+                "op": "Relu",
+                "input0": "main/bn3d_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673019207,
+            "dur": 582785,
+            "args": {
+                "name": "main/res3d_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_20/Relu",
+                "input1": "main/res3d_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673602015,
+            "dur": 7875,
+            "args": {
+                "name": "main/res3d_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3d_branch2b/convolution",
+                "input1": "main/res3d_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673609899,
+            "dur": 123604,
+            "args": {
+                "name": "main/bn3d_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3d_branch2b/BiasAdd",
+                "input1": "main/bn3d_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673733518,
+            "dur": 24563,
+            "args": {
+                "name": "main/bn3d_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3d_branch2b/batchnorm/mul_1",
+                "input1": "main/bn3d_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673758095,
+            "dur": 7213,
+            "args": {
+                "name": "main/activation_21/Relu",
+                "op": "Relu",
+                "input0": "main/bn3d_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876673765316,
+            "dur": 285417,
+            "args": {
+                "name": "main/res3d_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_21/Relu",
+                "input1": "main/res3d_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674050757,
+            "dur": 31849,
+            "args": {
+                "name": "main/res3d_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res3d_branch2c/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674082618,
+            "dur": 482867,
+            "args": {
+                "name": "main/bn3d_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res3d_branch2c/BiasAdd",
+                "input1": "main/bn3d_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674565500,
+            "dur": 82442,
+            "args": {
+                "name": "main/bn3d_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn3d_branch2c/batchnorm/mul_1",
+                "input1": "main/bn3d_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674647953,
+            "dur": 43535,
+            "args": {
+                "name": "main/add_7/add",
+                "op": "Add",
+                "input0": "main/bn3d_branch2c/batchnorm/add_1",
+                "input1": "main/activation_19/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674691502,
+            "dur": 26659,
+            "args": {
+                "name": "main/activation_22/Relu",
+                "op": "Relu",
+                "input0": "main/add_7/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876674718174,
+            "dur": 442741,
+            "args": {
+                "name": "main/res4a_branch1/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_22/Relu",
+                "input1": "main/res4a_branch1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675160939,
+            "dur": 15992,
+            "args": {
+                "name": "main/res4a_branch1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4a_branch1/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675176942,
+            "dur": 228765,
+            "args": {
+                "name": "main/bn4a_branch1/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4a_branch1/BiasAdd",
+                "input1": "main/bn4a_branch1/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675405720,
+            "dur": 41441,
+            "args": {
+                "name": "main/bn4a_branch1/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4a_branch1/batchnorm/mul_1",
+                "input1": "main/bn4a_branch1/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675447174,
+            "dur": 109877,
+            "args": {
+                "name": "main/res4a_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_22/Relu",
+                "input1": "main/res4a_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675557077,
+            "dur": 4440,
+            "args": {
+                "name": "main/res4a_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4a_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675561523,
+            "dur": 65686,
+            "args": {
+                "name": "main/bn4a_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4a_branch2a/BiasAdd",
+                "input1": "main/bn4a_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675627219,
+            "dur": 12837,
+            "args": {
+                "name": "main/bn4a_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4a_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4a_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675640066,
+            "dur": 2640,
+            "args": {
+                "name": "main/activation_23/Relu",
+                "op": "Relu",
+                "input0": "main/bn4a_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876675642711,
+            "dur": 499295,
+            "args": {
+                "name": "main/res4a_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_23/Relu",
+                "input1": "main/res4a_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676142027,
+            "dur": 3973,
+            "args": {
+                "name": "main/res4a_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4a_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676146004,
+            "dur": 56840,
+            "args": {
+                "name": "main/bn4a_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4a_branch2b/BiasAdd",
+                "input1": "main/bn4a_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676202852,
+            "dur": 9866,
+            "args": {
+                "name": "main/bn4a_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4a_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4a_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676212722,
+            "dur": 1689,
+            "args": {
+                "name": "main/activation_24/Relu",
+                "op": "Relu",
+                "input0": "main/bn4a_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676214414,
+            "dur": 208673,
+            "args": {
+                "name": "main/res4a_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_24/Relu",
+                "input1": "main/res4a_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676423113,
+            "dur": 18801,
+            "args": {
+                "name": "main/res4a_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4a_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676441928,
+            "dur": 260736,
+            "args": {
+                "name": "main/bn4a_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4a_branch2c/BiasAdd",
+                "input1": "main/bn4a_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676702677,
+            "dur": 46712,
+            "args": {
+                "name": "main/bn4a_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4a_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4a_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676749401,
+            "dur": 23283,
+            "args": {
+                "name": "main/add_8/add",
+                "op": "Add",
+                "input0": "main/bn4a_branch2c/batchnorm/add_1",
+                "input1": "main/bn4a_branch1/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676772697,
+            "dur": 15231,
+            "args": {
+                "name": "main/activation_25/Relu",
+                "op": "Relu",
+                "input0": "main/add_8/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876676787940,
+            "dur": 216171,
+            "args": {
+                "name": "main/res4b_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_25/Relu",
+                "input1": "main/res4b_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677004133,
+            "dur": 3881,
+            "args": {
+                "name": "main/res4b_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4b_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677008019,
+            "dur": 56599,
+            "args": {
+                "name": "main/bn4b_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4b_branch2a/BiasAdd",
+                "input1": "main/bn4b_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677064624,
+            "dur": 9925,
+            "args": {
+                "name": "main/bn4b_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4b_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4b_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677074555,
+            "dur": 1795,
+            "args": {
+                "name": "main/activation_26/Relu",
+                "op": "Relu",
+                "input0": "main/bn4b_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677076354,
+            "dur": 498383,
+            "args": {
+                "name": "main/res4b_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_26/Relu",
+                "input1": "main/res4b_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677574760,
+            "dur": 4461,
+            "args": {
+                "name": "main/res4b_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4b_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677579227,
+            "dur": 66422,
+            "args": {
+                "name": "main/bn4b_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4b_branch2b/BiasAdd",
+                "input1": "main/bn4b_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677645656,
+            "dur": 11220,
+            "args": {
+                "name": "main/bn4b_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4b_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4b_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677656881,
+            "dur": 2017,
+            "args": {
+                "name": "main/activation_27/Relu",
+                "op": "Relu",
+                "input0": "main/bn4b_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677658902,
+            "dur": 233386,
+            "args": {
+                "name": "main/res4b_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_27/Relu",
+                "input1": "main/res4b_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677892309,
+            "dur": 16880,
+            "args": {
+                "name": "main/res4b_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4b_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876677909202,
+            "dur": 230991,
+            "args": {
+                "name": "main/bn4b_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4b_branch2c/BiasAdd",
+                "input1": "main/bn4b_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678140206,
+            "dur": 39908,
+            "args": {
+                "name": "main/bn4b_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4b_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4b_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678180125,
+            "dur": 22840,
+            "args": {
+                "name": "main/add_9/add",
+                "op": "Add",
+                "input0": "main/bn4b_branch2c/batchnorm/add_1",
+                "input1": "main/activation_25/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678202978,
+            "dur": 13381,
+            "args": {
+                "name": "main/activation_28/Relu",
+                "op": "Relu",
+                "input0": "main/add_9/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678216369,
+            "dur": 199439,
+            "args": {
+                "name": "main/res4c_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_28/Relu",
+                "input1": "main/res4c_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678415829,
+            "dur": 4151,
+            "args": {
+                "name": "main/res4c_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4c_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678419986,
+            "dur": 60043,
+            "args": {
+                "name": "main/bn4c_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4c_branch2a/BiasAdd",
+                "input1": "main/bn4c_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678480038,
+            "dur": 12417,
+            "args": {
+                "name": "main/bn4c_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4c_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4c_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678492462,
+            "dur": 1865,
+            "args": {
+                "name": "main/activation_29/Relu",
+                "op": "Relu",
+                "input0": "main/bn4c_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876678494331,
+            "dur": 537447,
+            "args": {
+                "name": "main/res4c_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_29/Relu",
+                "input1": "main/res4c_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679031803,
+            "dur": 5479,
+            "args": {
+                "name": "main/res4c_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4c_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679037291,
+            "dur": 65409,
+            "args": {
+                "name": "main/bn4c_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4c_branch2b/BiasAdd",
+                "input1": "main/bn4c_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679102712,
+            "dur": 11330,
+            "args": {
+                "name": "main/bn4c_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4c_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4c_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679114051,
+            "dur": 3007,
+            "args": {
+                "name": "main/activation_30/Relu",
+                "op": "Relu",
+                "input0": "main/bn4c_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679117067,
+            "dur": 228890,
+            "args": {
+                "name": "main/res4c_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_30/Relu",
+                "input1": "main/res4c_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679345978,
+            "dur": 15763,
+            "args": {
+                "name": "main/res4c_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4c_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679361762,
+            "dur": 238356,
+            "args": {
+                "name": "main/bn4c_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4c_branch2c/BiasAdd",
+                "input1": "main/bn4c_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679600130,
+            "dur": 41390,
+            "args": {
+                "name": "main/bn4c_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4c_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4c_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679641532,
+            "dur": 20824,
+            "args": {
+                "name": "main/add_10/add",
+                "op": "Add",
+                "input0": "main/bn4c_branch2c/batchnorm/add_1",
+                "input1": "main/activation_28/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679662366,
+            "dur": 13255,
+            "args": {
+                "name": "main/activation_31/Relu",
+                "op": "Relu",
+                "input0": "main/add_10/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679675629,
+            "dur": 200025,
+            "args": {
+                "name": "main/res4d_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_31/Relu",
+                "input1": "main/res4d_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679875675,
+            "dur": 3888,
+            "args": {
+                "name": "main/res4d_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4d_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679879570,
+            "dur": 59461,
+            "args": {
+                "name": "main/bn4d_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4d_branch2a/BiasAdd",
+                "input1": "main/bn4d_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679939042,
+            "dur": 9977,
+            "args": {
+                "name": "main/bn4d_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4d_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4d_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679949028,
+            "dur": 1905,
+            "args": {
+                "name": "main/activation_32/Relu",
+                "op": "Relu",
+                "input0": "main/bn4d_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876679950938,
+            "dur": 489629,
+            "args": {
+                "name": "main/res4d_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_32/Relu",
+                "input1": "main/res4d_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680440589,
+            "dur": 4078,
+            "args": {
+                "name": "main/res4d_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4d_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680444673,
+            "dur": 57642,
+            "args": {
+                "name": "main/bn4d_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4d_branch2b/BiasAdd",
+                "input1": "main/bn4d_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680502324,
+            "dur": 9923,
+            "args": {
+                "name": "main/bn4d_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4d_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4d_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680512252,
+            "dur": 2047,
+            "args": {
+                "name": "main/activation_33/Relu",
+                "op": "Relu",
+                "input0": "main/bn4d_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680514303,
+            "dur": 213007,
+            "args": {
+                "name": "main/res4d_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_33/Relu",
+                "input1": "main/res4d_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680727332,
+            "dur": 16947,
+            "args": {
+                "name": "main/res4d_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4d_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680744291,
+            "dur": 234018,
+            "args": {
+                "name": "main/bn4d_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4d_branch2c/BiasAdd",
+                "input1": "main/bn4d_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876680978323,
+            "dur": 42374,
+            "args": {
+                "name": "main/bn4d_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4d_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4d_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681020710,
+            "dur": 22724,
+            "args": {
+                "name": "main/add_11/add",
+                "op": "Add",
+                "input0": "main/bn4d_branch2c/batchnorm/add_1",
+                "input1": "main/activation_31/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681043446,
+            "dur": 13459,
+            "args": {
+                "name": "main/activation_34/Relu",
+                "op": "Relu",
+                "input0": "main/add_11/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681056915,
+            "dur": 201074,
+            "args": {
+                "name": "main/res4e_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_34/Relu",
+                "input1": "main/res4e_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681258011,
+            "dur": 3869,
+            "args": {
+                "name": "main/res4e_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4e_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681261884,
+            "dur": 56498,
+            "args": {
+                "name": "main/bn4e_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4e_branch2a/BiasAdd",
+                "input1": "main/bn4e_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681318390,
+            "dur": 9878,
+            "args": {
+                "name": "main/bn4e_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4e_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4e_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681328272,
+            "dur": 1779,
+            "args": {
+                "name": "main/activation_35/Relu",
+                "op": "Relu",
+                "input0": "main/bn4e_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681330054,
+            "dur": 475042,
+            "args": {
+                "name": "main/res4e_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_35/Relu",
+                "input1": "main/res4e_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681805117,
+            "dur": 3977,
+            "args": {
+                "name": "main/res4e_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4e_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681809101,
+            "dur": 59738,
+            "args": {
+                "name": "main/bn4e_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4e_branch2b/BiasAdd",
+                "input1": "main/bn4e_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681868849,
+            "dur": 10280,
+            "args": {
+                "name": "main/bn4e_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4e_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4e_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681879135,
+            "dur": 2008,
+            "args": {
+                "name": "main/activation_36/Relu",
+                "op": "Relu",
+                "input0": "main/bn4e_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876681881147,
+            "dur": 209842,
+            "args": {
+                "name": "main/res4e_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_36/Relu",
+                "input1": "main/res4e_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682091011,
+            "dur": 16054,
+            "args": {
+                "name": "main/res4e_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4e_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682107076,
+            "dur": 233314,
+            "args": {
+                "name": "main/bn4e_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4e_branch2c/BiasAdd",
+                "input1": "main/bn4e_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682340402,
+            "dur": 40372,
+            "args": {
+                "name": "main/bn4e_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4e_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4e_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682380785,
+            "dur": 22282,
+            "args": {
+                "name": "main/add_12/add",
+                "op": "Add",
+                "input0": "main/bn4e_branch2c/batchnorm/add_1",
+                "input1": "main/activation_34/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682403079,
+            "dur": 13233,
+            "args": {
+                "name": "main/activation_37/Relu",
+                "op": "Relu",
+                "input0": "main/add_12/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682416321,
+            "dur": 216709,
+            "args": {
+                "name": "main/res4f_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_37/Relu",
+                "input1": "main/res4f_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682633053,
+            "dur": 4944,
+            "args": {
+                "name": "main/res4f_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4f_branch2a/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682638007,
+            "dur": 57146,
+            "args": {
+                "name": "main/bn4f_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4f_branch2a/BiasAdd",
+                "input1": "main/bn4f_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682695161,
+            "dur": 10108,
+            "args": {
+                "name": "main/bn4f_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4f_branch2a/batchnorm/mul_1",
+                "input1": "main/bn4f_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682705276,
+            "dur": 2151,
+            "args": {
+                "name": "main/activation_38/Relu",
+                "op": "Relu",
+                "input0": "main/bn4f_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876682707432,
+            "dur": 483009,
+            "args": {
+                "name": "main/res4f_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_38/Relu",
+                "input1": "main/res4f_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683190463,
+            "dur": 4155,
+            "args": {
+                "name": "main/res4f_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4f_branch2b/convolution",
+                "input1": "main/res4f_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683194623,
+            "dur": 57283,
+            "args": {
+                "name": "main/bn4f_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4f_branch2b/BiasAdd",
+                "input1": "main/bn4f_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683251917,
+            "dur": 9835,
+            "args": {
+                "name": "main/bn4f_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4f_branch2b/batchnorm/mul_1",
+                "input1": "main/bn4f_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683261757,
+            "dur": 1649,
+            "args": {
+                "name": "main/activation_39/Relu",
+                "op": "Relu",
+                "input0": "main/bn4f_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683263409,
+            "dur": 206986,
+            "args": {
+                "name": "main/res4f_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_39/Relu",
+                "input1": "main/res4f_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683470416,
+            "dur": 16861,
+            "args": {
+                "name": "main/res4f_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res4f_branch2c/convolution",
+                "input1": "main/res4f_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683487289,
+            "dur": 230103,
+            "args": {
+                "name": "main/bn4f_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res4f_branch2c/BiasAdd",
+                "input1": "main/bn4f_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683717405,
+            "dur": 40979,
+            "args": {
+                "name": "main/bn4f_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn4f_branch2c/batchnorm/mul_1",
+                "input1": "main/bn4f_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683758395,
+            "dur": 22017,
+            "args": {
+                "name": "main/add_13/add",
+                "op": "Add",
+                "input0": "main/bn4f_branch2c/batchnorm/add_1",
+                "input1": "main/activation_37/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683780424,
+            "dur": 14554,
+            "args": {
+                "name": "main/activation_40/Relu",
+                "op": "Relu",
+                "input0": "main/add_13/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683794992,
+            "dur": 104698,
+            "args": {
+                "name": "main/res5a_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_40/Relu",
+                "input1": "main/res5a_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683899712,
+            "dur": 1846,
+            "args": {
+                "name": "main/res5a_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5a_branch2a/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683901569,
+            "dur": 27832,
+            "args": {
+                "name": "main/bn5a_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5a_branch2a/BiasAdd",
+                "input1": "main/bn5a_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683929405,
+            "dur": 4903,
+            "args": {
+                "name": "main/bn5a_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5a_branch2a/batchnorm/mul_1",
+                "input1": "main/bn5a_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683934312,
+            "dur": 1593,
+            "args": {
+                "name": "main/activation_41/Relu",
+                "op": "Relu",
+                "input0": "main/bn5a_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876683935908,
+            "dur": 445547,
+            "args": {
+                "name": "main/res5a_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_41/Relu",
+                "input1": "main/res5a_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684381477,
+            "dur": 1883,
+            "args": {
+                "name": "main/res5a_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5a_branch2b/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684383364,
+            "dur": 28806,
+            "args": {
+                "name": "main/bn5a_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5a_branch2b/BiasAdd",
+                "input1": "main/bn5a_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684412174,
+            "dur": 4851,
+            "args": {
+                "name": "main/bn5a_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5a_branch2b/batchnorm/mul_1",
+                "input1": "main/bn5a_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684417028,
+            "dur": 663,
+            "args": {
+                "name": "main/activation_42/Relu",
+                "op": "Relu",
+                "input0": "main/bn5a_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684417693,
+            "dur": 198825,
+            "args": {
+                "name": "main/res5a_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_42/Relu",
+                "input1": "main/res5a_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684616542,
+            "dur": 9462,
+            "args": {
+                "name": "main/res5a_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5a_branch2c/convolution",
+                "input1": "main/res5c_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684626017,
+            "dur": 115613,
+            "args": {
+                "name": "main/bn5a_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5a_branch2c/BiasAdd",
+                "input1": "main/bn5a_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684741644,
+            "dur": 20681,
+            "args": {
+                "name": "main/bn5a_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5a_branch2c/batchnorm/mul_1",
+                "input1": "main/bn5a_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876684762340,
+            "dur": 378852,
+            "args": {
+                "name": "main/res5a_branch1/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_40/Relu",
+                "input1": "main/res5a_branch1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685141215,
+            "dur": 8106,
+            "args": {
+                "name": "main/res5a_branch1/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5a_branch1/convolution",
+                "input1": "main/res5c_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685149332,
+            "dur": 114120,
+            "args": {
+                "name": "main/bn5a_branch1/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5a_branch1/BiasAdd",
+                "input1": "main/bn5a_branch1/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685263464,
+            "dur": 19791,
+            "args": {
+                "name": "main/bn5a_branch1/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5a_branch1/batchnorm/mul_1",
+                "input1": "main/bn5a_branch1/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685283264,
+            "dur": 12085,
+            "args": {
+                "name": "main/add_14/add",
+                "op": "Add",
+                "input0": "main/bn5a_branch2c/batchnorm/add_1",
+                "input1": "main/bn5a_branch1/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685295362,
+            "dur": 6899,
+            "args": {
+                "name": "main/activation_43/Relu",
+                "op": "Relu",
+                "input0": "main/add_14/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685302273,
+            "dur": 200191,
+            "args": {
+                "name": "main/res5b_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_43/Relu",
+                "input1": "main/res5b_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685502486,
+            "dur": 1893,
+            "args": {
+                "name": "main/res5b_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5b_branch2a/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685504382,
+            "dur": 28505,
+            "args": {
+                "name": "main/bn5b_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5b_branch2a/BiasAdd",
+                "input1": "main/bn5b_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685532892,
+            "dur": 5833,
+            "args": {
+                "name": "main/bn5b_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5b_branch2a/batchnorm/mul_1",
+                "input1": "main/bn5b_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685538729,
+            "dur": 674,
+            "args": {
+                "name": "main/activation_44/Relu",
+                "op": "Relu",
+                "input0": "main/bn5b_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685539407,
+            "dur": 443419,
+            "args": {
+                "name": "main/res5b_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_44/Relu",
+                "input1": "main/res5b_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685982848,
+            "dur": 2400,
+            "args": {
+                "name": "main/res5b_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5b_branch2b/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876685985252,
+            "dur": 28899,
+            "args": {
+                "name": "main/bn5b_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5b_branch2b/BiasAdd",
+                "input1": "main/bn5b_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686014155,
+            "dur": 4855,
+            "args": {
+                "name": "main/bn5b_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5b_branch2b/batchnorm/mul_1",
+                "input1": "main/bn5b_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686019014,
+            "dur": 653,
+            "args": {
+                "name": "main/activation_45/Relu",
+                "op": "Relu",
+                "input0": "main/bn5b_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686019670,
+            "dur": 196596,
+            "args": {
+                "name": "main/res5b_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_45/Relu",
+                "input1": "main/res5b_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686216287,
+            "dur": 7876,
+            "args": {
+                "name": "main/res5b_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5b_branch2c/convolution",
+                "input1": "main/res5c_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686224172,
+            "dur": 115331,
+            "args": {
+                "name": "main/bn5b_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5b_branch2c/BiasAdd",
+                "input1": "main/bn5b_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686339516,
+            "dur": 20121,
+            "args": {
+                "name": "main/bn5b_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5b_branch2c/batchnorm/mul_1",
+                "input1": "main/bn5b_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686359649,
+            "dur": 11641,
+            "args": {
+                "name": "main/add_15/add",
+                "op": "Add",
+                "input0": "main/bn5b_branch2c/batchnorm/add_1",
+                "input1": "main/activation_43/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686371303,
+            "dur": 6628,
+            "args": {
+                "name": "main/activation_46/Relu",
+                "op": "Relu",
+                "input0": "main/add_15/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686377939,
+            "dur": 215052,
+            "args": {
+                "name": "main/res5c_branch2a/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_46/Relu",
+                "input1": "main/res5c_branch2a/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686593016,
+            "dur": 2177,
+            "args": {
+                "name": "main/res5c_branch2a/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5c_branch2a/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686595197,
+            "dur": 32331,
+            "args": {
+                "name": "main/bn5c_branch2a/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5c_branch2a/BiasAdd",
+                "input1": "main/bn5c_branch2a/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686627533,
+            "dur": 5584,
+            "args": {
+                "name": "main/bn5c_branch2a/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5c_branch2a/batchnorm/mul_1",
+                "input1": "main/bn5c_branch2a/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686633121,
+            "dur": 839,
+            "args": {
+                "name": "main/activation_47/Relu",
+                "op": "Relu",
+                "input0": "main/bn5c_branch2a/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876686633964,
+            "dur": 471072,
+            "args": {
+                "name": "main/res5c_branch2b/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_47/Relu",
+                "input1": "main/res5c_branch2b/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687105058,
+            "dur": 2169,
+            "args": {
+                "name": "main/res5c_branch2b/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5c_branch2b/convolution",
+                "input1": "main/res5c_branch2a/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687107231,
+            "dur": 33321,
+            "args": {
+                "name": "main/bn5c_branch2b/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5c_branch2b/BiasAdd",
+                "input1": "main/bn5c_branch2b/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687140556,
+            "dur": 5650,
+            "args": {
+                "name": "main/bn5c_branch2b/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5c_branch2b/batchnorm/mul_1",
+                "input1": "main/bn5c_branch2b/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687146210,
+            "dur": 782,
+            "args": {
+                "name": "main/activation_48/Relu",
+                "op": "Relu",
+                "input0": "main/bn5c_branch2b/batchnorm/add_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Conv2D",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687146995,
+            "dur": 224504,
+            "args": {
+                "name": "main/res5c_branch2c/convolution",
+                "op": "Conv2D",
+                "input0": "main/activation_48/Relu",
+                "input1": "main/res5c_branch2c/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687371523,
+            "dur": 8877,
+            "args": {
+                "name": "main/res5c_branch2c/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/res5c_branch2c/convolution",
+                "input1": "main/res5c_branch2c/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687380411,
+            "dur": 116101,
+            "args": {
+                "name": "main/bn5c_branch2c/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "main/res5c_branch2c/BiasAdd",
+                "input1": "main/bn5c_branch2c/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687496524,
+            "dur": 19922,
+            "args": {
+                "name": "main/bn5c_branch2c/batchnorm/add_1",
+                "op": "Add",
+                "input0": "main/bn5c_branch2c/batchnorm/mul_1",
+                "input1": "main/bn5c_branch2c/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687516455,
+            "dur": 10975,
+            "args": {
+                "name": "main/add_16/add",
+                "op": "Add",
+                "input0": "main/bn5c_branch2c/batchnorm/add_1",
+                "input1": "main/activation_46/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Relu",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687527441,
+            "dur": 6428,
+            "args": {
+                "name": "main/activation_49/Relu",
+                "op": "Relu",
+                "input0": "main/add_16/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "AvgPool",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687533877,
+            "dur": 7231,
+            "args": {
+                "name": "main/avg_pool/AvgPool",
+                "op": "AvgPool",
+                "input0": "main/activation_49/Relu"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541127,
+            "dur": 12,
+            "args": {
+                "name": "main/flatten_1/Shape",
+                "op": "Shape",
+                "input0": "main/avg_pool/AvgPool"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541141,
+            "dur": 12,
+            "args": {
+                "name": "main/flatten_1/strided_slice",
+                "op": "StridedSlice",
+                "input0": "main/flatten_1/Shape",
+                "input1": "main/flatten_1/strided_slice/stack",
+                "input2": "main/flatten_1/strided_slice/stack_1",
+                "input3": "main/flatten_1/strided_slice/stack"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541156,
+            "dur": 12,
+            "args": {
+                "name": "main/flatten_1/Prod",
+                "op": "Prod",
+                "input0": "main/flatten_1/strided_slice",
+                "input1": "main/flatten_1/strided_slice/stack_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541170,
+            "dur": 10,
+            "args": {
+                "name": "main/flatten_1/stack",
+                "op": "Pack",
+                "input0": "main/flatten_1/stack/0",
+                "input1": "main/flatten_1/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Reshape",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541182,
+            "dur": 4,
+            "args": {
+                "name": "main/flatten_1/Reshape",
+                "op": "Reshape",
+                "input0": "main/avg_pool/AvgPool",
+                "input1": "main/flatten_1/stack"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687541188,
+            "dur": 9271,
+            "args": {
+                "name": "main/fc1000/MatMul",
+                "op": "MatMul",
+                "input0": "main/flatten_1/Reshape",
+                "input1": "main/fc1000/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687550466,
+            "dur": 76,
+            "args": {
+                "name": "main/fc1000/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "main/fc1000/MatMul",
+                "input1": "main/fc1000/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Softmax",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687550545,
+            "dur": 2990,
+            "args": {
+                "name": "main/fc1000/Softmax",
+                "op": "Softmax",
+                "input0": "main/fc1000/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687553539,
+            "dur": 3,
+            "args": {
+                "name": "main/output_node0",
+                "op": "Identity",
+                "input0": "main/fc1000/Softmax"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Retval",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1517876687553543,
+            "dur": 10,
+            "args": {
+                "name": "_retval_main/output_node0_0_0",
+                "op": "_Retval",
+                "input0": "main/output_node0"
+            }
+        }
+    ]
+}

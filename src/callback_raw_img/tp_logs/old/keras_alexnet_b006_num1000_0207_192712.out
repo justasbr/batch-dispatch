@@ -1,0 +1,10 @@
+Framework	keras
+Model____	alexnet
+Bsize____	006
+TP (Img/s)	124.78
+99pct LAT	0.0577
+90pct LAT	0.0510
+
+75pct LAT	0.0485
+MEAN LAT	0.0481
+Summary: keras alexnet BATCH 006 TP 124.78 PCT99 0.0577 MEAN 0.0481

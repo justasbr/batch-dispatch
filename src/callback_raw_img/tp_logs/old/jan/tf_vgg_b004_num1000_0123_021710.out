@@ -1,0 +1,10 @@
+Framework	tf
+Model____	vgg
+Bsize____	004
+TP (Img/s)	10.00
+99pct LAT	0.4237
+90pct LAT	0.4118
+
+75pct LAT	0.4042
+50pct LAT	0.3985
+ 

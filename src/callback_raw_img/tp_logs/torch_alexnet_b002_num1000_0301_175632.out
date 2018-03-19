@@ -1,0 +1,10 @@
+Framework	torch
+Model____	alexnet
+Bsize____	002
+TP (Img/s)	119.26
+99pct LAT	0.0252
+90pct LAT	0.0179
+
+75pct LAT	0.0166
+MEAN LAT	0.0168
+Summary: torch alexnet BATCH 002 TP 119.26 PCT99 0.0252 MEAN 0.0168

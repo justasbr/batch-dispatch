@@ -1,0 +1,10 @@
+Framework	keras
+Model____	inception
+Bsize____	005
+TP (Img/s)	18.11
+99pct LAT	0.3112
+90pct LAT	0.2844
+
+75pct LAT	0.2787
+MEAN LAT	0.2761
+Summary: keras inception BATCH 005 TP 18.11 PCT99 0.3112 MEAN 0.2761

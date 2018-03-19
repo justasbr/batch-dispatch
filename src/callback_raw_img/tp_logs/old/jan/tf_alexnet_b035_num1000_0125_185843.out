@@ -1,0 +1,10 @@
+Framework	tf
+Model____	alexnet
+Bsize____	035
+TP (Img/s)	207.62
+99pct LAT	0.1871
+90pct LAT	0.1753
+
+75pct LAT	0.1704
+50pct LAT	0.1671
+ 

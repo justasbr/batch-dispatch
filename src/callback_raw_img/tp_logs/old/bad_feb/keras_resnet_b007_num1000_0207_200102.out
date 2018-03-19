@@ -1,0 +1,10 @@
+Framework	keras
+Model____	resnet
+Bsize____	007
+TP (Img/s)	17.11
+99pct LAT	0.4544
+90pct LAT	0.4221
+
+75pct LAT	0.4145
+MEAN LAT	0.4091
+Summary: keras resnet BATCH 007 TP 17.11 PCT99 0.4544 MEAN 0.4091

@@ -1,0 +1,10 @@
+Framework	keras
+Model____	vgg
+Bsize____	002
+TP (Img/s)	24.62
+99pct LAT	0.1053
+90pct LAT	0.0859
+
+75pct LAT	0.0808
+MEAN LAT	0.0812
+Summary: keras vgg BATCH 002 TP 24.62 PCT99 0.1053 MEAN 0.0812

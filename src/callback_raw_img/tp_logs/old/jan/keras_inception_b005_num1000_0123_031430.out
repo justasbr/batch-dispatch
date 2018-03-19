@@ -1,0 +1,10 @@
+Framework	keras
+Model____	inception
+Bsize____	005
+TP (Img/s)	16.58
+99pct LAT	0.3300
+90pct LAT	0.3122
+
+75pct LAT	0.3055
+50pct LAT	0.2999
+ 

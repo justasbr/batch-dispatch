@@ -1,0 +1,10 @@
+Framework	tf
+Model____	inception
+Bsize____	001
+TP (Img/s)	11.40
+99pct LAT	0.0997
+90pct LAT	0.0905
+
+75pct LAT	0.0875
+MEAN LAT	0.0877
+Summary: tf inception BATCH 001 TP 11.40 PCT99 0.0997 MEAN 0.0877

@@ -1,0 +1,10 @@
+Framework	tf
+Model____	vgg
+Bsize____	001
+TP (Img/s)	20.78
+99pct LAT	0.0726
+90pct LAT	0.0519
+
+75pct LAT	0.0467
+MEAN LAT	0.0481
+Summary: tf vgg BATCH 001 TP 20.78 PCT99 0.0726 MEAN 0.0481

@@ -1,0 +1,10 @@
+Framework	torch
+Model____	alexnet
+Bsize____	037
+TP (Img/s)	187.65
+99pct LAT	0.2353
+90pct LAT	0.2095
+
+75pct LAT	0.2014
+50pct LAT	0.1949
+ 

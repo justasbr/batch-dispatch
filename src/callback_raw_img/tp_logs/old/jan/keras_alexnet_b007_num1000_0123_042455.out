@@ -1,0 +1,10 @@
+Framework	keras
+Model____	alexnet
+Bsize____	007
+TP (Img/s)	143.66
+99pct LAT	0.0620
+90pct LAT	0.0525
+
+75pct LAT	0.0490
+50pct LAT	0.0477
+ 

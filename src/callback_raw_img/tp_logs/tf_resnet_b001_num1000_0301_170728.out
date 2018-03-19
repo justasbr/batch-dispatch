@@ -1,0 +1,10 @@
+Framework	tf
+Model____	resnet
+Bsize____	001
+TP (Img/s)	12.16
+99pct LAT	0.1032
+90pct LAT	0.0885
+
+75pct LAT	0.0816
+MEAN LAT	0.0822
+Summary: tf resnet BATCH 001 TP 12.16 PCT99 0.1032 MEAN 0.0822

@@ -1,0 +1,10 @@
+Framework	torch
+Model____	inception
+Bsize____	003
+TP (Img/s)	13.51
+99pct LAT	0.2737
+90pct LAT	0.2309
+
+75pct LAT	0.2191
+MEAN LAT	0.2220
+Summary: torch inception BATCH 003 TP 13.51 PCT99 0.2737 MEAN 0.2220

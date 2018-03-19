@@ -1,0 +1,10 @@
+Framework	tf
+Model____	alexnet
+Bsize____	020
+TP (Img/s)	470.84
+99pct LAT	0.0815
+90pct LAT	0.0452
+
+75pct LAT	0.0410
+MEAN LAT	0.0425
+Summary: tf alexnet BATCH 020 TP 470.84 PCT99 0.0815 MEAN 0.0425
