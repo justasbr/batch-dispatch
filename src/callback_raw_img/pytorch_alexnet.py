@@ -16,6 +16,9 @@ def load_weights(weight_file):
 
     return weights_dict
 
+def t_relu(layer):
+    return F.relu(layer, inplace=True)
+
 class KitModel(nn.Module):
 
     
@@ -36,27 +39,27 @@ class KitModel(nn.Module):
     def forward(self, x):
         conv2d_1_pad    = F.pad(x, (3, 4, 3, 4))
         conv2d_1        = self.conv2d_1(conv2d_1_pad)
-        activation_1    = F.relu(conv2d_1)
+        activation_1    = t_relu(conv2d_1)
         max_pooling2d_1 = F.max_pool2d(activation_1, kernel_size=(3, 3), stride=(2, 2))
         conv2d_2_pad    = F.pad(max_pooling2d_1, (2, 2, 2, 2))
         conv2d_2        = self.conv2d_2(conv2d_2_pad)
-        activation_2    = F.relu(conv2d_2)
+        activation_2    = t_relu(conv2d_2)
         max_pooling2d_2 = F.max_pool2d(activation_2, kernel_size=(3, 3), stride=(2, 2))
         conv2d_3_pad    = F.pad(max_pooling2d_2, (1, 1, 1, 1))
         conv2d_3        = self.conv2d_3(conv2d_3_pad)
-        activation_3    = F.relu(conv2d_3)
+        activation_3    = t_relu(conv2d_3)
         conv2d_4_pad    = F.pad(activation_3, (1, 1, 1, 1))
         conv2d_4        = self.conv2d_4(conv2d_4_pad)
-        activation_4    = F.relu(conv2d_4)
+        activation_4    = t_relu(conv2d_4)
         conv2d_5_pad    = F.pad(activation_4, (1, 1, 1, 1))
         conv2d_5        = self.conv2d_5(conv2d_5_pad)
-        activation_5    = F.relu(conv2d_5)
+        activation_5    = t_relu(conv2d_5)
         max_pooling2d_3 = F.max_pool2d(activation_5, kernel_size=(3, 3), stride=(2, 2))
         flatten_1       = max_pooling2d_3.view(max_pooling2d_3.size(0), -1)
         dense_1         = self.dense_1(flatten_1)
-        activation_6    = F.relu(dense_1)
+        activation_6    = t_relu(dense_1)
         dense_2         = self.dense_2(activation_6)
-        activation_7    = F.relu(dense_2)
+        activation_7    = t_relu(dense_2)
         dense_3         = self.dense_3(activation_7)
         return dense_3
 

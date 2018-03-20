@@ -4,6 +4,7 @@ from __future__ import division
 from __future__ import print_function
 
 #from memory_profiler import profile
+import os
 import argparse
 import cProfile
 import io as io2
@@ -28,6 +29,12 @@ run_metadata = tf.RunMetadata()
 options = None
 prep_start = 0
 
+INTRA = int(os.environ.get("DINTRA",0))
+INTER = int(os.environ.get("DINTER", 1))
+print("INTRA", INTRA)
+print("INTRA", INTER)
+
+TF_CONFIG=tf.ConfigProto(intra_op_parallelism_threads=INTRA, inter_op_parallelism_threads=INTER)
 
 def prepare_torch(model):
     print("Preparing Torch")
@@ -50,29 +57,20 @@ def torch_classify(imgs, opts=None, run_md=None):
     else:
         net.forward(batch)
 
-
 def prepare_keras(model):
     print("Preparing Keras")
     import models_keras
     global net, graph
 
-    net = models_keras.create_model(model)
-    net.summary()
+    K.set_learning_phase(False)
 
+    
     graph = tf.get_default_graph()
-    keras_session = K.get_session()
-
-    # old_run = keras_session.run
-    # print("old_run", old_run)
-    # print("K.sess 1", keras_session)
-    #
-    # def new_run(*args, **kwargs):
-    #     # print("X", self)
-    #     print("NewRunning", *args)
-    #     old_run(*args, **kwargs)
-
-    # keras_session.run = new_run
-
+    keras_sess = tf.Session(config=TF_CONFIG)
+    K.set_session(keras_sess) #keras_session = K.get_session()
+    
+    net = models_keras.create_model(model)
+    assert net.uses_learning_phase == False
 
 def keras_classify(imgs, opts=None, run_md=None):
     global graph
@@ -87,10 +85,7 @@ def prepare_tf(model):
     g = load_frozen_tensorflow_graph(model)
 
     input_tensor_name = g.get_operations()[0].name + ":0"
-    if model in {"alexnet"}:
-        output_tensor_name = "dense_3/BiasAdd:0"
-    else:
-        output_tensor_name = g.get_operations()[-1].name + ":0"
+    output_tensor_name = g.get_operations()[-1].name + ":0"
 
     print("I:", input_tensor_name)
     print("O:", output_tensor_name)
@@ -101,44 +96,33 @@ def prepare_tf(model):
 
         init_global = tf.global_variables_initializer()
 
-    config = tf.ConfigProto()
-
     # Not relevant for non-GPU
     # config.gpu_options.allocator_type = 'BFC'
 
-    main_sess = tf.Session(graph=g, config=config)
+    main_sess = tf.Session(graph=g, config=TF_CONFIG)
     main_sess.run(init_global)
 
 
 def load_frozen_tensorflow_graph(model):
     global main_sess, g
-    # saver = tf.train.import_meta_graph('./tmp/model.ckpt-55695.meta')
-    # saver.restore(session, './tmp/model.ckpt-55695')
+    model_file = "tf_frozen/"
 
-    model_file = "./tf_frozen/" if model in {"alexnet"} else "tf_frozen/"
+    if model == "vgg":
+       model_file += "tf_vgg.pb"
+    elif model == "inception":
+        model_file += "tf_inception.pb"
+    elif model == "resnet":
+        model_file += "tf_resnet.pb"
+    elif model == "alexnet":
+        model_file += "tf_alex.pb"
+    print("TF model file", model_file)
 
-    if model == "alexnet":
-        model_file += "tf_alexnet.ckpt"
+    with tf.gfile.GFile(model_file, "rb") as f:
+        graph_def = tf.GraphDef()
+        graph_def.ParseFromString(f.read())
 
-        with tf.Graph().as_default() as g, tf.Session() as sess:
-            saver = tf.train.import_meta_graph(model_file + ".meta")
-            saver.restore(sess, model_file)
-        print("TF model file", model_file)
-    else:
-        if model == "vgg":
-            model_file += "tf_vgg.pb"
-        elif model == "inception":
-            model_file += "tf_inception.pb"
-        elif model == "resnet":
-            model_file += "tf_resnet.pb"
-        print("TF model file", model_file)
-
-        with tf.gfile.GFile(model_file, "rb") as f:
-            graph_def = tf.GraphDef()
-            graph_def.ParseFromString(f.read())
-
-        with tf.Graph().as_default() as g:
-            tf.import_graph_def(graph_def, name="main")
+    with tf.Graph().as_default() as g:
+        tf.import_graph_def(graph_def, name="main")
     return g
 
 
@@ -158,7 +142,7 @@ def time_run(info_string, imgs, fw, model):
     Returns:
       None
     """
-    num_steps_burn_in = 25
+    num_steps_burn_in = 50
     total_duration = 0.0
     total_duration_squared = 0.0
 
@@ -187,7 +171,7 @@ def time_run(info_string, imgs, fw, model):
     
     batches_per_second = 1.0 / mn
     images_per_second = batches_per_second * FLAGS.batch_size
-    #durs 
+    
     durs50 = np.percentile(durs,50)
     durs75 = np.percentile(durs,75)
     durs90 = np.percentile(durs,90)
@@ -198,17 +182,19 @@ def time_run(info_string, imgs, fw, model):
           (datetime.now(), durs50, durs75, durs90)) 
     print('%s: 99LAT - %.4f s/batch, THROUGHPUT (IPS) - %.3f' % (datetime.now(), durs99, images_per_second))
     
-    result_file = ("tp_logs/" + str(fw) + "_" + str(model) + "_b" + str(FLAGS.batch_size) + "_num" + 
+    result_file = ("tp_logs/" + str(fw) + "_" + str(model) + "_b" + str(FLAGS.batch_size).zfill(3) + "_num" + 
                   str(FLAGS.num_batches) + "_" + datetime.now().strftime("%m%d_%H%M%S") + ".out")
     with open(result_file, "w") as f:
         f.write("Framework\t" + str(fw) + "\n")
         f.write("Model____\t" + str(model) + "\n")
-        f.write("Bsize____\t" + str(FLAGS.batch_size) + "\n")
+        f.write("Bsize____\t%03d\n" % (FLAGS.batch_size))
         f.write("TP (Img/s)\t%.2f\n" % (images_per_second))
         f.write("99pct LAT\t%.4f\n" % (durs99))
         f.write("90pct LAT\t%.4f\n" % (durs90))
         f.write("\n75pct LAT\t%.4f\n" % (durs75))
-        f.write("50pct LAT\t%.4f\n "% (durs50))
+        f.write("MEAN LAT\t%.4f\n"% (mn))
+        f.write("Summary: %s %s BATCH %03d TP %.2f PCT99 %.4f MEAN %.4f\n" % 
+                (str(fw), str(model), FLAGS.batch_size, images_per_second, durs99, mn)) 
 
 def generate_dummy_images(fw, batch_size, image_size):
     if fw in {"torch", "pytorch"}:
