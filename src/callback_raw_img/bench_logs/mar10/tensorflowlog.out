@@ -1,0 +1,2 @@
+2018-03-08 16:24:42.836304: tensorflow, alexnet, batch_size 6 | across 100 steps (WALL TIME), 0.0113 +/- 0.0006 sec / batch, throughput (IPS) - 533.209 0.0113
+2018-03-08 16:24:42.836358: PROCESS_TIME: 0.007 +/- 0.000 sec / batch

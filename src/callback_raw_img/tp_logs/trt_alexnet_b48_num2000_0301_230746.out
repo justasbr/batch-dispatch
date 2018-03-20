@@ -1,0 +1,10 @@
+Framework	trt
+Model____	alexnet
+Bsize____	48
+TP (Img/s)	1743.78
+99pct LAT	0.0444
+90pct LAT	0.0346
+
+75pct LAT	0.0277
+50pct LAT	0.0251
+ 

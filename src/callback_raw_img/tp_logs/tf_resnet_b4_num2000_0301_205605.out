@@ -1,0 +1,10 @@
+Framework	tf
+Model____	resnet
+Bsize____	4
+TP (Img/s)	141.55
+99pct LAT	0.0298
+90pct LAT	0.0285
+
+75pct LAT	0.0284
+50pct LAT	0.0284
+ 

@@ -1,0 +1,10 @@
+Framework	trt
+Model____	inception
+Bsize____	3
+TP (Img/s)	187.79
+99pct LAT	0.0161
+90pct LAT	0.0160
+
+75pct LAT	0.0160
+50pct LAT	0.0160
+ 

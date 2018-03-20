@@ -1,0 +1,4 @@
+2018-02-21 00:53:32.405258: keras, alexnet, batch_size 1 | across 1000 steps (WALL TIME), 0.0056 +/- 0.0008 sec / batch, throughput (IPS) - 178.260 0.0056
+2018-02-21 00:53:32.405288: PROCESS_TIME: 0.004 +/- 0.001 sec / batch
+2018-02-21 00:53:58.832418: keras, alexnet, batch_size 2 | across 1000 steps (WALL TIME), 0.0069 +/- 0.0007 sec / batch, throughput (IPS) - 289.566 0.0069
+2018-02-21 00:53:58.832449: PROCESS_TIME: 0.004 +/- 0.000 sec / batch

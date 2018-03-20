@@ -1,0 +1,10 @@
+Framework	trt
+Model____	vgg
+Bsize____	2
+TP (Img/s)	103.77
+99pct LAT	0.0336
+90pct LAT	0.0270
+
+75pct LAT	0.0178
+50pct LAT	0.0175
+ 

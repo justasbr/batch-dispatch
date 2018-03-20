@@ -1,0 +1,10 @@
+Framework	trt
+Model____	resnet
+Bsize____	8
+TP (Img/s)	349.96
+99pct LAT	0.0387
+90pct LAT	0.0308
+
+75pct LAT	0.0212
+50pct LAT	0.0210
+ 
